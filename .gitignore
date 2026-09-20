@@ -21,3 +21,7 @@ Thumbs.db
 
 # 原始报告默认不纳入版本控制，后续通过 manifest 和下载脚本复现
 data/raw/
+
+# 可由原始报告确定性重建的文本和临时检查文件
+data/processed/
+tmp/

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "extractor": {
+    "name": "pdfplumber",
+    "x_tolerance": 3.0,
+    "y_tolerance": 3.0,
+    "dedupe_tolerance": 1.0
+  },
+  "cleaning": {
+    "boundary_scan_lines": 3,
+    "boundary_min_fraction": 0.3
+  },
+  "chunking": {
+    "strategy": "page-section-character",
+    "chunk_size": 1200,
+    "chunk_overlap": 200,
+    "min_chunk_size": 200
+  }
+}

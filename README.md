@@ -6,9 +6,9 @@
 
 ## 当前进度
 
-Phase 1：APT 报告语料与 Manifest。
+Phase 2：PDF 解析、清洗、Chunk 与 Metadata Pipeline。
 
-当前已建立 15 份公开 APT 技术报告的可追溯清单、下载流程和完整性校验。原始 PDF 不进入 Git，文档解析、Chunk、Benchmark、模型依赖及 RAG 功能将在对应阶段逐步加入。
+当前已能够把 15 份公开 APT 技术报告确定性处理为带页码、章节和来源信息的 JSONL Chunk。原始 PDF 和处理文本不进入 Git，Benchmark、模型依赖及 RAG 功能将在对应阶段逐步加入。
 
 ## 环境要求
 
@@ -31,6 +31,8 @@ uv sync
 uv run python --version
 uv run pytest
 uv run python scripts/validate_manifest.py
+uv run python scripts/process_corpus.py
+uv run python scripts/validate_processed.py
 ```
 
 Python 版本应为 3.12，测试和 manifest 校验应全部通过。
@@ -44,11 +46,14 @@ uv run python scripts/download_reports.py --verify-only
 
 报告默认保存到 `data/raw/`，不会被 Git 跟踪。语料选择标准、字段说明和单份报告下载方式见 [语料文档](docs/corpus.md)。
 
+PDF 解析、清洗、Chunk 配置和 Metadata 字段说明见 [处理流程文档](docs/processing.md)。
+
 ## 当前目录
 
 ```text
 .
 ├── src/apt_rag/       # Python 包
+├── configs/           # 可复现实验配置
 ├── data/manifest/     # 报告清单与 JSON Schema
 ├── docs/              # 阶段文档
 ├── scripts/           # Manifest 校验与报告下载入口
