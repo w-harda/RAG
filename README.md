@@ -6,9 +6,9 @@
 
 ## 当前进度
 
-Phase 3：APT QA Benchmark 与 Ground Truth Evidence。
+Phase 4：三模型 Embedding 检索 Benchmark。
 
-当前已能够把 15 份公开 APT 技术报告确定性处理为带页码、章节和来源信息的 JSONL Chunk，并建立 20 题、四类均衡且逐条关联真实 Chunk 的中文 APT Benchmark。原始 PDF 和处理文本不进入 Git，模型依赖及 RAG 功能将在对应阶段逐步加入。
+已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark，以及 BGE-M3、text2vec-large-chinese、m3e-base 三模型实测。BGE-M3 在当前跨语言任务中领先，被选为 Phase 5 的固定 Embedding。原始 PDF、处理文本和向量缓存不进入 Git，实验结果进入 Git。
 
 ## 环境要求
 
@@ -50,6 +50,8 @@ uv run python scripts/download_reports.py --verify-only
 PDF 解析、清洗、Chunk 配置和 Metadata 字段说明见 [处理流程文档](docs/processing.md)。
 
 Benchmark 的设计、字段与证据相关性等级见 [Benchmark 文档](docs/benchmark.md)。
+
+Embedding 控制变量、指标定义、运行命令和真实结果见 [Embedding 实验](docs/embedding_benchmark.md)。
 
 ## 当前目录
 

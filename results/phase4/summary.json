@@ -1,0 +1,83 @@
+{
+  "completed_models": 3,
+  "controlled_variables": {
+    "batch_size": 8,
+    "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+    "benchmark_id": "apt-qa-v1.1",
+    "chunk_count": 1297,
+    "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+    "corpus_id": "apt-reports-v1",
+    "device": "cpu",
+    "dtype": "float32",
+    "max_seq_length": 256,
+    "mrr_cutoff": 1297,
+    "normalized": true,
+    "query_prefix": "",
+    "question_count": 20,
+    "similarity": "cosine",
+    "top_k": [
+      1,
+      3,
+      5,
+      10
+    ]
+  },
+  "expected_models": 3,
+  "experiment": "phase4-embedding-benchmark",
+  "results": [
+    {
+      "corpus_encoding": 607.964942399878,
+      "dimension": 1024,
+      "model_id": "bge-m3",
+      "model_load": 6.282213100232184,
+      "model_name": "BAAI/bge-m3",
+      "mrr": 0.5744129240324892,
+      "ndcg@10": 0.646050906112744,
+      "query_encoding": 3.8848099997267127,
+      "recall@1": 0.375,
+      "recall@10": 0.9,
+      "recall@3": 0.5166666666666667,
+      "recall@5": 0.7,
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "search_mean_per_query": 0.002321400004439056,
+      "search_total": 0.04642800008878112
+    },
+    {
+      "corpus_encoding": 178.75185099989176,
+      "dimension": 768,
+      "model_id": "m3e-base",
+      "model_load": 3.423376700375229,
+      "model_name": "moka-ai/m3e-base",
+      "mrr": 0.28644894775154994,
+      "ndcg@10": 0.3532172775502803,
+      "query_encoding": 0.5038632000796497,
+      "recall@1": 0.075,
+      "recall@10": 0.675,
+      "recall@3": 0.24166666666666664,
+      "recall@5": 0.4416666666666667,
+      "revision": "764b537a0e50e5c7d64db883f2d2e051cbe3c64c",
+      "search_mean_per_query": 0.0006655149860307574,
+      "search_total": 0.013310299720615149
+    },
+    {
+      "corpus_encoding": 628.1705197999254,
+      "dimension": 1024,
+      "model_id": "text2vec-large-chinese",
+      "model_load": 4.436770299915224,
+      "model_name": "GanymedeNil/text2vec-large-chinese",
+      "mrr": 0.24649759743715133,
+      "ndcg@10": 0.2593349541909911,
+      "query_encoding": 1.7595063000917435,
+      "recall@1": 0.125,
+      "recall@10": 0.4166666666666667,
+      "recall@3": 0.21666666666666665,
+      "recall@5": 0.26666666666666666,
+      "revision": "add4e02ec45da97442798f25093d9ab96e40c5ad",
+      "search_mean_per_query": 0.003777189995162189,
+      "search_total": 0.07554379990324378
+    }
+  ],
+  "schema_version": "1.0",
+  "selected_model_id": "bge-m3",
+  "selection_rule": "MRR descending, then nDCG@10 descending"
+}

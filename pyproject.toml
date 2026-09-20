@@ -5,7 +5,10 @@ description = "面向可复现实验的 APT 情报检索增强生成问答系统
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "matplotlib>=3.10,<4",
+    "numpy>=2.3,<3",
     "pdfplumber>=0.11.10",
+    "sentence-transformers>=5.1,<6",
 ]
 
 [dependency-groups]

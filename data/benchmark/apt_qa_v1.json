@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "benchmark_id": "apt-qa-v1",
+  "benchmark_id": "apt-qa-v1.1",
   "corpus_id": "apt-reports-v1",
   "created_at": "2026-09-20",
   "question_language": "zh-CN",
@@ -199,6 +199,12 @@
           "page": 3,
           "chunk_id": "cisa-aa23-108-p0003-c002",
           "relevance": 3
+        },
+        {
+          "report_id": "cisa-aa23-108",
+          "page": 3,
+          "chunk_id": "cisa-aa23-108-p0003-c000",
+          "relevance": 2
         }
       ],
       "difficulty": "hard"
@@ -295,6 +301,12 @@
           "page": 38,
           "chunk_id": "cisa-aa23-129a-p0038-c002",
           "relevance": 3
+        },
+        {
+          "report_id": "cisa-aa23-129a",
+          "page": 11,
+          "chunk_id": "cisa-aa23-129a-p0011-c000",
+          "relevance": 2
         }
       ],
       "difficulty": "medium"
