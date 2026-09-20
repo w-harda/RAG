@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "apt-qa-v1",
+  "corpus_id": "apt-reports-v1",
+  "created_at": "2026-09-20",
+  "question_language": "zh-CN",
+  "questions": [
+    {
+      "id": "q001",
+      "category": "background",
+      "question": "APT44 通常还被称为什么？它被归属于俄罗斯哪个军事情报单位，其行动范围有何特点？",
+      "expected_answer": "APT44 通常被称为 Sandworm、FROZENBARENTS 或 Seashell Blizzard。多国政府将其归属于俄罗斯武装力量总参谋部情报总局（GRU）下属的主要特殊技术中心 Unit 74455。它不是只执行单一任务，而是同时开展网络间谍、攻击和影响行动。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt44-2024",
+          "page": 4,
+          "chunk_id": "mandiant-apt44-2024-p0004-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q002",
+      "category": "background",
+      "question": "Mandiant 如何判断 APT42 的国家背景、主要任务以及可能服务的机构？",
+      "expected_answer": "Mandiant 高置信度判断 APT42 是伊朗国家支持的网络间谍组织，主要针对伊朗政府具有战略利益的个人和组织开展信息收集与监视；并以中等置信度判断其代表伊斯兰革命卫队情报组织（IRGC-IO）行动。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt42-2022",
+          "page": 2,
+          "chunk_id": "mandiant-apt42-2022-p0002-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q003",
+      "category": "background",
+      "question": "APT41 的两类主要行动动机分别是什么？报告列举了哪些对应活动？",
+      "expected_answer": "APT41 一方面执行中国国家支持的间谍活动，例如针对医疗、高科技和电信行业建立长期访问并窃取知识产权；另一方面为个人利益实施以游戏行业为重点的牟利入侵，包括窃取源代码和数字证书、操纵虚拟货币及尝试部署勒索软件。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt41-2019",
+          "page": 3,
+          "chunk_id": "mandiant-apt41-2019-p0003-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q004",
+      "category": "background",
+      "question": "APT38 的支持背景、核心目标和公开行动所涉盗窃金额规模是什么？",
+      "expected_answer": "APT38 是受朝鲜政权支持、以经济利益为动机的组织，专门攻击金融机构并实施大型网络盗窃和破坏性行动；仅按公开行动计算，其企图盗取的金额已超过 11 亿美元。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt38-2018",
+          "page": 2,
+          "chunk_id": "mandiant-apt38-2018-p0002-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q005",
+      "category": "background",
+      "question": "Mandiant 将 APT1 与中国人民解放军的哪个单位关联起来？该单位位于哪里？",
+      "expected_answer": "Mandiant 认为 APT1 是中国人民解放军总参谋部第三部第二局，常用军事单位代号为 Unit 61398；其设施部分位于上海浦东新区高桥镇大同路。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt1-2013",
+          "page": 5,
+          "chunk_id": "mandiant-apt1-2013-p0005-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q006",
+      "category": "ttp",
+      "question": "Volt Typhoon 如何利用合法工具和账户维持长期隐蔽驻留？报告观察到的最长驻留时间是多少？",
+      "expected_answer": "Volt Typhoon 以“就地取材”（LOTL）技术为标志，配合有效账户和严格的行动安全，将恶意行为伪装进正常系统及网络活动，并按受害环境定制 TTP、持续维护访问。报告称其在部分受害 IT 环境中的立足点至少维持了五年。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa24-038a",
+          "page": 3,
+          "chunk_id": "cisa-aa24-038a-p0003-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q007",
+      "category": "ttp",
+      "question": "APT29（SVR）在 2018 年一次入侵中如何实施“低速慢速”密码喷洒以降低被发现概率？",
+      "expected_answer": "攻击者以较长间隔只尝试少量密码，并使用大量与受害者同一国家的 IP 地址，来源覆盖住宅、商业、移动网络和 Tor，以降低集中失败登录的可见性；最终命中了一个被错误豁免 MFA 的管理员账户。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa21-116a",
+          "page": 2,
+          "chunk_id": "cisa-aa21-116a-p0002-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q008",
+      "category": "ttp",
+      "question": "APT40 为隐藏数据外传和命令控制使用了哪些云服务、代理或隧道及数据暂存手段？",
+      "expected_answer": "APT40 使用 Dropbox 上传窃取数据以伪装成正常云服务流量，使用协议隧道和包括 Tor 在内的多跳代理，并采用仿冒域名搭建 C2；外传前会归档、加密并在本地或远程暂存数据，随后通过 C2 通道外传。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa21-200a",
+          "page": 3,
+          "chunk_id": "cisa-aa21-200a-p0003-c001",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q009",
+      "category": "ttp",
+      "question": "APT42 的鱼叉式网络钓鱼为何强调先建立信任？窃取的凭据还被怎样用于绕过和扩展访问？",
+      "expected_answer": "APT42 先与目标建立信任和关系，再窃取个人或企业邮箱凭据；它还通过凭据收集获取 MFA 验证码以绕过认证，并用已攻陷凭据继续访问目标本人及其雇主、同事或亲属的网络、设备和账户。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt42-2022",
+          "page": 3,
+          "chunk_id": "mandiant-apt42-2022-p0003-c001",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q010",
+      "category": "ttp",
+      "question": "APT44 从初始访问到入侵后活动常采用哪些方法？",
+      "expected_answer": "初始访问阶段，APT44 使用网络钓鱼、凭据收集、已知漏洞利用、定向供应链攻击以及对路由器和 VPN 等边缘基础设施的利用。进入网络后，它常用 LOTL 技术扩展访问、建立持久化并外传信息，且偏好开源或犯罪市场工具而非昂贵的自研植入物。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt44-2024",
+          "page": 7,
+          "chunk_id": "mandiant-apt44-2024-p0007-c000",
+          "relevance": 3
+        },
+        {
+          "report_id": "mandiant-apt44-2024",
+          "page": 8,
+          "chunk_id": "mandiant-apt44-2024-p0008-c000",
+          "relevance": 2
+        }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q011",
+      "category": "attack_technique",
+      "question": "APT29 大规模利用 TeamCity 的哪个漏洞？攻陷构建服务器为何可能升级为供应链攻击？",
+      "expected_answer": "APT29 自 2023 年 9 月起大规模利用 CVE-2023-42793。TeamCity 服务器掌握开发者源代码、签名证书以及编译和部署流程，攻击者可篡改构建产物或部署过程，进而把访问扩展成针对下游客户的供应链攻击。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa23-347a",
+          "page": 1,
+          "chunk_id": "cisa-aa23-347a-p0001-c001",
+          "relevance": 3
+        },
+        {
+          "report_id": "cisa-aa23-347a",
+          "page": 3,
+          "chunk_id": "cisa-aa23-347a-p0003-c000",
+          "relevance": 1
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q012",
+      "category": "attack_technique",
+      "question": "APT28 如何通过 SNMP 和 CVE-2017-6742 攻击 Cisco 路由器，Jaguar Tooth 随后执行了什么操作？",
+      "expected_answer": "APT28 利用未加密、使用默认或弱 community string 的 SNMP，并利用 CVE-2017-6742（Cisco CSCve54313）获得对易受攻击路由器的访问。随后部署的 Jaguar Tooth 会收集更多设备信息、通过 TFTP 外传，并植入允许未认证访问的后门。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa23-108",
+          "page": 3,
+          "chunk_id": "cisa-aa23-108-p0003-c001",
+          "relevance": 2
+        },
+        {
+          "report_id": "cisa-aa23-108",
+          "page": 3,
+          "chunk_id": "cisa-aa23-108-p0003-c002",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q013",
+      "category": "attack_technique",
+      "question": "Snake 植入体的点对点网络和自定义通信协议如何帮助 FSB 隐蔽开展长期情报收集？",
+      "expected_answer": "FSB Center 16 把全球受感染主机组成隐蔽 P2P 网络，其中大量节点充当中继，为最终目标上的 Snake 植入体转发伪装流量；其自定义协议使用加密和分片来保护通信，并增加检测和流量收集难度。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa23-129a",
+          "page": 1,
+          "chunk_id": "cisa-aa23-129a-p0001-c001",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q014",
+      "category": "attack_technique",
+      "question": "APT38 针对 SWIFT 系统的准备和 DYEPACK 的演进体现了怎样的攻击技术发展过程？",
+      "expected_answer": "APT38 的开发者研读 SWIFT 手册，并从至少 2014 年开始为操纵金融交易系统积累能力；已知最早的 DYEPACK 部署在 2015 年 12 月。行动中它长期观察网络、用户和可访问 SWIFT 服务器的系统，并把原本落盘的 DYEPACK 改造成内存内运行版本以规避检测。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt38-2018",
+          "page": 14,
+          "chunk_id": "mandiant-apt38-2018-p0014-c000",
+          "relevance": 3
+        },
+        {
+          "report_id": "mandiant-apt38-2018",
+          "page": 15,
+          "chunk_id": "mandiant-apt38-2018-p0015-c001",
+          "relevance": 2
+        }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q015",
+      "category": "attack_technique",
+      "question": "APT41 的软件供应链攻击通过什么环节把恶意代码传递给下游目标？",
+      "expected_answer": "APT41 先获取软件公司的访问权限，再把恶意代码注入合法软件文件，使被污染的文件随正常软件更新分发给下游目标。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt41-2019",
+          "page": 3,
+          "chunk_id": "mandiant-apt41-2019-p0003-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "q016",
+      "category": "ioc",
+      "question": "APT41 相关 CCleaner 供应链事件中，DIRTCLEANER 下载的第二阶段加载器 MD5 是什么？后续载荷链包含哪些组件？",
+      "expected_answer": "第二阶段加载器的 MD5 为 748aa5fcfa2af451c76039faf6a8684d。该加载器包含 32 位和 64 位 COLDJAVA DLL 载荷，COLDJAVA 中的 shellcode 再加载 BLACKCOFFEE 变种。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt41-2019",
+          "page": 23,
+          "chunk_id": "mandiant-apt41-2019-p0023-c001",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "q017",
+      "category": "ioc",
+      "question": "报告列出的 APT28 常用恶意软件家族有哪些？其中 EVILTOSS 和 CHOPSTICK 分别承担什么功能？",
+      "expected_answer": "常用家族包括 SOURFACE 下载器、其第二阶段后门 EVILTOSS 和模块化植入体 CHOPSTICK。EVILTOSS 用于侦察、监控、凭据窃取和 shellcode 执行；CHOPSTICK 基于模块化框架，可按目标提供定制功能。",
+      "evidence": [
+        {
+          "report_id": "mandiant-apt28-2014",
+          "page": 19,
+          "chunk_id": "mandiant-apt28-2014-p0019-c002",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q018",
+      "category": "ioc",
+      "question": "在 Windows 主机上检测 Snake Queue File 时，可重点检查哪个目录和哪些文件特征？",
+      "expected_answer": "可重点检查 %windows%\\registration\\ 目录。Queue File 通常采用两个随机 GUID 加 .crmlog 的文件名结构，具有高熵，并带有 hidden、system 和 archive 文件属性。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa23-129a",
+          "page": 38,
+          "chunk_id": "cisa-aa23-129a-p0038-c002",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q019",
+      "category": "ioc",
+      "question": "WhisperGate 的 stage1.exe 样本 SHA-256 是什么，它对受害主机执行什么破坏行为？",
+      "expected_answer": "stage1.exe 的 SHA-256 为 a196c6b8ffcb97ffb276d04f354696e2391311db3841ae16c8c9f56f36a38e92。它在设备关机时覆盖主引导记录（MBR），导致系统无法正常启动并显示伪造的勒索信息。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa24-249a",
+          "page": 21,
+          "chunk_id": "cisa-aa24-249a-p0021-c000",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "id": "q020",
+      "category": "ioc",
+      "question": "CISA 的 APT40 IOC 附录最先列出的三个域名或 URL 是什么？",
+      "expected_answer": "最先列出的三个指标是 airbusocean[.]com、https://pastebin[.]com/vfb5mbbu 和 santaclarasystem[.]us。",
+      "evidence": [
+        {
+          "report_id": "cisa-aa21-200a",
+          "page": 6,
+          "chunk_id": "cisa-aa21-200a-p0006-c001",
+          "relevance": 3
+        }
+      ],
+      "difficulty": "medium"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/apt-qa.schema.json",
+  "title": "APT QA Benchmark",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "benchmark_id",
+    "corpus_id",
+    "created_at",
+    "question_language",
+    "questions"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "benchmark_id": {"type": "string", "minLength": 1},
+    "corpus_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date"},
+    "question_language": {"type": "string", "minLength": 1},
+    "questions": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category", "question", "expected_answer", "evidence", "difficulty"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^q[0-9]{3}$"},
+          "category": {
+            "enum": ["background", "ttp", "attack_technique", "ioc"]
+          },
+          "question": {"type": "string", "minLength": 1},
+          "expected_answer": {"type": "string", "minLength": 1},
+          "difficulty": {"enum": ["easy", "medium", "hard"]},
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["report_id", "page", "chunk_id", "relevance"],
+              "properties": {
+                "report_id": {"type": "string", "minLength": 1},
+                "page": {"type": "integer", "minimum": 1},
+                "chunk_id": {"type": "string", "minLength": 1},
+                "relevance": {"type": "integer", "minimum": 1, "maximum": 3}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

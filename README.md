@@ -6,9 +6,9 @@
 
 ## 当前进度
 
-Phase 2：PDF 解析、清洗、Chunk 与 Metadata Pipeline。
+Phase 3：APT QA Benchmark 与 Ground Truth Evidence。
 
-当前已能够把 15 份公开 APT 技术报告确定性处理为带页码、章节和来源信息的 JSONL Chunk。原始 PDF 和处理文本不进入 Git，Benchmark、模型依赖及 RAG 功能将在对应阶段逐步加入。
+当前已能够把 15 份公开 APT 技术报告确定性处理为带页码、章节和来源信息的 JSONL Chunk，并建立 20 题、四类均衡且逐条关联真实 Chunk 的中文 APT Benchmark。原始 PDF 和处理文本不进入 Git，模型依赖及 RAG 功能将在对应阶段逐步加入。
 
 ## 环境要求
 
@@ -33,6 +33,7 @@ uv run pytest
 uv run python scripts/validate_manifest.py
 uv run python scripts/process_corpus.py
 uv run python scripts/validate_processed.py
+uv run python scripts/validate_benchmark.py
 ```
 
 Python 版本应为 3.12，测试和 manifest 校验应全部通过。
@@ -48,15 +49,18 @@ uv run python scripts/download_reports.py --verify-only
 
 PDF 解析、清洗、Chunk 配置和 Metadata 字段说明见 [处理流程文档](docs/processing.md)。
 
+Benchmark 的设计、字段与证据相关性等级见 [Benchmark 文档](docs/benchmark.md)。
+
 ## 当前目录
 
 ```text
 .
 ├── src/apt_rag/       # Python 包
 ├── configs/           # 可复现实验配置
+├── data/benchmark/    # 问题、标准答案与 Ground Truth Evidence
 ├── data/manifest/     # 报告清单与 JSON Schema
 ├── docs/              # 阶段文档
-├── scripts/           # Manifest 校验与报告下载入口
+├── scripts/           # 下载、处理与数据校验入口
 ├── tests/             # 自动化测试
 ├── .env.example       # 环境变量模板（不存放真实密钥）
 ├── .python-version    # Python 3.12 约束
