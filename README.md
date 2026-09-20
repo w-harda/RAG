@@ -6,15 +6,16 @@
 
 ## 当前进度
 
-Phase 0：项目初始化和开发环境。
+Phase 1：APT 报告语料与 Manifest。
 
-当前仅包含可安装的最小 Python 包和环境冒烟测试。APT 报告、解析流程、Benchmark、模型依赖及 RAG 功能将在对应阶段逐步加入。
+当前已建立 15 份公开 APT 技术报告的可追溯清单、下载流程和完整性校验。原始 PDF 不进入 Git，文档解析、Chunk、Benchmark、模型依赖及 RAG 功能将在对应阶段逐步加入。
 
 ## 环境要求
 
 - Git
 - uv
 - Python 3.12（由 `.python-version` 和 `pyproject.toml` 约束）
+- curl（仅在来源站点拒绝 Python 下载客户端时作为自动回退）
 
 ## 初始化
 
@@ -29,15 +30,28 @@ uv sync
 ```powershell
 uv run python --version
 uv run pytest
+uv run python scripts/validate_manifest.py
 ```
 
-Python 版本应为 3.12，测试应全部通过。
+Python 版本应为 3.12，测试和 manifest 校验应全部通过。
+
+## 获取报告语料
+
+```powershell
+uv run python scripts/download_reports.py
+uv run python scripts/download_reports.py --verify-only
+```
+
+报告默认保存到 `data/raw/`，不会被 Git 跟踪。语料选择标准、字段说明和单份报告下载方式见 [语料文档](docs/corpus.md)。
 
 ## 当前目录
 
 ```text
 .
 ├── src/apt_rag/       # Python 包
+├── data/manifest/     # 报告清单与 JSON Schema
+├── docs/              # 阶段文档
+├── scripts/           # Manifest 校验与报告下载入口
 ├── tests/             # 自动化测试
 ├── .env.example       # 环境变量模板（不存放真实密钥）
 ├── .python-version    # Python 3.12 约束
@@ -45,4 +59,4 @@ Python 版本应为 3.12，测试应全部通过。
 └── uv.lock            # 依赖锁文件（运行 uv sync 后生成）
 ```
 
-原始报告文件默认由 `.gitignore` 排除。后续语料阶段将使用 manifest、来源 URL 和 SHA-256 校验值保证数据可追溯与可复现。
+原始报告文件默认由 `.gitignore` 排除。项目使用 manifest、官方来源 URL、文件大小和 SHA-256 校验值保证数据可追溯，并在来源文件变化时显式报错。
