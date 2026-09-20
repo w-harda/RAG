@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+
+# 本地配置与密钥
+.env
+.env.*
+!.env.example
+
+# 编辑器与操作系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 原始报告默认不纳入版本控制，后续通过 manifest 和下载脚本复现
+data/raw/

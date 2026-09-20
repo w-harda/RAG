@@ -1,0 +1,20 @@
+[project]
+name = "apt-rag"
+version = "0.1.0"
+description = "面向可复现实验的 APT 情报检索增强生成问答系统"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0,<10",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
