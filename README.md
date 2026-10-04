@@ -6,7 +6,7 @@
 
 ## 当前进度
 
-Phase 8：根据 Phase 4–7 的实验结果确定最终研究技术栈，记录依据与限制。
+Phase 9：接通完整 RAG Pipeline 和真实 Metadata 来源引用，提供命令行问答。
 
 已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比、两个 LLM 的 40 份真实回答，以及三策略固定向量检索对比和 600 个真实 Reranker 分数。LLM 辅助评分尚未经独立人工评审；检索指标来自固定证据标注，不代表最终问答正确率。原始 PDF、处理文本、向量、模型和索引缓存不进入 Git，实验结果进入 Git。
 
@@ -100,7 +100,21 @@ uv run python scripts/run_retrieval_benchmark.py
 uv run python scripts/validate_stack_selection.py
 ```
 
-Phase 8 未调用模型或付费 API，未改动旧实验数据；尚未实现 Phase 9 的完整 RAG Pipeline/Citation 或 Web UI。
+Phase 8 未调用模型或付费 API，未改动旧实验数据。
+
+Phase 9 已验证 20 题 FAISS Top-30 与精确参考/Phase 7 候选的一致性、两后端完整 Context 的长度预算，并保存两条真实端到端冒烟。问答从检索 Chunk 构造 Context，引用的标题、页码、章节、URL 和 Chunk ID 来自 Metadata，不由模型生成。完整下载/准备步骤、预算与引用限制见 [RAG 管线说明](docs/rag_pipeline.md)。
+
+```powershell
+# 输入/模型准备步骤先按管线文档执行。
+uv run python scripts/prepare_rag.py --check-budgets
+uv run python scripts/ask_rag.py "APT44 通常还被称为什么？它被归属于俄罗斯哪个军事情报单位，其行动范围有何特点？" --provider ollama-qwen
+# 云端显式授权，问题与公开片段会发送给 DeepSeek，生成会计费。
+uv run python scripts/ask_rag.py "APT44 通常还被称为什么？它被归属于俄罗斯哪个军事情报单位，其行动范围有何特点？" --allow-cloud
+# 离线检查，不要求模型/密钥/服务。
+uv run python scripts/validate_rag_results.py
+```
+
+引用映射通过不等于回答语义正确；未开展 Phase 10 的消融/独立质量评审，也未实现 Web UI。
 
 ## 当前目录
 

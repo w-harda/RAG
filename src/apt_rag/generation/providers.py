@@ -98,6 +98,7 @@ class OllamaProvider(HTTPProvider):
         data = self.request("POST", self.host + "/api/chat", json={
             "model": self.spec["model"], "messages": messages,
             "stream": False, "think": False, "keep_alive": self.spec["keep_alive"],
+            **({"truncate": False, "shift": False} if self.settings.get("strict_context") else {}),
             "options": {
                 "temperature": self.settings["temperature"],
                 "num_predict": self.settings["max_output_tokens"],

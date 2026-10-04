@@ -1,0 +1,408 @@
+{
+  "abstained": false,
+  "answer": "**别名**：APT44 通常也被称为 Sandworm、FROZENBARENTS 和 Seashell Blizzard [S1]。\n\n**归属单位**：APT44 被多国政府归属于 Unit 74455，即俄罗斯联邦武装力量总参谋部总局（GU，通称 GRU）下属的 Main Centre for Special Technologies（GTsST）[S1]。Mandiant 评估 APT44 极有可能隶属于 GRU 的信息作战部队（Information Operations Troops, VIO）[S1]。\n\n**行动范围特点**：\n- APT44 的行动范围是全球性的，反映俄罗斯广泛的 national interests and ambitions [S4]。\n- 在后 Maidan 革命时代，其网络行动主要集中于乌克兰 [S4]。\n- 即便在战争持续期间，仍观察到该组织在北美、欧洲、中东、中亚和拉丁美洲维持访问与间谍活动 [S4]。\n- 其主要目标是俄罗斯近邻（near abroad）的政府、国防、交通、能源、媒体和公民社会组织；波兰、哈萨克斯坦及俄罗斯境内的政府机构和其他关键基础设施与关键资源（CIKR）运营方也频繁出现在其近期目标中 [S4]。\n- APT44 还多次针对西方选举系统和机构 [S4]。\n- 该组织被评估为克里姆林宫眼中的一种灵活权力工具，能够服务于俄罗斯广泛的国家利益与野心，包括在全球范围内削弱民主进程 [S2]。\n\n**证据不足之处**：报告片段未提供 APT44 企图金额或实际金额相关信息，因此无法就金额作出判断。",
+  "answer_sha256": "32dbdde5100b3f9ae76aaa94bdf69d5eef78a67e5d5b670b2dd27814c330fb87",
+  "candidate_ids": [
+    "mandiant-apt44-2024-p0004-c000",
+    "mandiant-apt44-2024-p0016-c001",
+    "mandiant-apt44-2024-p0014-c003",
+    "mandiant-apt44-2024-p0013-c001",
+    "mandiant-apt44-2024-p0014-c005",
+    "mandiant-apt44-2024-p0008-c000",
+    "mandiant-apt44-2024-p0014-c001",
+    "mandiant-apt44-2024-p0017-c001",
+    "mandiant-apt1-2013-p0054-c000",
+    "mandiant-apt1-2013-p0009-c001",
+    "mandiant-apt44-2024-p0010-c000",
+    "mandiant-apt1-2013-p0009-c002",
+    "mandiant-apt44-2024-p0004-c001",
+    "mandiant-apt44-2024-p0006-c000",
+    "mandiant-apt44-2024-p0040-c000",
+    "mandiant-apt1-2013-p0018-c003",
+    "mandiant-apt44-2024-p0010-c001",
+    "mandiant-apt44-2024-p0003-c001",
+    "mandiant-apt44-2024-p0038-c002",
+    "mandiant-apt44-2024-p0013-c002",
+    "mandiant-apt44-2024-p0037-c001",
+    "mandiant-apt44-2024-p0009-c001",
+    "mandiant-apt44-2024-p0038-c001",
+    "mandiant-apt44-2024-p0014-c002",
+    "mandiant-apt44-2024-p0039-c003",
+    "mandiant-apt44-2024-p0011-c002",
+    "mandiant-apt44-2024-p0038-c000",
+    "mandiant-apt44-2024-p0039-c000",
+    "mandiant-apt44-2024-p0016-c000",
+    "mandiant-apt44-2024-p0039-c001"
+  ],
+  "citations": [
+    {
+      "chunk_id": "mandiant-apt44-2024-p0004-c000",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S1",
+      "page": 4,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Overview of APT44",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "1f4ff56f4ea0ebbf055971e3f967775368e904f286d0ed6010c89d8ee4d3ebbd",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0006-c000",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S4",
+      "page": 6,
+      "report_id": "mandiant-apt44-2024",
+      "section": "A Global Targeting Mandate",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "17f265d4648aab42d68b90081d83d5bda9c87d27efec2de5085528cf6a5ffe9c",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0003-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S2",
+      "page": 3,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Key Judgments",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "7c60a9b4e423cd64127292e75305a541e30aa95015532c67b1f8982e0fcbfc8c",
+      "vendor": "Mandiant"
+    }
+  ],
+  "cli_total_seconds": 102.35598170000594,
+  "controls": {
+    "context_mode": "retrieved_chunks",
+    "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+    "decision_id": "apt-rag-stack-v1",
+    "provider_spec": {
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "documented_version": "DeepSeek-V4.1-Flash",
+      "id": "deepseek-flash",
+      "kind": "deepseek",
+      "model": "deepseek-flash",
+      "pricing": {
+        "cache_hit_per_million": 0.006,
+        "cache_miss_per_million": 0.3,
+        "checked_on": "2026-10-04",
+        "currency": "USD",
+        "note": "采用峰值单价作为保守估算；非实际账单，非高峰时段通常更低。",
+        "output_per_million": 1.2,
+        "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+      }
+    },
+    "rag_config_fingerprint": "fda566218569e54475c47d1c5319e8c7bd5bc97b9a002d17358a9aadc6ee28f4",
+    "runtime": {
+      "packages": {
+        "faiss-cpu": "1.15.1",
+        "httpx": "0.28.1",
+        "numpy": "2.5.3",
+        "tokenizers": "0.23.2",
+        "torch": "2.14.0",
+        "transformers": "5.17.0"
+      },
+      "platform": "Windows-10-10.0.19045-SP0",
+      "python": "3.12.3"
+    }
+  },
+  "generation": {
+    "answer": "**别名**：APT44 通常也被称为 Sandworm、FROZENBARENTS 和 Seashell Blizzard [S1]。\n\n**归属单位**：APT44 被多国政府归属于 Unit 74455，即俄罗斯联邦武装力量总参谋部总局（GU，通称 GRU）下属的 Main Centre for Special Technologies（GTsST）[S1]。Mandiant 评估 APT44 极有可能隶属于 GRU 的信息作战部队（Information Operations Troops, VIO）[S1]。\n\n**行动范围特点**：\n- APT44 的行动范围是全球性的，反映俄罗斯广泛的 national interests and ambitions [S4]。\n- 在后 Maidan 革命时代，其网络行动主要集中于乌克兰 [S4]。\n- 即便在战争持续期间，仍观察到该组织在北美、欧洲、中东、中亚和拉丁美洲维持访问与间谍活动 [S4]。\n- 其主要目标是俄罗斯近邻（near abroad）的政府、国防、交通、能源、媒体和公民社会组织；波兰、哈萨克斯坦及俄罗斯境内的政府机构和其他关键基础设施与关键资源（CIKR）运营方也频繁出现在其近期目标中 [S4]。\n- APT44 还多次针对西方选举系统和机构 [S4]。\n- 该组织被评估为克里姆林宫眼中的一种灵活权力工具，能够服务于俄罗斯广泛的国家利益与野心，包括在全球范围内削弱民主进程 [S2]。\n\n**证据不足之处**：报告片段未提供 APT44 企图金额或实际金额相关信息，因此无法就金额作出判断。",
+    "cache_hit_tokens": 256,
+    "finish_reason": "stop",
+    "generation_seconds": null,
+    "latency_seconds": 2.2072406000224873,
+    "load_seconds": null,
+    "output_tokens": 329,
+    "prompt_tokens": 2933,
+    "response_model": "deepseek-flash",
+    "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+  },
+  "identity": {
+    "documented_version": "DeepSeek-V4.1-Flash",
+    "immutable_revision_available": false,
+    "model": "deepseek-flash"
+  },
+  "messages_sha256": "81a5f9342cc5bb04111df5e57bc47acb50aba20e73d7d0f219430012fc07823d",
+  "occurrences": [
+    "S1",
+    "S1",
+    "S1",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S2"
+  ],
+  "question": "APT44 通常还被称为什么？它被归属于俄罗斯哪个军事情报单位，其行动范围有何特点？",
+  "rankings": [
+    {
+      "chunk_id": "mandiant-apt44-2024-p0004-c000",
+      "score": 8.045186996459961
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0003-c001",
+      "score": 2.5185513496398926
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0004-c001",
+      "score": 2.3419747352600098
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0006-c000",
+      "score": 1.8418431282043457
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0014-c001",
+      "score": 1.7792949676513672
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0009-c001",
+      "score": 1.7328181266784668
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0008-c000",
+      "score": 1.5356824398040771
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0014-c002",
+      "score": 1.4683737754821777
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0010-c001",
+      "score": 1.2127821445465088
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0016-c001",
+      "score": 0.8378266096115112
+    }
+  ],
+  "reranking": {
+    "input_tokens": [
+      304,
+      278,
+      309,
+      296,
+      218,
+      299,
+      303,
+      333,
+      353,
+      297,
+      37,
+      340,
+      141,
+      294,
+      449,
+      512,
+      290,
+      232,
+      411,
+      274,
+      417,
+      318,
+      414,
+      301,
+      314,
+      292,
+      411,
+      394,
+      304,
+      400
+    ],
+    "original_tokens": [
+      304,
+      278,
+      309,
+      296,
+      218,
+      299,
+      303,
+      333,
+      353,
+      297,
+      37,
+      340,
+      141,
+      294,
+      449,
+      529,
+      290,
+      232,
+      411,
+      274,
+      417,
+      318,
+      414,
+      301,
+      314,
+      292,
+      411,
+      394,
+      304,
+      400
+    ],
+    "scores": [
+      8.045186996459961,
+      0.8378266096115112,
+      0.4950830936431885,
+      0.08534333109855652,
+      0.7294244766235352,
+      1.5356824398040771,
+      1.7792949676513672,
+      -1.8864049911499023,
+      -6.840295791625977,
+      -5.74310302734375,
+      -2.6458451747894287,
+      -8.041749954223633,
+      2.3419747352600098,
+      1.8418431282043457,
+      -1.3560760021209717,
+      -9.248722076416016,
+      1.2127821445465088,
+      2.5185513496398926,
+      -1.876927137374878,
+      0.16592466831207275,
+      -1.3012802600860596,
+      1.7328181266784668,
+      -1.3743009567260742,
+      1.4683737754821777,
+      -0.9893269538879395,
+      -0.5510498285293579,
+      -1.6751346588134766,
+      -1.55862557888031,
+      0.7977336645126343,
+      -1.391639232635498
+    ]
+  },
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "chunk_id": "mandiant-apt44-2024-p0004-c000",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S1",
+      "page": 4,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Overview of APT44",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "1f4ff56f4ea0ebbf055971e3f967775368e904f286d0ed6010c89d8ee4d3ebbd",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0003-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S2",
+      "page": 3,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Key Judgments",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "7c60a9b4e423cd64127292e75305a541e30aa95015532c67b1f8982e0fcbfc8c",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0004-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S3",
+      "page": 4,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Overview of APT44",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "70a92e4982212fb986b1a06c9f3185787c811052c6b4fea0eb69cb7df85b6460",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0006-c000",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S4",
+      "page": 6,
+      "report_id": "mandiant-apt44-2024",
+      "section": "A Global Targeting Mandate",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "17f265d4648aab42d68b90081d83d5bda9c87d27efec2de5085528cf6a5ffe9c",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0014-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S5",
+      "page": 14,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Amplifying Cyber Activity",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "c1a190c09bbd94ac42361d41d205ca92dda5aeb0d538226984156013f325cf37",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0009-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S6",
+      "page": 9,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Cyber Sabotage Unit",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "07e77a0e74d16294b12101687da6f9c56d3461d7018af39d1f51aa2320693ac0",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0008-c000",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S7",
+      "page": 8,
+      "report_id": "mandiant-apt44-2024",
+      "section": "A Highly Adaptive Adversary",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "9a93673104ab90a23cee791a2705246791d424197ced85a8465f09252fa3acb7",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0014-c002",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S8",
+      "page": 14,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Amplifying Cyber Activity",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "d18dd18f410e9730866afe3820aafa7ea2178bd34b21d6cfeceb20ee35cb1706",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0010-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S9",
+      "page": 10,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Cyber Operations",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "465708586a44c58ee063a957ffd0a4eb58b17f47c4e54f0d7a653184a6e2d841",
+      "vendor": "Mandiant"
+    },
+    {
+      "chunk_id": "mandiant-apt44-2024-p0016-c001",
+      "document_title": "APT44: Unearthing Sandworm",
+      "label": "S10",
+      "page": 16,
+      "report_id": "mandiant-apt44-2024",
+      "section": "Amplifying Cyber Activity",
+      "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+      "text_sha256": "26f6885bd2b1fdae66b879cc9932afaad1d2e47c4fd06695c559c7143a2263d7",
+      "vendor": "Mandiant"
+    }
+  ],
+  "started_at": "2026-10-04T14:00:22.089966+00:00",
+  "status": "answered",
+  "timings_seconds": {
+    "embedding": 3.255044599995017,
+    "reranking": 49.33827280002879,
+    "retrieval_fusion": 0.037589100014884025
+  },
+  "token_budget": {
+    "context_window_tokens": 8192,
+    "count_kind": "official_v4_demo_chat_estimate",
+    "input_tokens": 2931,
+    "max_output_tokens": 768,
+    "render_sha256": "c89a49ab3178cece5d0e69af3c8d570c0d174be3cfb32f939b731f3e1d7c676a",
+    "safety_margin": 256,
+    "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614"
+  },
+  "total_seconds": 55.01577190001262
+}

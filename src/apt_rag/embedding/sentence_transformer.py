@@ -18,17 +18,21 @@ class SentenceTransformerProvider:
         device: str,
         batch_size: int,
         max_seq_length: int,
+        local_files_only: bool = False,
+        reject_truncated_inputs: bool = False,
     ) -> None:
         self.model_name = model_name
         self.revision = revision
         self.device = device
         self.batch_size = batch_size
         self.max_seq_length = max_seq_length
+        self.reject_truncated_inputs = reject_truncated_inputs
         self._model = SentenceTransformer(
             model_name,
             revision=revision,
             device=device,
             trust_remote_code=False,
+            local_files_only=local_files_only,
         )
         self._model.max_seq_length = max_seq_length
 
@@ -40,6 +44,10 @@ class SentenceTransformerProvider:
         return int(dimension)
 
     def embed(self, texts: list[str]) -> NDArray[np.float32]:
+        if self.reject_truncated_inputs:
+            tokenized = self._model.tokenizer(texts, truncation=False, padding=False)
+            if any(len(tokens) > self.max_seq_length for tokens in tokenized["input_ids"]):
+                raise ValueError("问题超过 Embedding Token 上限；禁止静默截断问题")
         vectors = self._model.encode(
             texts,
             batch_size=self.batch_size,

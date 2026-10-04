@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "stack_path": "configs/final_stack.json",
+  "index_directory": "data/processed/vectorstores/rag-v1",
+  "context_window_tokens": 8192,
+  "token_safety_margin": 256,
+  "max_question_characters": 1000,
+  "ollama_version": "0.35.1",
+  "tokenizers": {
+    "ollama-qwen": {
+      "model_name": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    "deepseek-flash": {
+      "url": "https://cdn.deepseek.com/api-docs/deepseek_v4_tokenizer.zip",
+      "archive_sha256": "e7310d1dafe0a86d8a5629fe78a7c763760f651db9b8682718a1781dcd6fe495",
+      "directory": "data/processed/tokenizers/deepseek-v4",
+      "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614",
+      "config_sha256": "841f8cf146e3f0ad1082594a31f68ecf7608c20467ef355081333d85bbaeb1cb",
+      "documented_context_tokens": 1000000
+    }
+  }
+}
