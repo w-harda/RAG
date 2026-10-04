@@ -6,9 +6,9 @@
 
 ## 当前进度
 
-Phase 6：本地 Qwen 与 DeepSeek 云端 API 的固定证据 LLM Benchmark。
+Phase 7：Dense、Hybrid（BM25 + Dense）与 Hybrid + Reranker 检索 Benchmark。
 
-已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比，以及两个 LLM 的 40 份真实回答。LLM 实验固定相同 Context 和 Prompt，保存逐题耗时、用量、费用估算和证据辅助复核。辅助评分尚未经独立人工评审，不是最终消融结论。原始 PDF、处理文本、向量和索引缓存不进入 Git，实验结果进入 Git。
+已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比、两个 LLM 的 40 份真实回答，以及三策略固定向量检索对比和 600 个真实 Reranker 分数。LLM 辅助评分尚未经独立人工评审；检索指标来自固定证据标注，不代表最终问答正确率。原始 PDF、处理文本、向量、模型和索引缓存不进入 Git，实验结果进入 Git。
 
 ## 环境要求
 
@@ -74,7 +74,23 @@ uv run python scripts/run_llm_benchmark.py --prepare-only
 uv run python scripts/run_llm_benchmark.py
 ```
 
-已完成的回答默认复用，不再次调用模型。重新实测应使用独立配置及新结果目录，不覆盖本次记录。尚未实现 Phase 7 检索策略对比、最终 RAG Pipeline 或 Web UI。
+已完成的回答默认复用，不再次调用模型。重新实测应使用独立配置及新结果目录，不覆盖本次记录。
+
+检索控制变量、模型下载、真实指标和 CPU 开销见 [检索策略实验](docs/retrieval_benchmark.md)。离线验证/绘图无需模型或向量缓存：
+
+```powershell
+uv run python scripts/validate_retrieval_results.py
+uv run python scripts/plot_retrieval_results.py
+```
+
+已有 Chunk 和向量时可检查完整检索输入，或运行实验（首次运行需先按文档下载固定 Reranker）：
+
+```powershell
+uv run python scripts/validate_retrieval_results.py --verify-inputs
+uv run python scripts/run_retrieval_benchmark.py
+```
+
+已经完成的实验默认复用。尚未进入 Phase 8 的最终技术栈决策，未实现最终 RAG Pipeline 或 Web UI。
 
 ## 当前目录
 

@@ -1,0 +1,1543 @@
+{
+  "bm25_index_seconds": 0.17734549997840077,
+  "candidates_fingerprint": "944d2beb882771def55063214da8de4fc508e8ca083eeaeef7561744c393f932",
+  "controls": {
+    "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+    "benchmark_id": "apt-qa-v1.1",
+    "bm25": {
+      "b": 0.75,
+      "k1": 1.2,
+      "positive_scores_only": true,
+      "query_term_frequency": "binary",
+      "tokenizer": "ascii_identifiers_cjk_chars_v1"
+    },
+    "candidate_k": 30,
+    "chunk_count": 1297,
+    "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+    "corpus_vectors_sha256": "8ec19d62d0c83de1db485e4f8456ad70a5202913a0e273d505a839dd296e3c71",
+    "dense_search": "numpy_exact_cosine",
+    "embedding_max_seq_length": 256,
+    "embedding_model": {
+      "dimension": 1024,
+      "id": "bge-m3",
+      "license": "MIT",
+      "loader": "sentence_transformers",
+      "model_name": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+    },
+    "generation": "not_run: ranking-only benchmark; no LLM variable",
+    "query_rewrite": false,
+    "query_vectors_sha256": "a33d21ca42da8a79729dfbeb2566561dc69c445e5028e04dfa579df5fcfc77c7",
+    "question_count": 20,
+    "rrf": {
+      "rank_constant": 60,
+      "weights": [
+        1.0,
+        1.0
+      ]
+    },
+    "tie_break": "corpus_order",
+    "top_k": [
+      1,
+      3,
+      5,
+      10
+    ]
+  },
+  "experiment": "phase7-retrieval-benchmark",
+  "reranker_model_load_seconds": 51.463093400001526,
+  "reranker_spec": {
+    "batch_size": 4,
+    "cpu_threads": 4,
+    "device": "cpu",
+    "dtype": "float32",
+    "license": "Apache-2.0",
+    "local_files_only": true,
+    "max_length": 512,
+    "model_name": "BAAI/bge-reranker-v2-m3",
+    "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "seed": 42,
+    "truncation": "only_second"
+  },
+  "results": [
+    {
+      "candidate_recall": 1.0,
+      "category_metrics": {
+        "attack_technique": {
+          "mrr@10": 0.5866666666666667,
+          "ndcg@10": 0.6847459710619102,
+          "recall@1": 0.3,
+          "recall@10": 1.0,
+          "recall@3": 0.4666666666666667,
+          "recall@5": 0.8
+        },
+        "background": {
+          "mrr@10": 0.6583333333333333,
+          "ndcg@10": 0.7343344127787501,
+          "recall@1": 0.6,
+          "recall@10": 1.0,
+          "recall@3": 0.6,
+          "recall@5": 0.6
+        },
+        "ioc": {
+          "mrr@10": 0.6285714285714286,
+          "ndcg@10": 0.6666666666666667,
+          "recall@1": 0.5,
+          "recall@10": 0.8,
+          "recall@3": 0.6,
+          "recall@5": 0.6
+        },
+        "ttp": {
+          "mrr@10": 0.4,
+          "ndcg@10": 0.49845657394364873,
+          "recall@1": 0.1,
+          "recall@10": 0.8,
+          "recall@3": 0.4,
+          "recall@5": 0.8
+        }
+      },
+      "latency_ms": {
+        "median": 0.5697000015061349,
+        "p95": 0.9057949675479904
+      },
+      "metrics": {
+        "mrr@10": 0.5683928571428571,
+        "ndcg@10": 0.646050906112744,
+        "recall@1": 0.375,
+        "recall@10": 0.9,
+        "recall@3": 0.5166666666666667,
+        "recall@5": 0.7
+      },
+      "per_query": [
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q001",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt44-2024-p0004-c000",
+            "mandiant-apt44-2024-p0010-c000",
+            "mandiant-apt44-2024-p0004-c001",
+            "mandiant-apt44-2024-p0006-c000",
+            "mandiant-apt44-2024-p0010-c001",
+            "mandiant-apt44-2024-p0003-c001",
+            "mandiant-apt44-2024-p0013-c002",
+            "mandiant-apt44-2024-p0009-c001",
+            "mandiant-apt44-2024-p0014-c002",
+            "mandiant-apt44-2024-p0011-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q002",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt42-2022-p0002-c000",
+            "mandiant-apt42-2022-p0003-c000",
+            "mandiant-apt42-2022-p0003-c001",
+            "mandiant-apt42-2022-p0012-c000",
+            "mandiant-apt42-2022-p0012-c001",
+            "mandiant-apt1-2013-p0004-c000",
+            "mandiant-apt42-2022-p0003-c002",
+            "mandiant-apt42-2022-p0010-c000",
+            "mandiant-apt1-2013-p0007-c002",
+            "mandiant-apt44-2024-p0009-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 8,
+          "ndcg@10": 0.31546487678572877,
+          "question_id": "q003",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.125,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0001-c000",
+            "mandiant-apt41-2019-p0005-c000",
+            "mandiant-apt41-2019-p0041-c000",
+            "mandiant-apt41-2019-p0014-c000",
+            "mandiant-apt41-2019-p0008-c001",
+            "mandiant-apt41-2019-p0008-c000",
+            "mandiant-apt41-2019-p0010-c001",
+            "mandiant-apt41-2019-p0003-c000",
+            "mandiant-apt41-2019-p0010-c003",
+            "mandiant-apt41-2019-p0046-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q004",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt38-2018-p0002-c000",
+            "mandiant-apt38-2018-p0007-c000",
+            "mandiant-apt38-2018-p0007-c002",
+            "mandiant-apt38-2018-p0012-c003",
+            "mandiant-apt38-2018-p0007-c001",
+            "mandiant-apt38-2018-p0022-c000",
+            "mandiant-apt38-2018-p0028-c000",
+            "mandiant-apt38-2018-p0008-c002",
+            "mandiant-apt38-2018-p0012-c000",
+            "mandiant-apt38-2018-p0017-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 6,
+          "ndcg@10": 0.3562071871080222,
+          "question_id": "q005",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.16666666666666666,
+          "retrieved_chunk_ids": [
+            "mandiant-apt1-2013-p0004-c002",
+            "mandiant-apt1-2013-p0001-c000",
+            "mandiant-apt1-2013-p0004-c001",
+            "mandiant-apt1-2013-p0004-c000",
+            "mandiant-apt1-2013-p0007-c002",
+            "mandiant-apt1-2013-p0005-c000",
+            "mandiant-apt1-2013-p0005-c001",
+            "mandiant-apt1-2013-p0022-c002",
+            "mandiant-apt1-2013-p0007-c000",
+            "mandiant-apt1-2013-p0061-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 4,
+          "ndcg@10": 0.43067655807339306,
+          "question_id": "q006",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.25,
+          "retrieved_chunk_ids": [
+            "cisa-aa24-038a-p0010-c001",
+            "cisa-aa24-038a-p0008-c000",
+            "cisa-aa24-038a-p0008-c001",
+            "cisa-aa24-038a-p0003-c000",
+            "cisa-aa24-038a-p0009-c002",
+            "cisa-aa24-038a-p0044-c000",
+            "cisa-aa24-038a-p0013-c002",
+            "cisa-aa24-038a-p0007-c000",
+            "cisa-aa24-038a-p0011-c000",
+            "cisa-aa24-038a-p0006-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.6309297535714575,
+          "question_id": "q007",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-347a-p0003-c000",
+            "cisa-aa21-116a-p0002-c000",
+            "cisa-aa21-116a-p0001-c003",
+            "cisa-aa21-116a-p0001-c001",
+            "cisa-aa23-108-p0003-c000",
+            "cisa-aa22-110a-p0004-c002",
+            "mandiant-apt41-2019-p0048-c000",
+            "mandiant-apt38-2018-p0012-c003",
+            "cisa-aa23-347a-p0001-c001",
+            "cisa-aa23-347a-p0003-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": null,
+          "ndcg@10": 0.0,
+          "question_id": "q008",
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-200a-p0003-c000",
+            "cisa-aa21-200a-p0002-c000",
+            "mandiant-apt42-2022-p0011-c000",
+            "mandiant-apt41-2019-p0048-c001",
+            "mandiant-apt42-2022-p0011-c001",
+            "mandiant-apt41-2019-p0048-c000",
+            "mandiant-apt41-2019-p0047-c000",
+            "mandiant-apt38-2018-p0025-c000",
+            "mandiant-apt1-2013-p0035-c001",
+            "mandiant-apt41-2019-p0046-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 4,
+          "ndcg@10": 0.43067655807339306,
+          "question_id": "q009",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.25,
+          "retrieved_chunk_ids": [
+            "mandiant-apt42-2022-p0014-c002",
+            "mandiant-apt42-2022-p0007-c000",
+            "cisa-aa21-200a-p0002-c000",
+            "mandiant-apt42-2022-p0003-c001",
+            "mandiant-apt41-2019-p0043-c000",
+            "mandiant-apt42-2022-p0011-c000",
+            "mandiant-apt42-2022-p0015-c003",
+            "mandiant-apt42-2022-p0015-c000",
+            "mandiant-apt44-2024-p0007-c000",
+            "mandiant-apt44-2024-p0008-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q010",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt44-2024-p0007-c000",
+            "mandiant-apt44-2024-p0008-c000",
+            "mandiant-apt44-2024-p0017-c001",
+            "mandiant-apt44-2024-p0016-c001",
+            "mandiant-apt1-2013-p0065-c001",
+            "mandiant-apt41-2019-p0043-c000",
+            "mandiant-apt1-2013-p0066-c002",
+            "mandiant-apt1-2013-p0065-c002",
+            "mandiant-apt44-2024-p0010-c000",
+            "mandiant-apt44-2024-p0007-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.6294594810005499,
+          "question_id": "q011",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-347a-p0003-c001",
+            "cisa-aa23-347a-p0001-c001",
+            "mandiant-apt41-2019-p0021-c000",
+            "mandiant-apt41-2019-p0021-c001",
+            "cisa-aa23-347a-p0003-c000",
+            "mandiant-apt41-2019-p0020-c000",
+            "mandiant-apt41-2019-p0043-c001",
+            "cisa-aa23-347a-p0025-c001",
+            "mandiant-apt38-2018-p0018-c000",
+            "mandiant-apt41-2019-p0026-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5727613585339494,
+          "question_id": "q012",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.3333333333333333,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-108-p0005-c000",
+            "cisa-aa23-108-p0002-c000",
+            "cisa-aa23-108-p0003-c002",
+            "cisa-aa23-108-p0003-c001",
+            "cisa-aa23-108-p0003-c000",
+            "cisa-aa23-108-p0002-c001",
+            "mandiant-apt28-2014-p0014-c000",
+            "mandiant-apt38-2018-p0026-c001",
+            "cisa-aa23-108-p0001-c000",
+            "cisa-aa23-108-p0004-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q013",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-129a-p0001-c001",
+            "cisa-aa23-129a-p0004-c001",
+            "cisa-aa23-129a-p0006-c000",
+            "cisa-aa23-129a-p0004-c000",
+            "cisa-aa23-129a-p0001-c002",
+            "cisa-aa23-129a-p0006-c001",
+            "cisa-aa23-129a-p0017-c001",
+            "cisa-aa23-129a-p0005-c002",
+            "cisa-aa23-129a-p0005-c003",
+            "cisa-aa23-129a-p0029-c003"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 0.9324441894571632,
+          "question_id": "q014",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt38-2018-p0014-c000",
+            "mandiant-apt38-2018-p0020-c000",
+            "mandiant-apt38-2018-p0021-c000",
+            "mandiant-apt38-2018-p0015-c001",
+            "mandiant-apt38-2018-p0012-c003",
+            "mandiant-apt38-2018-p0021-c001",
+            "mandiant-apt38-2018-p0019-c000",
+            "mandiant-apt38-2018-p0014-c001",
+            "mandiant-apt38-2018-p0017-c001",
+            "mandiant-apt38-2018-p0002-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 10,
+          "ndcg@10": 0.2890648263178878,
+          "question_id": "q015",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.1,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0021-c001",
+            "mandiant-apt41-2019-p0021-c000",
+            "mandiant-apt41-2019-p0018-c001",
+            "mandiant-apt41-2019-p0026-c000",
+            "mandiant-apt41-2019-p0005-c002",
+            "mandiant-apt41-2019-p0024-c000",
+            "mandiant-apt41-2019-p0008-c001",
+            "mandiant-apt41-2019-p0017-c000",
+            "mandiant-apt41-2019-p0018-c000",
+            "mandiant-apt41-2019-p0003-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 7,
+          "ndcg@10": 0.33333333333333337,
+          "question_id": "q016",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.14285714285714285,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0023-c000",
+            "mandiant-apt41-2019-p0058-c000",
+            "mandiant-apt41-2019-p0037-c001",
+            "mandiant-apt41-2019-p0024-c001",
+            "mandiant-apt41-2019-p0029-c001",
+            "mandiant-apt41-2019-p0023-c002",
+            "mandiant-apt41-2019-p0023-c001",
+            "mandiant-apt41-2019-p0025-c001",
+            "cisa-aa24-249a-p0030-c000",
+            "mandiant-apt41-2019-p0024-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q017",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt28-2014-p0019-c002",
+            "mandiant-apt28-2014-p0021-c000",
+            "mandiant-apt28-2014-p0020-c000",
+            "mandiant-apt28-2014-p0019-c001",
+            "mandiant-apt28-2014-p0023-c002",
+            "mandiant-apt28-2014-p0005-c001",
+            "cisa-aa23-108-p0002-c000",
+            "mandiant-apt28-2014-p0038-c001",
+            "cisa-aa23-108-p0002-c001",
+            "mandiant-apt28-2014-p0035-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q018",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-129a-p0038-c002",
+            "cisa-aa23-129a-p0011-c000",
+            "cisa-aa23-129a-p0038-c001",
+            "cisa-aa23-129a-p0012-c000",
+            "cisa-aa23-129a-p0010-c000",
+            "cisa-aa23-129a-p0009-c000",
+            "cisa-aa23-129a-p0041-c000",
+            "cisa-aa23-129a-p0035-c001",
+            "cisa-aa23-129a-p0018-c000",
+            "cisa-aa23-129a-p0040-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": null,
+          "ndcg@10": 0.0,
+          "question_id": "q019",
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa24-249a-p0028-c000",
+            "cisa-aa24-249a-p0020-c001",
+            "cisa-aa24-249a-p0020-c000",
+            "cisa-aa24-249a-p0020-c002",
+            "cisa-aa24-249a-p0025-c000",
+            "mandiant-apt41-2019-p0024-c000",
+            "mandiant-apt41-2019-p0029-c001",
+            "cisa-aa24-249a-p0006-c001",
+            "cisa-aa24-249a-p0022-c000",
+            "cisa-aa24-249a-p0024-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q020",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-200a-p0006-c001",
+            "cisa-aa21-200a-p0001-c001",
+            "cisa-aa21-200a-p0002-c000",
+            "mandiant-apt1-2013-p0057-c000",
+            "mandiant-apt38-2018-p0026-c001",
+            "cisa-aa21-116a-p0005-c001",
+            "mandiant-apt1-2013-p0042-c002",
+            "mandiant-apt1-2013-p0047-c001",
+            "mandiant-apt1-2013-p0070-c000",
+            "mandiant-apt1-2013-p0051-c002"
+          ]
+        }
+      ],
+      "strategy": "dense"
+    },
+    {
+      "candidate_recall": 1.0,
+      "category_metrics": {
+        "attack_technique": {
+          "mrr@10": 0.5866666666666667,
+          "ndcg@10": 0.6834944322922443,
+          "recall@1": 0.3,
+          "recall@10": 1.0,
+          "recall@3": 0.5333333333333333,
+          "recall@5": 0.8
+        },
+        "background": {
+          "mrr@10": 0.3352380952380952,
+          "ndcg@10": 0.44403722811357504,
+          "recall@1": 0.2,
+          "recall@10": 0.8,
+          "recall@3": 0.4,
+          "recall@5": 0.6
+        },
+        "ioc": {
+          "mrr@10": 0.5952380952380952,
+          "ndcg@10": 0.6928526173809582,
+          "recall@1": 0.3,
+          "recall@10": 1.0,
+          "recall@3": 0.8,
+          "recall@5": 0.8
+        },
+        "ttp": {
+          "mrr@10": 0.2733333333333333,
+          "ndcg@10": 0.38976868296497297,
+          "recall@1": 0.0,
+          "recall@10": 0.8,
+          "recall@3": 0.5,
+          "recall@5": 0.7
+        }
+      },
+      "latency_ms": {
+        "median": 1.0535000183153898,
+        "p95": 1.5416750189615414
+      },
+      "metrics": {
+        "mrr@10": 0.44761904761904764,
+        "ndcg@10": 0.5525382401879375,
+        "recall@1": 0.2,
+        "recall@10": 0.9,
+        "recall@3": 0.5583333333333333,
+        "recall@5": 0.725
+      },
+      "per_query": [
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q001",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt44-2024-p0004-c000",
+            "mandiant-apt44-2024-p0016-c001",
+            "mandiant-apt44-2024-p0014-c003",
+            "mandiant-apt44-2024-p0013-c001",
+            "mandiant-apt44-2024-p0014-c005",
+            "mandiant-apt44-2024-p0008-c000",
+            "mandiant-apt44-2024-p0014-c001",
+            "mandiant-apt44-2024-p0017-c001",
+            "mandiant-apt1-2013-p0054-c000",
+            "mandiant-apt1-2013-p0009-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 5,
+          "ndcg@10": 0.38685280723454163,
+          "question_id": "q002",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.2,
+          "retrieved_chunk_ids": [
+            "mandiant-apt42-2022-p0003-c001",
+            "mandiant-apt42-2022-p0003-c002",
+            "mandiant-apt42-2022-p0003-c000",
+            "mandiant-apt42-2022-p0012-c001",
+            "mandiant-apt42-2022-p0002-c000",
+            "mandiant-apt42-2022-p0010-c000",
+            "mandiant-apt42-2022-p0015-c002",
+            "mandiant-apt42-2022-p0012-c000",
+            "mandiant-apt42-2022-p0011-c000",
+            "mandiant-apt42-2022-p0012-c005"
+          ]
+        },
+        {
+          "first_relevant_rank": 7,
+          "ndcg@10": 0.33333333333333337,
+          "question_id": "q003",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.14285714285714285,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0041-c000",
+            "mandiant-apt41-2019-p0008-c000",
+            "mandiant-apt41-2019-p0001-c000",
+            "mandiant-apt41-2019-p0024-c001",
+            "mandiant-apt41-2019-p0005-c000",
+            "mandiant-apt41-2019-p0046-c000",
+            "mandiant-apt41-2019-p0003-c000",
+            "mandiant-apt41-2019-p0020-c000",
+            "mandiant-apt41-2019-p0010-c000",
+            "mandiant-apt41-2019-p0047-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5,
+          "question_id": "q004",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "mandiant-apt38-2018-p0007-c002",
+            "mandiant-apt38-2018-p0007-c001",
+            "mandiant-apt38-2018-p0002-c000",
+            "mandiant-apt38-2018-p0007-c000",
+            "mandiant-apt38-2018-p0012-c000",
+            "mandiant-apt38-2018-p0015-c001",
+            "mandiant-apt38-2018-p0020-c000",
+            "mandiant-apt38-2018-p0008-c002",
+            "mandiant-apt38-2018-p0014-c000",
+            "mandiant-apt38-2018-p0028-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": null,
+          "ndcg@10": 0.0,
+          "question_id": "q005",
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt1-2013-p0007-c002",
+            "mandiant-apt1-2013-p0004-c002",
+            "mandiant-apt1-2013-p0022-c002",
+            "mandiant-apt1-2013-p0005-c001",
+            "mandiant-apt1-2013-p0009-c001",
+            "mandiant-apt1-2013-p0004-c001",
+            "mandiant-apt1-2013-p0030-c001",
+            "mandiant-apt1-2013-p0070-c000",
+            "mandiant-apt1-2013-p0007-c000",
+            "mandiant-apt1-2013-p0007-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": null,
+          "ndcg@10": 0.0,
+          "question_id": "q006",
+          "recall@1": 0.0,
+          "recall@10": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa24-038a-p0010-c001",
+            "cisa-aa24-038a-p0008-c000",
+            "cisa-aa24-038a-p0044-c000",
+            "cisa-aa24-038a-p0041-c000",
+            "cisa-aa24-038a-p0008-c001",
+            "cisa-aa24-038a-p0040-c000",
+            "cisa-aa24-038a-p0041-c001",
+            "cisa-aa24-038a-p0007-c000",
+            "cisa-aa24-038a-p0038-c000",
+            "cisa-aa24-038a-p0011-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5,
+          "question_id": "q007",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "cisa-aa22-110a-p0004-c002",
+            "cisa-aa21-116a-p0001-c003",
+            "cisa-aa21-116a-p0002-c000",
+            "cisa-aa23-347a-p0003-c000",
+            "cisa-aa22-110a-p0005-c000",
+            "cisa-aa21-116a-p0001-c001",
+            "cisa-aa23-347a-p0001-c002",
+            "cisa-aa22-110a-p0019-c001",
+            "cisa-aa23-108-p0003-c000",
+            "cisa-aa23-347a-p0002-c003"
+          ]
+        },
+        {
+          "first_relevant_rank": 5,
+          "ndcg@10": 0.38685280723454163,
+          "question_id": "q008",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.2,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-200a-p0002-c000",
+            "cisa-aa21-200a-p0003-c000",
+            "cisa-aa21-200a-p0001-c001",
+            "cisa-aa21-200a-p0006-c001",
+            "cisa-aa21-200a-p0003-c001",
+            "mandiant-apt1-2013-p0018-c002",
+            "cisa-aa21-200a-p0001-c000",
+            "mandiant-apt42-2022-p0011-c000",
+            "mandiant-apt41-2019-p0037-c000",
+            "mandiant-apt41-2019-p0048-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.6309297535714575,
+          "question_id": "q009",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "mandiant-apt42-2022-p0014-c002",
+            "mandiant-apt42-2022-p0003-c001",
+            "mandiant-apt42-2022-p0007-c000",
+            "mandiant-apt42-2022-p0011-c000",
+            "mandiant-apt42-2022-p0015-c003",
+            "mandiant-apt42-2022-p0015-c000",
+            "mandiant-apt42-2022-p0003-c000",
+            "mandiant-apt42-2022-p0014-c003",
+            "mandiant-apt42-2022-p0011-c001",
+            "mandiant-apt1-2013-p0054-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.4310608540188655,
+          "question_id": "q010",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 0.5,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "mandiant-apt44-2024-p0017-c001",
+            "mandiant-apt44-2024-p0016-c001",
+            "mandiant-apt44-2024-p0008-c000",
+            "mandiant-apt44-2024-p0010-c000",
+            "mandiant-apt44-2024-p0011-c001",
+            "mandiant-apt44-2024-p0014-c001",
+            "mandiant-apt44-2024-p0007-c000",
+            "mandiant-apt44-2024-p0040-c000",
+            "mandiant-apt44-2024-p0038-c002",
+            "mandiant-apt44-2024-p0037-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 0.9737576937588317,
+          "question_id": "q011",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-347a-p0001-c001",
+            "cisa-aa23-347a-p0003-c001",
+            "cisa-aa23-347a-p0025-c001",
+            "cisa-aa23-347a-p0003-c000",
+            "mandiant-apt1-2013-p0013-c001",
+            "cisa-aa22-110a-p0019-c001",
+            "cisa-aa23-347a-p0025-c000",
+            "mandiant-apt41-2019-p0021-c000",
+            "cisa-aa23-347a-p0001-c000",
+            "mandiant-apt41-2019-p0021-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.6305667822198809,
+          "question_id": "q012",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.6666666666666666,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-108-p0005-c000",
+            "cisa-aa23-108-p0003-c001",
+            "cisa-aa23-108-p0003-c002",
+            "cisa-aa23-108-p0002-c000",
+            "cisa-aa23-108-p0003-c000",
+            "cisa-aa23-108-p0004-c001",
+            "cisa-aa23-108-p0002-c001",
+            "cisa-aa23-108-p0001-c000",
+            "mandiant-apt28-2014-p0023-c002",
+            "cisa-aa23-108-p0006-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q013",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-129a-p0001-c001",
+            "cisa-aa23-129a-p0001-c002",
+            "cisa-aa23-129a-p0006-c000",
+            "cisa-aa23-129a-p0004-c000",
+            "cisa-aa23-129a-p0005-c002",
+            "cisa-aa23-129a-p0005-c000",
+            "cisa-aa23-129a-p0005-c003",
+            "cisa-aa23-129a-p0004-c001",
+            "cisa-aa23-129a-p0006-c001",
+            "cisa-aa23-129a-p0007-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5240828591646209,
+          "question_id": "q014",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "mandiant-apt38-2018-p0021-c000",
+            "mandiant-apt38-2018-p0020-c000",
+            "mandiant-apt38-2018-p0014-c000",
+            "mandiant-apt38-2018-p0021-c001",
+            "mandiant-apt38-2018-p0015-c001",
+            "mandiant-apt38-2018-p0012-c003",
+            "mandiant-apt38-2018-p0020-c001",
+            "mandiant-apt38-2018-p0019-c000",
+            "mandiant-apt38-2018-p0007-c001",
+            "mandiant-apt38-2018-p0017-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 10,
+          "ndcg@10": 0.2890648263178878,
+          "question_id": "q015",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.1,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0021-c000",
+            "mandiant-apt41-2019-p0021-c001",
+            "mandiant-apt41-2019-p0020-c000",
+            "mandiant-apt41-2019-p0026-c000",
+            "mandiant-apt41-2019-p0043-c000",
+            "mandiant-apt41-2019-p0043-c001",
+            "mandiant-apt41-2019-p0018-c000",
+            "mandiant-apt41-2019-p0024-c001",
+            "mandiant-apt41-2019-p0018-c001",
+            "mandiant-apt41-2019-p0003-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5,
+          "question_id": "q016",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0023-c000",
+            "mandiant-apt41-2019-p0023-c002",
+            "mandiant-apt41-2019-p0023-c001",
+            "mandiant-apt41-2019-p0037-c001",
+            "mandiant-apt41-2019-p0029-c001",
+            "mandiant-apt41-2019-p0021-c002",
+            "mandiant-apt41-2019-p0021-c001",
+            "mandiant-apt41-2019-p0036-c000",
+            "mandiant-apt41-2019-p0058-c000",
+            "mandiant-apt1-2013-p0018-c004"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q017",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt28-2014-p0019-c002",
+            "mandiant-apt28-2014-p0019-c001",
+            "mandiant-apt28-2014-p0020-c000",
+            "mandiant-apt28-2014-p0023-c002",
+            "mandiant-apt28-2014-p0021-c000",
+            "mandiant-apt28-2014-p0005-c001",
+            "mandiant-apt28-2014-p0023-c001",
+            "mandiant-apt28-2014-p0024-c001",
+            "mandiant-apt28-2014-p0020-c001",
+            "mandiant-apt28-2014-p0037-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q018",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-129a-p0038-c002",
+            "cisa-aa23-129a-p0011-c000",
+            "cisa-aa23-129a-p0012-c000",
+            "cisa-aa23-129a-p0038-c001",
+            "cisa-aa23-129a-p0010-c000",
+            "cisa-aa23-129a-p0011-c001",
+            "cisa-aa23-129a-p0027-c001",
+            "cisa-aa23-129a-p0018-c000",
+            "cisa-aa23-129a-p0040-c000",
+            "cisa-aa23-129a-p0015-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 7,
+          "ndcg@10": 0.33333333333333337,
+          "question_id": "q019",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0,
+          "reciprocal_rank": 0.14285714285714285,
+          "retrieved_chunk_ids": [
+            "cisa-aa24-249a-p0020-c001",
+            "cisa-aa24-249a-p0028-c000",
+            "cisa-aa24-249a-p0022-c000",
+            "cisa-aa24-249a-p0020-c002",
+            "cisa-aa24-249a-p0025-c000",
+            "cisa-aa24-249a-p0020-c000",
+            "cisa-aa24-249a-p0021-c000",
+            "cisa-aa24-249a-p0024-c000",
+            "cisa-aa24-249a-p0026-c001",
+            "cisa-aa24-249a-p0006-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.6309297535714575,
+          "question_id": "q020",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-200a-p0001-c001",
+            "cisa-aa21-200a-p0006-c001",
+            "mandiant-apt1-2013-p0070-c000",
+            "cisa-aa21-200a-p0002-c000",
+            "cisa-aa21-116a-p0005-c001",
+            "cisa-aa20-283a-p0008-c002",
+            "cisa-aa23-347a-p0027-c000",
+            "cisa-aa24-249a-p0018-c001",
+            "cisa-aa20-283a-p0009-c001",
+            "mandiant-apt1-2013-p0075-c000"
+          ]
+        }
+      ],
+      "strategy": "hybrid"
+    },
+    {
+      "candidate_recall": 1.0,
+      "category_metrics": {
+        "attack_technique": {
+          "mrr@10": 0.9,
+          "ndcg@10": 0.9033213440876106,
+          "recall@1": 0.6,
+          "recall@10": 1.0,
+          "recall@3": 0.8333333333333334,
+          "recall@5": 1.0
+        },
+        "background": {
+          "mrr@10": 0.7166666666666667,
+          "ndcg@10": 0.7861353116146785,
+          "recall@1": 0.6,
+          "recall@10": 1.0,
+          "recall@3": 0.8,
+          "recall@5": 1.0
+        },
+        "ioc": {
+          "mrr@10": 0.8666666666666666,
+          "ndcg@10": 0.8864888378914326,
+          "recall@1": 0.7,
+          "recall@10": 1.0,
+          "recall@3": 0.9,
+          "recall@5": 1.0
+        },
+        "ttp": {
+          "mrr@10": 0.9,
+          "ndcg@10": 0.9261859507142916,
+          "recall@1": 0.7,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "median": 31154.015699983574,
+        "p95": 40483.545889976085
+      },
+      "metrics": {
+        "mrr@10": 0.8458333333333334,
+        "ndcg@10": 0.8755328610770035,
+        "recall@1": 0.65,
+        "recall@10": 1.0,
+        "recall@3": 0.8833333333333334,
+        "recall@5": 1.0
+      },
+      "per_query": [
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q001",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt44-2024-p0004-c000",
+            "mandiant-apt44-2024-p0003-c001",
+            "mandiant-apt44-2024-p0004-c001",
+            "mandiant-apt44-2024-p0006-c000",
+            "mandiant-apt44-2024-p0014-c001",
+            "mandiant-apt44-2024-p0009-c001",
+            "mandiant-apt44-2024-p0008-c000",
+            "mandiant-apt44-2024-p0014-c002",
+            "mandiant-apt44-2024-p0010-c001",
+            "mandiant-apt44-2024-p0016-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q002",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt42-2022-p0002-c000",
+            "mandiant-apt42-2022-p0003-c000",
+            "mandiant-apt42-2022-p0015-c002",
+            "mandiant-apt42-2022-p0012-c001",
+            "mandiant-apt42-2022-p0010-c000",
+            "mandiant-apt42-2022-p0010-c001",
+            "mandiant-apt42-2022-p0012-c005",
+            "mandiant-apt42-2022-p0003-c001",
+            "mandiant-apt42-2022-p0012-c004",
+            "mandiant-apt42-2022-p0011-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 4,
+          "ndcg@10": 0.43067655807339306,
+          "question_id": "q003",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.25,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0005-c000",
+            "mandiant-apt41-2019-p0041-c000",
+            "mandiant-apt41-2019-p0008-c000",
+            "mandiant-apt41-2019-p0003-c000",
+            "mandiant-apt41-2019-p0008-c001",
+            "mandiant-apt41-2019-p0014-c000",
+            "mandiant-apt41-2019-p0033-c001",
+            "mandiant-apt41-2019-p0006-c000",
+            "mandiant-apt41-2019-p0001-c000",
+            "mandiant-apt41-2019-p0010-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q004",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt38-2018-p0002-c000",
+            "mandiant-apt38-2018-p0005-c000",
+            "mandiant-apt38-2018-p0006-c000",
+            "mandiant-apt38-2018-p0015-c001",
+            "mandiant-apt38-2018-p0007-c002",
+            "mandiant-apt38-2018-p0007-c000",
+            "mandiant-apt38-2018-p0012-c000",
+            "mandiant-apt38-2018-p0010-c002",
+            "mandiant-apt38-2018-p0012-c001",
+            "mandiant-apt38-2018-p0028-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5,
+          "question_id": "q005",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "mandiant-apt1-2013-p0004-c002",
+            "mandiant-apt1-2013-p0061-c000",
+            "mandiant-apt1-2013-p0005-c000",
+            "mandiant-apt1-2013-p0009-c001",
+            "mandiant-apt1-2013-p0005-c001",
+            "mandiant-apt1-2013-p0002-c000",
+            "mandiant-apt1-2013-p0004-c001",
+            "mandiant-apt1-2013-p0007-c001",
+            "mandiant-apt1-2013-p0053-c000",
+            "mandiant-apt1-2013-p0008-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q006",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa24-038a-p0003-c000",
+            "cisa-aa24-038a-p0008-c000",
+            "cisa-aa24-038a-p0010-c001",
+            "cisa-aa24-038a-p0008-c001",
+            "cisa-aa24-038a-p0039-c000",
+            "cisa-aa24-038a-p0007-c000",
+            "cisa-aa24-038a-p0027-c001",
+            "cisa-aa24-038a-p0009-c002",
+            "cisa-aa24-038a-p0045-c000",
+            "cisa-aa24-038a-p0011-c002"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q007",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-116a-p0002-c000",
+            "cisa-aa23-347a-p0003-c000",
+            "cisa-aa21-116a-p0001-c003",
+            "cisa-aa21-116a-p0001-c001",
+            "cisa-aa23-347a-p0001-c001",
+            "cisa-aa22-110a-p0004-c002",
+            "cisa-aa22-110a-p0004-c001",
+            "cisa-aa21-116a-p0003-c000",
+            "cisa-aa23-347a-p0010-c000",
+            "cisa-aa23-347a-p0009-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.6309297535714575,
+          "question_id": "q008",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-200a-p0003-c000",
+            "cisa-aa21-200a-p0003-c001",
+            "cisa-aa21-200a-p0002-c000",
+            "cisa-aa21-200a-p0006-c001",
+            "cisa-aa21-200a-p0001-c001",
+            "cisa-aa24-038a-p0010-c001",
+            "cisa-aa21-200a-p0001-c002",
+            "mandiant-apt41-2019-p0023-c002",
+            "mandiant-apt41-2019-p0035-c000",
+            "mandiant-apt1-2013-p0035-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q009",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt42-2022-p0003-c001",
+            "mandiant-apt42-2022-p0014-c002",
+            "mandiant-apt42-2022-p0002-c000",
+            "mandiant-apt42-2022-p0007-c000",
+            "mandiant-apt42-2022-p0015-c003",
+            "mandiant-apt42-2022-p0015-c002",
+            "mandiant-apt42-2022-p0015-c000",
+            "mandiant-apt42-2022-p0010-c000",
+            "mandiant-apt42-2022-p0003-c000",
+            "mandiant-apt42-2022-p0011-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q010",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt44-2024-p0007-c000",
+            "mandiant-apt44-2024-p0008-c000",
+            "mandiant-apt44-2024-p0007-c001",
+            "mandiant-apt44-2024-p0016-c001",
+            "mandiant-apt44-2024-p0011-c003",
+            "mandiant-apt44-2024-p0014-c001",
+            "mandiant-apt41-2019-p0043-c000",
+            "mandiant-apt1-2013-p0065-c002",
+            "mandiant-apt44-2024-p0011-c001",
+            "mandiant-apt1-2013-p0065-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 0.9737576937588317,
+          "question_id": "q011",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-347a-p0001-c001",
+            "cisa-aa22-110a-p0004-c002",
+            "cisa-aa22-110a-p0005-c000",
+            "cisa-aa23-347a-p0003-c000",
+            "cisa-aa23-347a-p0001-c002",
+            "cisa-aa23-347a-p0003-c001",
+            "cisa-aa23-347a-p0025-c000",
+            "cisa-aa22-110a-p0019-c001",
+            "cisa-aa23-347a-p0003-c002",
+            "mandiant-apt41-2019-p0008-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 2,
+          "ndcg@10": 0.5870184373330412,
+          "question_id": "q012",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 0.6666666666666666,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.5,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-108-p0005-c000",
+            "cisa-aa23-108-p0003-c000",
+            "cisa-aa23-108-p0003-c001",
+            "cisa-aa23-108-p0002-c000",
+            "cisa-aa23-108-p0003-c002",
+            "cisa-aa23-108-p0004-c001",
+            "cisa-aa23-108-p0002-c001",
+            "cisa-aa23-108-p0001-c000",
+            "mandiant-apt28-2014-p0023-c002",
+            "mandiant-apt28-2014-p0006-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q013",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-129a-p0001-c001",
+            "cisa-aa23-129a-p0004-c001",
+            "cisa-aa23-129a-p0004-c000",
+            "cisa-aa23-129a-p0001-c002",
+            "cisa-aa23-129a-p0005-c002",
+            "cisa-aa23-129a-p0017-c001",
+            "cisa-aa23-129a-p0006-c001",
+            "cisa-aa23-129a-p0017-c000",
+            "cisa-aa23-129a-p0006-c000",
+            "cisa-aa23-129a-p0007-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 0.95583058934618,
+          "question_id": "q014",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt38-2018-p0014-c000",
+            "mandiant-apt38-2018-p0020-c000",
+            "mandiant-apt38-2018-p0015-c001",
+            "mandiant-apt38-2018-p0012-c003",
+            "mandiant-apt38-2018-p0002-c000",
+            "mandiant-apt38-2018-p0021-c000",
+            "mandiant-apt38-2018-p0019-c000",
+            "mandiant-apt38-2018-p0010-c002",
+            "mandiant-apt38-2018-p0007-c001",
+            "mandiant-apt38-2018-p0014-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q015",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0003-c000",
+            "mandiant-apt41-2019-p0018-c001",
+            "mandiant-apt41-2019-p0043-c000",
+            "mandiant-apt41-2019-p0024-c000",
+            "mandiant-apt41-2019-p0021-c000",
+            "mandiant-apt41-2019-p0021-c001",
+            "mandiant-apt41-2019-p0008-c001",
+            "mandiant-apt41-2019-p0029-c001",
+            "mandiant-apt41-2019-p0005-c001",
+            "mandiant-apt41-2019-p0026-c000"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q016",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt41-2019-p0023-c001",
+            "mandiant-apt41-2019-p0023-c000",
+            "mandiant-apt41-2019-p0023-c002",
+            "mandiant-apt41-2019-p0029-c001",
+            "mandiant-apt41-2019-p0025-c001",
+            "mandiant-apt41-2019-p0025-c000",
+            "mandiant-apt41-2019-p0024-c000",
+            "mandiant-apt41-2019-p0026-c000",
+            "mandiant-apt41-2019-p0024-c001",
+            "mandiant-apt41-2019-p0037-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q017",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "mandiant-apt28-2014-p0019-c002",
+            "mandiant-apt28-2014-p0020-c000",
+            "mandiant-apt28-2014-p0021-c000",
+            "mandiant-apt28-2014-p0019-c001",
+            "mandiant-apt28-2014-p0005-c001",
+            "mandiant-apt28-2014-p0035-c001",
+            "mandiant-apt28-2014-p0023-c002",
+            "mandiant-apt28-2014-p0023-c001",
+            "mandiant-apt28-2014-p0038-c001",
+            "mandiant-apt28-2014-p0020-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 0.9324441894571632,
+          "question_id": "q018",
+          "recall@1": 0.5,
+          "recall@10": 1.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa23-129a-p0038-c002",
+            "cisa-aa23-129a-p0038-c001",
+            "cisa-aa23-129a-p0039-c000",
+            "cisa-aa23-129a-p0011-c000",
+            "cisa-aa23-129a-p0009-c000",
+            "cisa-aa23-129a-p0012-c000",
+            "cisa-aa23-129a-p0040-c000",
+            "cisa-aa23-129a-p0016-c000",
+            "cisa-aa23-129a-p0010-c000",
+            "cisa-aa23-129a-p0015-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 3,
+          "ndcg@10": 0.5,
+          "question_id": "q019",
+          "recall@1": 0.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "retrieved_chunk_ids": [
+            "cisa-aa24-249a-p0020-c001",
+            "cisa-aa24-249a-p0022-c000",
+            "cisa-aa24-249a-p0021-c000",
+            "cisa-aa24-249a-p0028-c000",
+            "cisa-aa24-249a-p0020-c002",
+            "cisa-aa24-249a-p0006-c001",
+            "cisa-aa24-249a-p0024-c000",
+            "cisa-aa24-249a-p0025-c000",
+            "cisa-aa24-249a-p0026-c000",
+            "cisa-aa24-249a-p0026-c001"
+          ]
+        },
+        {
+          "first_relevant_rank": 1,
+          "ndcg@10": 1.0,
+          "question_id": "q020",
+          "recall@1": 1.0,
+          "recall@10": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_chunk_ids": [
+            "cisa-aa21-200a-p0006-c001",
+            "cisa-aa21-200a-p0001-c001",
+            "cisa-aa21-200a-p0002-c000",
+            "mandiant-apt1-2013-p0075-c001",
+            "mandiant-apt41-2019-p0035-c000",
+            "mandiant-apt41-2019-p0037-c000",
+            "cisa-aa24-249a-p0035-c000",
+            "mandiant-apt1-2013-p0047-c001",
+            "mandiant-apt41-2019-p0024-c001",
+            "mandiant-apt1-2013-p0072-c000"
+          ]
+        }
+      ],
+      "strategy": "hybrid_reranker"
+    }
+  ],
+  "schema_version": "1.0",
+  "scored_pairs": 600,
+  "truncated_pairs": 10
+}

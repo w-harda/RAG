@@ -12,6 +12,8 @@ dependencies = [
     "numpy>=2.3,<3",
     "pdfplumber>=0.11.10",
     "sentence-transformers>=5.1,<6",
+    "torch>=2.14,<3",
+    "transformers>=5.17,<6",
 ]
 
 [dependency-groups]

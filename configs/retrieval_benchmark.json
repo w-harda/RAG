@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "embedding_config": "configs/embedding_benchmark.json",
+  "embedding_model_id": "bge-m3",
+  "manifest_path": "data/manifest/reports.json",
+  "results_directory": "results/phase7",
+  "reranker_cache_path": "data/processed/reranking/phase7.json",
+  "strategies": ["dense", "hybrid", "hybrid_reranker"],
+  "top_k": [1, 3, 5, 10],
+  "candidate_k": 30,
+  "tie_break": "corpus_order",
+  "dense_search": "numpy_exact_cosine",
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "tokenizer": "ascii_identifiers_cjk_chars_v1",
+    "query_term_frequency": "binary",
+    "positive_scores_only": true
+  },
+  "rrf": {"rank_constant": 60, "weights": [1.0, 1.0]},
+  "reranker": {
+    "model_name": "BAAI/bge-reranker-v2-m3",
+    "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "license": "Apache-2.0",
+    "device": "cpu",
+    "dtype": "float32",
+    "batch_size": 4,
+    "max_length": 512,
+    "truncation": "only_second",
+    "cpu_threads": 4,
+    "seed": 42,
+    "local_files_only": true
+  }
+}
