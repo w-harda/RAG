@@ -1,5 +1,7 @@
 # Phase 5：向量存储对比
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 本阶段比较 FAISS 与 Chroma 在同一组预计算 BGE-M3 向量上的行为。`VectorStore` 接口只接收向量、Chunk ID 和 Metadata，返回 Chunk ID、余弦相似度及原始 Metadata；模型不参与建库或查询计时。新增此接口是本阶段替换后端和验证一致性所必需的。
 
 ## 控制变量
@@ -63,6 +65,8 @@ HNSW 的实现和内部随机机制并不完全相同，因此对齐公共参数
 官方接口依据：[FAISS 索引说明](https://github.com/facebookresearch/faiss/wiki/Faiss-indexes)、[FAISS 距离与余弦相似度说明](https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances)、[Chroma 当前 configuration/HNSW 文档](https://docs.trychroma.com/docs/collections/configure)和[Metadata 过滤文档](https://docs.trychroma.com/docs/querying-collections/metadata-filtering)。配置使用当前 `configuration` 参数；Chroma 接收预计算向量，embedding_function=None。
 
 ## 运行和独立验证
+
+最终收尾补齐实验入口 `--config`，允许独立结果/索引目录。下列原命令保留为阶段记录，默认会重写历史结果；当前重新实测应按 [复现指南](reproduction.md) 建立新配置，不以默认重跑作为启动 UI 的前提。
 
 已有 Phase 4 缓存时：
 

@@ -1,5 +1,7 @@
 # Phase 10：四组生成消融实验
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 本阶段比较相同 20 道问题的 Pure LLM、Dense RAG、Hybrid RAG、Hybrid + Reranker。不是重新选模型、重跑组件性能基准或实现 Web UI。原始生成和辅助评审都保存，独立人工评审仍待完成。
 
 ## 实验协议与控制变量

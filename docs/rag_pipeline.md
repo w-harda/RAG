@@ -1,5 +1,7 @@
 # Phase 9：完整 RAG Pipeline 与真实来源引用
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 ## 已实现范围与最小架构
 
 基于 Phase 8 选型接通：已有 PDF 加载/清洗/分块 → 固定 BGE-M3 语料向量 → FAISS HNSW → BM25/RRF → BGE Reranker → 完整 Chunk Context → 显式 LLM → 来源映射。新增的是组件编排、Context/引用、长度与身份保护，以及命令行入口；没有实现 Phase 10 消融或 Phase 11 Web UI。

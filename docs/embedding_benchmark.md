@@ -1,5 +1,7 @@
 # Phase 4：Embedding 对比实验
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 本阶段比较 BGE-M3、text2vec-large-chinese 和 m3e-base 的真实检索结果。核心接口 `EmbeddingProvider` 仅约束归一化 float32 向量输出，实验使用 NumPy 精确搜索，便于后续替换模型和数据库。
 
 ## 固定变量与版本
@@ -30,6 +32,8 @@
 20 题是小规模工程 Benchmark，且相关性标注并非穷尽全文；不能据此得出模型普遍优劣或统计显著性结论。问题为中文、报告为英文，结果主要反映当前 APT 跨语言任务。质量评估未使用 LLM。精确搜索时间是批量操作均摊值，非单查询延迟或数据库性能结论。
 
 ## 运行与产物
+
+最终用户启动 UI 应按 [复现指南](reproduction.md) 使用 `configs/reproduction_embedding.json`，不要覆盖已冻结的历史记录。实验入口现支持 `--config` 指定独立输出配置；新增 `validate_embedding_results.py` 可不加载模型核验历史指标。
 
 ```powershell
 uv sync --locked

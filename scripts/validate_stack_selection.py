@@ -15,7 +15,7 @@ def main() -> None:
     args = parser.parse_args()
     decision = json.loads(args.config.read_text(encoding="utf-8"))
     validate_selection(ROOT, decision)
-    print("Phase 8 验证通过：12 份依据的内容指纹与组件选择一致；尚未集成 RAG")
+    print("Phase 8 历史选型验证通过：12 份依据的内容指纹与组件选择一致；当前 RAG 接入另见 Phase 9 校验")
     for name, value in decision["selection"].items():
         print(f"{name}: {value}")
 

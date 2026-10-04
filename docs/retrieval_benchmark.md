@@ -1,5 +1,7 @@
 # Phase 7：Dense、Hybrid 与 Hybrid + Reranker
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 本阶段只比较检索排名，不调用 LLM，不实现最终 RAG、Citation 渲染、Web UI，也不替 Phase 8 决定最终技术栈。问题、语料和已有向量不变。
 
 ## 核心问题与最小实现

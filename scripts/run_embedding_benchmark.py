@@ -22,6 +22,8 @@ CONFIG_PATH = REPOSITORY_ROOT / "configs" / "embedding_benchmark.json"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", type=Path, default=CONFIG_PATH,
+                        help="独立实验配置；重建缓存时将结果写入独立目录，避免覆盖历史数据")
     parser.add_argument("--reuse-embeddings", action="store_true", help="校验并复用 Corpus 向量，重编码查询并评测")
     parser.add_argument(
         "--model",
@@ -33,7 +35,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    config = EmbeddingBenchmarkConfig.from_file(CONFIG_PATH, REPOSITORY_ROOT)
+    config = EmbeddingBenchmarkConfig.from_file(args.config, REPOSITORY_ROOT)
     selected = list(config.models)
     if args.model != "all":
         selected = [model for model in config.models if model.id == args.model]

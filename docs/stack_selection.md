@@ -1,5 +1,7 @@
 # Phase 8：最终研究技术栈决策
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 ## 状态与目标
 
 决定采用 `apt-rag-stack-v1` 作为 Phase 9 的实现目标，状态为 `selected_not_integrated`。**组件已选定，组合尚未实现或端到端验证**；不能把组件指标相加当作最终 RAG 的质量、时延或费用。

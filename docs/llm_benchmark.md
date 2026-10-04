@@ -1,5 +1,7 @@
 # Phase 6：固定证据的 LLM 对比
 
+> 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
+
 本阶段比较本地 Ollama `qwen3.5:4b` 与云端 DeepSeek `deepseek-flash`，已真实运行同一 20 题，保存 40 个回答。没有实现检索策略对比、最终 RAG Pipeline、Reranker 或 Web UI。
 
 ## 核心问题与最小方案
