@@ -1,0 +1,192 @@
+{
+  "answers_fingerprint": "d6a639c6dd05d6b256e12b0a7a72d61335cd9b7cfc331e37d27a0c60fe2db9e3",
+  "completed": false,
+  "controls": {
+    "config_fingerprint": "c328cd35acdfdbbe5a8e889ff7e5c383bb94779bbfaec1a35368bfa9f12e5b0b",
+    "context_top_k": 10,
+    "context_window_tokens": 8192,
+    "decision_fingerprint": "0fdfb858f0baf2b92a63a482c5c61a140288f5e6b7734a99e69bf393c0bf6096",
+    "max_output_tokens": 768,
+    "prompt_fingerprint": "5a9db28f34e129073604f088800a3e4328d6fc25b177a34cda61d59e9d4e4b93",
+    "provider_spec": {
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "documented_version": "DeepSeek-V4.1-Flash",
+      "id": "deepseek-flash",
+      "kind": "deepseek",
+      "model": "deepseek-flash",
+      "pricing": {
+        "cache_hit_per_million": 0.006,
+        "cache_miss_per_million": 0.3,
+        "checked_on": "2026-10-04",
+        "currency": "USD",
+        "note": "采用峰值单价作为保守估算；非实际账单，非高峰时段通常更低。",
+        "output_per_million": 1.2,
+        "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+      }
+    },
+    "rag_config_fingerprint": "fda566218569e54475c47d1c5319e8c7bd5bc97b9a002d17358a9aadc6ee28f4",
+    "reranker_execution": "reuse_phase7_verified_scores_not_new_timing",
+    "retrieval": {
+      "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+      "benchmark_id": "apt-qa-v1.1",
+      "bm25": {
+        "b": 0.75,
+        "k1": 1.2,
+        "positive_scores_only": true,
+        "query_term_frequency": "binary",
+        "tokenizer": "ascii_identifiers_cjk_chars_v1"
+      },
+      "candidate_k": 30,
+      "chunk_count": 1297,
+      "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+      "corpus_vectors_sha256": "8ec19d62d0c83de1db485e4f8456ad70a5202913a0e273d505a839dd296e3c71",
+      "dense_search": "numpy_exact_cosine",
+      "embedding_max_seq_length": 256,
+      "embedding_model": {
+        "dimension": 1024,
+        "id": "bge-m3",
+        "license": "MIT",
+        "loader": "sentence_transformers",
+        "model_name": "BAAI/bge-m3",
+        "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+      },
+      "generation": "not_run: ranking-only benchmark; no LLM variable",
+      "query_rewrite": false,
+      "query_vectors_sha256": "a33d21ca42da8a79729dfbeb2566561dc69c445e5028e04dfa579df5fcfc77c7",
+      "question_count": 20,
+      "rrf": {
+        "rank_constant": 60,
+        "weights": [
+          1.0,
+          1.0
+        ]
+      },
+      "tie_break": "corpus_order",
+      "top_k": [
+        1,
+        3,
+        5,
+        10
+      ]
+    },
+    "retrieval_results_fingerprint": "f220931e5b0567039b9a8965e1f359b7020b777fd25262778bfb0988542d8ea2",
+    "review_prompt_fingerprint": "917ba64b8839e55b1f0ba64fab8e3a88a87d40eb9e2ebbb7ebc034c6339977a2",
+    "review_status": "ai_assisted_same_model_family_pending_independent_human_review",
+    "rubric_fingerprint": "27fb280d2b3ee6e4dfd64975f4be4adb6ccb052604e947f6d52f9ab3101a8057",
+    "temperature": 0,
+    "token_safety_margin": 256
+  },
+  "identity": {
+    "documented_version": "DeepSeek-V4.1-Flash",
+    "immutable_revision_available": false,
+    "model": "deepseek-flash"
+  },
+  "inputs_fingerprint": "02fa8578dd17cbf2474eda5c2f26db572a47a295f1ed693779934160016aaec3",
+  "review_settings": {
+    "benchmark_path": "data/benchmark/apt_qa_v1.json",
+    "chunks_directory": "data/processed/chunks",
+    "context_mode": "ground_truth_evidence",
+    "context_window_tokens": 32768,
+    "inputs_path": "data/processed/llm_benchmark/inputs.json",
+    "manifest_path": "data/manifest/reports.json",
+    "max_output_tokens": 4096,
+    "prompt_path": "configs/llm_benchmark_prompt.json",
+    "providers": [
+      {
+        "default_host": "http://localhost:11434",
+        "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "host_env": "OLLAMA_HOST",
+        "id": "ollama-qwen",
+        "keep_alive": "10m",
+        "kind": "ollama",
+        "model": "qwen3.5:4b",
+        "num_ctx": 8192,
+        "seed": 42
+      },
+      {
+        "api_key_env": "DEEPSEEK_API_KEY",
+        "base_url": "https://api.deepseek.com",
+        "documented_version": "DeepSeek-V4.1-Flash",
+        "id": "deepseek-flash",
+        "kind": "deepseek",
+        "model": "deepseek-flash",
+        "pricing": {
+          "cache_hit_per_million": 0.006,
+          "cache_miss_per_million": 0.3,
+          "checked_on": "2026-10-04",
+          "currency": "USD",
+          "note": "采用峰值单价作为保守估算；非实际账单，非高峰时段通常更低。",
+          "output_per_million": 1.2,
+          "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+        }
+      }
+    ],
+    "response_format": {
+      "type": "json_object"
+    },
+    "results_directory": "results/phase6",
+    "schema_version": "1.0",
+    "temperature": 0,
+    "timeout_seconds": 600
+  },
+  "reviews": [
+    {
+      "answer": "{\n  \"required_facts\": [\n    {\n      \"covered\": true,\n      \"reason\": \"回答明确提到合法账户（Valid Accounts）和就地取材（LOTL/LOLBins），并说明其用于持久化和隐蔽驻留。\"\n    },\n    {\n      \"covered\": true,\n      \"reason\": \"回答包含强运营安全（OPSEC）、按环境定制TTP、融入正常系统与网络活动等内容。\"\n    },\n    {\n      \"covered\": true,\n      \"reason\": \"回答指出美国授权机构观察到在某些受害IT环境中维持访问和据点至少五年，并注明片段未说明是否为已确认的最长值。\"\n    }\n  ],\n  \"claims\": [\n    {\n      \"text\": \"主要依赖有效凭据实现持久化\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0010-c001\", \"cisa-aa24-038a-p0039-c000\"],\n      \"reason\": \"参考报告明确称Volt Typhoon主要依赖有效凭据实现持久化（T1078）。\"\n    },\n    {\n      \"text\": \"使用有效管理员凭据通过 RDP 等远程访问服务横向移动至域控和其他设备\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0007-c000\"],\n      \"reason\": \"参考报告第7页明确描述使用有效管理员凭据通过RDP等远程访问服务横向移动至域控和其他设备。\"\n    },\n    {\n      \"text\": \"反复窃取域凭据以确保掌握当前有效的账户，例如在四年内从三台域控提取 NTDS.dit，或在九个月内两次提取\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0008-c000\"],\n      \"reason\": \"参考报告第8页明确记载四年内从三台域控提取NTDS.dit，以及九个月内两次提取。\"\n    },\n    {\n      \"text\": \"LOTL 是其针对关键基础设施活动的标志性手法\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0003-c000\"],\n      \"reason\": \"参考报告第3页明确称LOTL技术是Volt Typhoon针对关键基础设施活动的标志。\"\n    },\n    {\n      \"text\": \"后渗透阶段很少使用恶意软件，而是通过命令行进行\\\"hands-on-keyboard\\\"操作，并使用系统原生工具和进程（LOLBins）维持和扩大访问\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0009-c002\"],\n      \"reason\": \"参考报告第9页明确描述后渗透阶段很少使用恶意软件，使用命令行hands-on-keyboard和原生工具/进程（LOLBins）维持和扩大访问。\"\n    },\n    {\n      \"text\": \"用 LOTL 进行防御规避，将恶意活动伪装成正常的系统与网络行为\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0010-c001\"],\n      \"reason\": \"参考报告第10页明确称主要使用LOTL进行防御规避，将恶意活动伪装成典型系统与网络行为。\"\n    },\n    {\n      \"text\": \"使用合法但过时的网络管理工具（如 comsvcs.dll），并用 netsh 等合法命令建立代理\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0045-c000\"],\n      \"reason\": \"参考报告第45页明确记载使用合法但过时的网络管理工具（如comsvcs.dll）以及使用netsh命令创建PortProxy。\"\n    },\n    {\n      \"text\": \"强运营安全与合法账户、LOTL 相结合，实现长期未被发现的驻留\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0003-c000\"],\n      \"reason\": \"参考报告第3页明确称依赖有效账户和强运营安全，结合LOTL，实现长期未被发现的驻留。\"\n    },\n    {\n      \"text\": \"通过有针对性的日志删除掩盖行为\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0008-c001\"],\n      \"reason\": \"参考报告第8页明确称运营安全通过有针对性的日志删除来掩盖行为。\"\n    },\n    {\n      \"text\": \"获取合法账户后活动极少（除发现侦察外），表明目标是维持驻留而非立即利用\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0008-c000\"],\n      \"reason\": \"参考报告第8页明确称获得合法账户后活动极少（除发现侦察外），表明目标是维持驻留而非立即利用。\"\n    },\n    {\n      \"text\": \"使用 VPN 会话接入受害环境，混入正常流量以降低被发现概率\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0009-c002\"],\n      \"reason\": \"参考报告第9页明确称使用VPN会话连接受害环境，混入正常流量以降低被发现概率。\"\n    },\n    {\n      \"text\": \"使用 FRP 建立隐蔽 C2 通道，并对 FRP 客户端文件及 ScanLine 用 UPX 加壳混淆\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0010-c001\"],\n      \"reason\": \"参考报告第10页明确记载植入FRP用于C2，并对FRP客户端文件和ScanLine用UPX加壳混淆。\"\n    },\n    {\n      \"text\": \"有条不紊地在数年间反复瞄准同一批组织，持续验证并可能增强其未授权访问\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0008-c000\"],\n      \"reason\": \"参考报告第8页明确称有条不紊地在数年间反复瞄准同一批组织，持续验证并可能增强未授权访问。\"\n    },\n    {\n      \"text\": \"美国授权机构近期观察到 Volt Typhoon 在某些受害 IT 环境中维持访问和据点至少五年\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0003-c000\"],\n      \"reason\": \"参考报告第3页明确称美国授权机构近期观察到在某些受害IT环境中维持访问和据点至少五年。\"\n    },\n    {\n      \"text\": \"片段未说明该\\\"五年\\\"是否为已确认的最长值，仅表述为\\\"至少五年\\\"\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\"cisa-aa24-038a-p0003-c000\"],\n      \"reason\": \"参考报告仅表述为至少五年，未说明是否为已确认的最长值，该注释与报告一致。\"\n    }\n  ],\n  \"citations\": [\n    {\n      \"label\": \"S3\",\n      \"claim\": \"主要依赖有效凭据实现持久化\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S3片段明确包含“Volt Typhoon primarily relies on valid credentials for persistence”。\"\n    },\n    {\n      \"label\": \"S5\",\n      \"claim\": \"主要依赖有效凭据实现持久化\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S5片段明确包含“Volt Typhoon primarily relies on valid credentials for persistence”。\"\n    },\n    {\n      \"label\": \"S6\",\n      \"claim\": \"使用有效管理员凭据通过 RDP 等远程访问服务横向移动至域控和其他设备\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S6片段明确包含“Volt Typhoon uses valid administrator credentials to move laterally to the domain controller (DC) and other devices via remote access services such as Remote Desktop Protocol (RDP)”。\"\n    },\n    {\n      \"label\": \"S2\",\n      \"claim\": \"反复窃取域凭据以确保掌握当前有效的账户，例如在四年内从三台域控提取 NTDS.dit，或在九个月内两次提取\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S2片段明确包含四年内从三台域控提取NTDS.dit以及九个月内两次提取的描述。\"\n    },\n    {\n      \"label\": \"S1\",\n      \"claim\": \"LOTL 是其针对关键基础设施活动的标志性手法\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S1片段明确包含“the use of living off the land (LOTL) techniques is a hallmark of Volt Typhoon actors’ malicious cyber activity when targeting critical infrastructure”。\"\n    },\n    {\n      \"label\": \"S8\",\n      \"claim\": \"后渗透阶段很少使用恶意软件，而是通过命令行进行\\\"hands-on-keyboard\\\"操作，并使用系统原生工具和进程（LOLBins）维持和扩大访问\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S8片段明确包含“rarely use malware for post-compromise execution... hands-on-keyboard activity via the command-line... native tools and processes... known as LOTL, to maintain and expand access”。\"\n    },\n    {\n      \"label\": \"S3\",\n      \"claim\": \"用 LOTL 进行防御规避，将恶意活动伪装成正常的系统与网络行为\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S3片段明确包含“primarily use LOTL for defense evasion... camouflage their malicious activity with typical system and network behavior”。\"\n    },\n    {\n      \"label\": \"S9\",\n      \"claim\": \"使用合法但过时的网络管理工具（如 comsvcs.dll），并用 netsh 等合法命令建立代理\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S9片段明确包含使用合法但过时的网络管理工具（如comsvcs.dll）以及使用netsh命令创建PortProxy。\"\n    },\n    {\n      \"label\": \"S1\",\n      \"claim\": \"强运营安全与合法账户、LOTL 相结合，实现长期未被发现的驻留\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S1片段明确包含“relies on valid accounts and leverage strong operational security, which combined, allows for long-term undiscovered persistence”。\"\n    },\n    {\n      \"label\": \"S4\",\n      \"claim\": \"通过有针对性的日志删除掩盖行为\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S4片段明确包含“operational security is enhanced by targeted log deletion to conceal their actions”。\"\n    },\n    {\n      \"label\": \"S2\",\n      \"claim\": \"获取合法账户后活动极少（除发现侦察外），表明目标是维持驻留而非立即利用\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S2片段明确包含“exhibit minimal activity within the compromised environment (except discovery as noted above), suggesting their objective is to maintain persistence rather than immediate exploitation”。\"\n    },\n    {\n      \"label\": \"S8\",\n      \"claim\": \"使用 VPN 会话接入受害环境，混入正常流量以降低被发现概率\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S8片段明确包含“use VPN sessions to securely connect to victim environments... blend in with regular traffic, significantly reducing their chances of detection”。\"\n    },\n    {\n      \"label\": \"S3\",\n      \"claim\": \"使用 FRP 建立隐蔽 C2 通道，并对 FRP 客户端文件及 ScanLine 用 UPX 加壳混淆\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S3片段明确包含植入FRP用于C2，以及对FRP客户端文件和ScanLine用UPX加壳混淆。\"\n    },\n    {\n      \"label\": \"S9\",\n      \"claim\": \"使用 FRP 建立隐蔽 C2 通道，并对 FRP 客户端文件及 ScanLine 用 UPX 加壳混淆\",\n      \"verdict\": \"unsupported\",\n      \"reason\": \"S9片段仅提到设置FRP客户端建立隐蔽通信通道，未提及对FRP客户端文件及ScanLine用UPX加壳混淆。\"\n    },\n    {\n      \"label\": \"S2\",\n      \"claim\": \"有条不紊地在数年间反复瞄准同一批组织，持续验证并可能增强其未授权访问\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S2片段明确包含“methodically re-targets the same organizations over extended periods, often spanning several years, to continuously validate and potentially enhance their unauthorized accesses”。\"\n    },\n    {\n      \"label\": \"S1\",\n      \"claim\": \"美国授权机构近期观察到 Volt Typhoon 在某些受害 IT 环境中维持访问和据点至少五年\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S1片段明确包含“the U.S. authoring agencies have recently observed indications of Volt Typhoon actors maintaining access and footholds within some victim IT environments for at least five years”。\"\n    }\n  ]\n}",
+      "answer_sha256": "e75c9d6e21b85bdcaa39827e8a1dcfb9728197250721360ed7dea331ddedfaba",
+      "answer_sha256_raw_review": "bcf0c8866f03d7a15f6b9d51d69ab259b2441e46fefaf378be177cff065a18ca",
+      "cache_hit_tokens": 0,
+      "estimated_api_cost_usd": 0.0059064,
+      "finish_reason": "stop",
+      "generation_seconds": null,
+      "id": "q006:hybrid_reranker",
+      "latency_seconds": 8.687359899980947,
+      "load_seconds": null,
+      "messages_sha256": "60bc315753f1e01b75fb55e84306f4322ddca020f10ebe7e1248b9421eef6a0f",
+      "output_tokens": 2854,
+      "prompt_tokens": 8272,
+      "response_model": "deepseek-flash",
+      "review_id": "3766fe39a117f3760805536953e2f2cd2335e9f80320d8cc6a7853463fc61acf",
+      "reviewed_at": "2026-10-04T14:43:18.614955+00:00",
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "token_budget": {
+        "context_window_tokens": 32768,
+        "count_kind": "official_v4_demo_chat_estimate",
+        "input_tokens": 8248,
+        "max_output_tokens": 4096,
+        "render_sha256": "9ae1f3d25c58cee18db95dd69b9699554a04e63d7ffd8e27522919be6bf8ffc8",
+        "safety_margin": 256,
+        "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614"
+      }
+    },
+    {
+      "answer": "{\n  \"required_facts\": [\n    {\n      \"covered\": true,\n      \"reason\": \"回答明确提到恶意软件开发人员阅读 SWIFT 系统用户手册，并称至少自 2014 年 2 月起开始针对金融机构、意图操纵金融交易系统。\"\n    },\n    {\n      \"covered\": true,\n      \"reason\": \"回答明确称最早观察到的 DYEPACK 部署是在 2015 年 12 月。\"\n    },\n    {\n      \"covered\": true,\n      \"reason\": \"回答提到 APT38 观察网络活动、收集可访问 SWIFT 服务器的用户和系统信息，并持续监控用户、管理员和 SWIFT 系统。\"\n    },\n    {\n      \"covered\": true,\n      \"reason\": \"回答明确称 APT38 将原本独立的 DYEPACK 修改为内存内联使用，避免将恶意软件写入磁盘以规避检测。\"\n    }\n  ],\n  \"claims\": [\n    {\n      \"text\": \"至少自 2014 年 2 月起，APT38 就开始针对金融机构，意图操纵金融交易系统，但直到 2015 年才观察到欺诈交易，说明存在一个学习期 [S1]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0014-c000\"\n      ],\n      \"reason\": \"参考报告明确称 APT38 至少自 2014 年 2 月起开始针对金融机构并意图操纵金融交易系统，直到 2015 年才观察到欺诈交易，且这些活动表明存在学习期。\"\n    },\n    {\n      \"text\": \"早期（2014 年初）在东南亚某银行部署了 NESTEGG（后门）和 KEYLIME（键盘记录器），但没有证据表明当时这些工具针对 SWIFT 系统，尽管该银行使用 SWIFT，表明其当时仍在学习金融交易相关系统 [S8]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0014-c001\"\n      ],\n      \"reason\": \"参考报告明确称 2014 年初在东南亚银行部署 NESTEGG 和 KEYLIME，没有证据表明这些工具当时针对 SWIFT 系统，尽管该银行使用 SWIFT，并认为 APT38 仍在学习金融交易相关系统。\"\n    },\n    {\n      \"text\": \"公开信息显示，恶意软件开发人员曾阅读 SWIFT 系统用户手册，为开发 SWIFT 专用恶意软件（如 DYEPACK）提供基础 [S1]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0014-c000\"\n      ],\n      \"reason\": \"参考报告称 DOJ 公布细节显示恶意软件开发者阅读 SWIFT 系统用户手册，表明开发 SWIFT 专用恶意软件（如 DYEPACK）的初步努力。\"\n    },\n    {\n      \"text\": \"APT38 投入大量时间和人力进行侦察，观察网络活动、收集可访问 SWIFT 服务器的用户和系统信息 [S4]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0015-c001\"\n      ],\n      \"reason\": \"参考报告明确称 APT38 进行极其彻底且耗时的侦察，观察网络活动并收集可访问 SWIFT 服务器的用户和系统关键信息。\"\n    },\n    {\n      \"text\": \"曾出现入侵 SWIFT 系统后等待近两年才实施欺诈交易的情况，期间保持访问、安装更新后门并持续监控用户、管理员和 SWIFT 系统 [S7]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0019-c000\"\n      ],\n      \"reason\": \"参考报告明确称 APT38 曾入侵 SWIFT 系统后等待近两年才实施欺诈交易，期间保持访问、安装更新后门并监控用户、管理员和 SWIFT 系统。\"\n    },\n    {\n      \"text\": \"在 SWIFT 系统上部署 Sysmon 等工具，以了解各机构中 SWIFT 的进程、服务和用户 [S2]；还利用 net.exe 等内部工具扫描系统 [S7]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0020-c000\",\n        \"mandiant-apt38-2018-p0019-c000\"\n      ],\n      \"reason\": \"参考报告 S2 明确称 APT38 在 SWIFT 系统部署 Sysmon 以了解各机构使用 SWIFT 的进程、服务和用户；S7 明确称使用 Sysmon 和 net.exe 等内部工具扫描系统。\"\n    },\n    {\n      \"text\": \"侦察还包括研究目标机构人员、第三方供应商及其 SWIFT 接入机制，甚至从朝鲜 IP 空间对受害银行进行侦察 [S9]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0017-c001\"\n      ],\n      \"reason\": \"参考报告明确称 APT38 研究目标机构人员、有 SWIFT 系统访问权限的第三方供应商，并至少有一次从朝鲜 IP 空间对受害银行进行侦察。\"\n    },\n    {\n      \"text\": \"DYEPACK 是用于劫持 SWIFT 交易、发起转账、窃取资金并隐藏欺诈痕迹的工具套件 [S3][S5]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0021-c000\",\n        \"mandiant-apt38-2018-p0012-c003\"\n      ],\n      \"reason\": \"参考报告 S3 称 DYEPACK 是 SWIFT 交易劫持框架，用于发起交易、窃取资金并隐藏欺诈交易证据；S5 称 DYEPACK 是操纵 SWIFT 服务器本地数据的工具套件。\"\n    },\n    {\n      \"text\": \"最早观察到的 DYEPACK 部署是在 2015 年 12 月 [S1]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0014-c000\"\n      ],\n      \"reason\": \"参考报告明确称最早观察到的 DYEPACK 部署是在 2015 年 12 月。\"\n    },\n    {\n      \"text\": \"为适应受害者使用 Foxit PDF Reader 查看 SWIFT 报文记录的情况，APT38 更新 DYEPACK，使其能修改用 Foxit 打开的 PDF 文件以清除欺诈交易痕迹，该变体被称为 DYEPACK.FOX [S3]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0021-c000\"\n      ],\n      \"reason\": \"参考报告明确称目标受害者使用 Foxit PDF Reader 查看 SWIFT 报文记录，APT38 更新 DYEPACK 以修改用 Foxit 打开的 PDF 文件并清除欺诈交易痕迹，该变体称为 DYEPACK.FOX。\"\n    },\n    {\n      \"text\": \"为规避检测，APT38 将原本独立的 DYEPACK 修改为内存内联使用，避免将恶意软件写入磁盘 [S4]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0015-c001\"\n      ],\n      \"reason\": \"参考报告明确称威胁行为者修改 DYEPACK，将原本独立版本改为内存内联使用，以避免将恶意软件写入磁盘。\"\n    },\n    {\n      \"text\": \"DYEPACK 还能在操纵发往文件或打印机的 SWIFT 报文记录时，同步修改 Alliance Access Oracle SQL 数据库中的原始记录，从而在 SWIFT 框架之外篡改交易数据 [S6]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0021-c001\"\n      ],\n      \"reason\": \"参考报告明确称如果 DYEPACK 处理器操纵发往文件或打印机的 SWIFT 报文记录，它也会修改 Alliance Access Oracle SQL 数据库中的原始记录，从而在 SWIFT 框架之外更改交易数据。\"\n    },\n    {\n      \"text\": \"APT38 至少在一个受害机构中修改恶意软件以更好适配该机构使用 SWIFT 的具体方式，表明其具备定制开发能力 [S3]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0021-c000\"\n      ],\n      \"reason\": \"参考报告明确称 APT38 至少在一个受害机构中修改恶意软件以更好适配该机构使用 SWIFT 的具体方式，表明其具备定制开发能力。\"\n    },\n    {\n      \"text\": \"其工具集高度专业化，DYEPACK 专门针对 SWIFT 等银行交易系统的复杂特性设计 [S5]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0012-c003\"\n      ],\n      \"reason\": \"参考报告明确称 APT38 工具集显著更专业化，DYEPACK 专门设计以考虑 SWIFT 等银行交易系统的复杂特性。\"\n    },\n    {\n      \"text\": \"从 2014 年起的早期学习，到长期潜伏侦察，再到 DYEPACK 从独立版本演进为内存内联、适配 PDF 阅读器、并直接篡改底层数据库的定制工具，体现了 APT38 逐步深化对 SWIFT 系统的理解、持续优化隐蔽性与适配性、并提升攻击复杂度和破坏性的技术发展路径 [S10]。\",\n      \"verdict\": \"supported\",\n      \"reference_chunk_ids\": [\n        \"mandiant-apt38-2018-p0002-c001\"\n      ],\n      \"reason\": \"参考报告称自首次观察到活动以来，APT38 行动日益复杂和破坏性，采取计算性方法随时间磨炼 TTP 并规避检测；结合其他参考可支持该总结性演进描述。\"\n    }\n  ],\n  \"citations\": [\n    {\n      \"label\": \"S1\",\n      \"claim\": \"至少自 2014 年 2 月起，APT38 就开始针对金融机构，意图操纵金融交易系统，但直到 2015 年才观察到欺诈交易，说明存在一个学习期 [S1]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S1 片段明确包含 APT38 至少自 2014 年 2 月起针对金融机构、意图操纵金融交易系统、直到 2015 年才观察到欺诈交易以及学习期的内容。\"\n    },\n    {\n      \"label\": \"S8\",\n      \"claim\": \"早期（2014 年初）在东南亚某银行部署了 NESTEGG（后门）和 KEYLIME（键盘记录器），但没有证据表明当时这些工具针对 SWIFT 系统，尽管该银行使用 SWIFT，表明其当时仍在学习金融交易相关系统 [S8]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S8 片段明确包含 2014 年初在东南亚银行部署 NESTEGG 和 KEYLIME、没有证据表明这些工具当时针对 SWIFT 系统、尽管该银行使用 SWIFT、以及 APT38 仍在学习金融交易相关系统的内容。\"\n    },\n    {\n      \"label\": \"S1\",\n      \"claim\": \"公开信息显示，恶意软件开发人员曾阅读 SWIFT 系统用户手册，为开发 SWIFT 专用恶意软件（如 DYEPACK）提供基础 [S1]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S1 片段明确包含 DOJ 公布细节显示恶意软件开发者阅读 SWIFT 系统用户手册，表明开发 SWIFT 专用恶意软件（如 DYEPACK）的初步努力。\"\n    },\n    {\n      \"label\": \"S4\",\n      \"claim\": \"APT38 投入大量时间和人力进行侦察，观察网络活动、收集可访问 SWIFT 服务器的用户和系统信息 [S4]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S4 片段明确包含 APT38 进行极其彻底且耗时的侦察，观察网络活动并收集可访问 SWIFT 服务器的用户和系统关键信息。\"\n    },\n    {\n      \"label\": \"S7\",\n      \"claim\": \"曾出现入侵 SWIFT 系统后等待近两年才实施欺诈交易的情况，期间保持访问、安装更新后门并持续监控用户、管理员和 SWIFT 系统 [S7]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S7 片段明确包含 APT38 入侵 SWIFT 系统后等待近两年才实施欺诈交易，期间保持访问、安装更新后门并监控用户、管理员和 SWIFT 系统。\"\n    },\n    {\n      \"label\": \"S2\",\n      \"claim\": \"在 SWIFT 系统上部署 Sysmon 等工具，以了解各机构中 SWIFT 的进程、服务和用户 [S2]；还利用 net.exe 等内部工具扫描系统 [S7]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S2 片段明确包含在 SWIFT 系统部署 Sysmon 以了解各机构使用 SWIFT 的进程、服务和用户；该引用所支撑的 Sysmon 部分在 S2 中可核实。\"\n    },\n    {\n      \"label\": \"S7\",\n      \"claim\": \"在 SWIFT 系统上部署 Sysmon 等工具，以了解各机构中 SWIFT 的进程、服务和用户 [S2]；还利用 net.exe 等内部工具扫描系统 [S7]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S7 片段明确包含使用 Sysmon 和 net.exe 等内部工具扫描系统；该引用所支撑的 net.exe 部分在 S7 中可核实。\"\n    },\n    {\n      \"label\": \"S9\",\n      \"claim\": \"侦察还包括研究目标机构人员、第三方供应商及其 SWIFT 接入机制，甚至从朝鲜 IP 空间对受害银行进行侦察 [S9]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S9 片段明确包含研究目标机构人员、有 SWIFT 系统访问权限的第三方供应商，并至少有一次从朝鲜 IP 空间对受害银行进行侦察。\"\n    },\n    {\n      \"label\": \"S3\",\n      \"claim\": \"DYEPACK 是用于劫持 SWIFT 交易、发起转账、窃取资金并隐藏欺诈痕迹的工具套件 [S3][S5]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S3 片段明确称 DYEPACK 是 SWIFT 交易劫持框架，用于发起交易、窃取资金并隐藏欺诈交易证据。\"\n    },\n    {\n      \"label\": \"S5\",\n      \"claim\": \"DYEPACK 是用于劫持 SWIFT 交易、发起转账、窃取资金并隐藏欺诈痕迹的工具套件 [S3][S5]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S5 片段明确称 DYEPACK 是操纵 SWIFT 服务器本地数据的工具套件，专门设计以考虑 SWIFT 等银行交易系统的复杂特性。\"\n    },\n    {\n      \"label\": \"S1\",\n      \"claim\": \"最早观察到的 DYEPACK 部署是在 2015 年 12 月 [S1]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S1 片段明确包含最早观察到的 DYEPACK 部署是在 2015 年 12 月。\"\n    },\n    {\n      \"label\": \"S3\",\n      \"claim\": \"为适应受害者使用 Foxit PDF Reader 查看 SWIFT 报文记录的情况，APT38 更新 DYEPACK，使其能修改用 Foxit 打开的 PDF 文件以清除欺诈交易痕迹，该变体被称为 DYEPACK.FOX [S3]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S3 片段明确包含目标受害者使用 Foxit PDF Reader 查看 SWIFT 报文记录，APT38 更新 DYEPACK 以修改用 Foxit 打开的 PDF 文件并清除欺诈交易痕迹，该变体称为 DYEPACK.FOX。\"\n    },\n    {\n      \"label\": \"S4\",\n      \"claim\": \"为规避检测，APT38 将原本独立的 DYEPACK 修改为内存内联使用，避免将恶意软件写入磁盘 [S4]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S4 片段明确包含威胁行为者修改 DYEPACK，将原本独立版本改为内存内联使用，以避免将恶意软件写入磁盘。\"\n    },\n    {\n      \"label\": \"S6\",\n      \"claim\": \"DYEPACK 还能在操纵发往文件或打印机的 SWIFT 报文记录时，同步修改 Alliance Access Oracle SQL 数据库中的原始记录，从而在 SWIFT 框架之外篡改交易数据 [S6]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S6 片段明确包含如果 DYEPACK 处理器操纵发往文件或打印机的 SWIFT 报文记录，它也会修改 Alliance Access Oracle SQL 数据库中的原始记录，从而在 SWIFT 框架之外更改交易数据。\"\n    },\n    {\n      \"label\": \"S3\",\n      \"claim\": \"APT38 至少在一个受害机构中修改恶意软件以更好适配该机构使用 SWIFT 的具体方式，表明其具备定制开发能力 [S3]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S3 片段明确包含 APT38 至少在一个受害机构中修改恶意软件以更好适配该机构使用 SWIFT 的具体方式，表明其具备定制开发能力。\"\n    },\n    {\n      \"label\": \"S5\",\n      \"claim\": \"其工具集高度专业化，DYEPACK 专门针对 SWIFT 等银行交易系统的复杂特性设计 [S5]。\",\n      \"verdict\": \"supported\",\n      \"reason\": \"S5 片段明确包含 APT38 工具集显著更专业化，DYEPACK 专门设计以考虑 SWIFT 等银行交易系统的复杂特性。\"\n    },\n    {\n      \"label\": \"S10\",\n      \"claim\": \"从 2014 年起的早期学习，到长期潜伏侦察，再到 DYEPACK 从独立版本演进为内存内联、适配 PDF 阅读器、并直接篡改底层数据库的定制工具，体现了 APT38 逐步深化对 SWIFT 系统的理解、持续优化隐蔽性与适配性、并提升攻击复杂度和破坏性的技术发展路径 [S10]。\",\n      \"verdict",
+      "answer_sha256": "d80a3ca47373f6242387f30c49fe4aff30ec6284fd954dd82ded7faec4b2de7d",
+      "answer_sha256_raw_review": "99636389d5e63b67b869fb0cea10a1b9c7b71ffd719900f4f233fffee32ae280",
+      "cache_hit_tokens": 256,
+      "estimated_api_cost_usd": 0.007305636000000001,
+      "finish_reason": "length",
+      "generation_seconds": null,
+      "id": "q014:dense",
+      "latency_seconds": 12.253682399983518,
+      "load_seconds": null,
+      "messages_sha256": "ccc23fa91a73ed6ad92ac9d000b18bf9e206aab0e976bfa3449aec73f2b7d459",
+      "output_tokens": 4096,
+      "prompt_tokens": 8219,
+      "response_model": "deepseek-flash",
+      "review_id": "9f796e9864480ba2231227cd117b973a6561168bb7f8e69105582918a779066b",
+      "reviewed_at": "2026-10-04T14:47:08.376274+00:00",
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "token_budget": {
+        "context_window_tokens": 32768,
+        "count_kind": "official_v4_demo_chat_estimate",
+        "input_tokens": 8195,
+        "max_output_tokens": 4096,
+        "render_sha256": "2e718897f69fe84250ba5b28d155720043ddae4e40174eb06f1bed57347d4ec3",
+        "safety_margin": 256,
+        "tokenizer_sha256": "89085f12ef79460ac5f66d1119325ddfc694b4ab209d80bbd81d35f081dc9614"
+      }
+    }
+  ],
+  "started_at": "2026-10-04T14:43:07.691966+00:00"
+}

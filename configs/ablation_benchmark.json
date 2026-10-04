@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "rag_config_path": "configs/rag.json",
+  "prompt_path": "configs/ablation_prompt.json",
+  "review_prompt_path": "configs/ablation_review_prompt.json",
+  "rubric_path": "data/benchmark/llm_rubric_v1.json",
+  "provider_id": "deepseek-flash",
+  "strategies": ["pure", "dense", "hybrid", "hybrid_reranker"],
+  "schedule_seed": 42,
+  "reference_page_radius": 1,
+  "inputs_path": "data/processed/ablation/inputs.json",
+  "results_directory": "results/phase10",
+  "review": {
+    "temperature": 0,
+    "max_output_tokens": 4096,
+    "context_window_tokens": 32768,
+    "response_format": {"type": "json_object"}
+  }
+}

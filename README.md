@@ -6,7 +6,7 @@
 
 ## 当前进度
 
-Phase 9：接通完整 RAG Pipeline 和真实 Metadata 来源引用，提供命令行问答。
+Phase 10：完成四组生成消融的工程运行与 AI 辅助比较；独立人工质量复核仍待完成。
 
 已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比、两个 LLM 的 40 份真实回答，以及三策略固定向量检索对比和 600 个真实 Reranker 分数。LLM 辅助评分尚未经独立人工评审；检索指标来自固定证据标注，不代表最终问答正确率。原始 PDF、处理文本、向量、模型和索引缓存不进入 Git，实验结果进入 Git。
 
@@ -114,7 +114,21 @@ uv run python scripts/ask_rag.py "APT44 通常还被称为什么？它被归属�
 uv run python scripts/validate_rag_results.py
 ```
 
-引用映射通过不等于回答语义正确；未开展 Phase 10 的消融/独立质量评审，也未实现 Web UI。
+引用映射通过不等于回答语义正确。Phase 10 已新增固定同一 LLM/Prompt/问题集的 Pure LLM、Dense RAG、Hybrid RAG、Hybrid + Reranker 四组 80 个真实回答与 80 个完整 AI 辅助评审，另保留两条失败试评，支持检查点恢复与离线重算。没有重跑生成来删除截断或坏引用，也没有提前实现 Web UI。
+
+消融的控制变量、指标分母、评审试运行修正、实测表格和已发现的 AI 误判见 [消融实验说明](docs/ablation_benchmark.md)。结果不能冒充独立人工指标：尤其是 100% 的可核实断言 Accuracy 和 0% 的 AI 矛盾率，不表示系统完美或真实无幻觉。
+
+```powershell
+# 无密钥即可校验已提交结果并绘图。
+uv run python scripts/validate_ablation_results.py
+uv run python scripts/plot_ablation_results.py
+# 本地 Chunk/向量/索引/tokenizer 准备后，仅冻结输入，不调用 API。
+uv run python scripts/run_ablation_benchmark.py --prepare-only
+# 首次生成/评审会发送公开数据到 DeepSeek 并计费；已完成默认复用。
+uv run python scripts/run_ablation_benchmark.py --allow-cloud
+```
+
+本次 AI 辅助完整性评分为 Pure 50.00%、Dense 93.33%、Hybrid 93.33%、Hybrid + Reranker 100.00%；评审已发现范围和限定词误判，最终研究结论仍需独立人工复核。下一阶段 Web UI 不自动进入。
 
 ## 当前目录
 

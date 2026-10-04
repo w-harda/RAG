@@ -1,0 +1,15 @@
+{
+  "review_id": "apt-ablation-review-v2",
+  "prompt_path": "configs/ablation_review_prompt.json",
+  "results_file": "reviews-v2.json",
+  "summary_file": "summary-v2.json",
+  "plot_file": "ablation_comparison.png",
+  "pilot_file": "reviews.json",
+  "settings": {
+    "temperature": 0,
+    "max_output_tokens": 8192,
+    "context_window_tokens": 32768,
+    "response_format": {"type": "json_object"}
+  },
+  "note": "保留首次 4096-token 试评两条原始记录；q014 输出截断。全部 80 答统一使用 v2 重新评审，生成回答不重跑。"
+}

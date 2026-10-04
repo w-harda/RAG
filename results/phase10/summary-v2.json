@@ -1,0 +1,2147 @@
+{
+  "answers_fingerprint": "d6a639c6dd05d6b256e12b0a7a72d61335cd9b7cfc331e37d27a0c60fe2db9e3",
+  "controls": {
+    "config_fingerprint": "c328cd35acdfdbbe5a8e889ff7e5c383bb94779bbfaec1a35368bfa9f12e5b0b",
+    "context_top_k": 10,
+    "context_window_tokens": 8192,
+    "decision_fingerprint": "0fdfb858f0baf2b92a63a482c5c61a140288f5e6b7734a99e69bf393c0bf6096",
+    "max_output_tokens": 768,
+    "prompt_fingerprint": "5a9db28f34e129073604f088800a3e4328d6fc25b177a34cda61d59e9d4e4b93",
+    "provider_spec": {
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "documented_version": "DeepSeek-V4.1-Flash",
+      "id": "deepseek-flash",
+      "kind": "deepseek",
+      "model": "deepseek-flash",
+      "pricing": {
+        "cache_hit_per_million": 0.006,
+        "cache_miss_per_million": 0.3,
+        "checked_on": "2026-10-04",
+        "currency": "USD",
+        "note": "采用峰值单价作为保守估算；非实际账单，非高峰时段通常更低。",
+        "output_per_million": 1.2,
+        "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+      }
+    },
+    "rag_config_fingerprint": "fda566218569e54475c47d1c5319e8c7bd5bc97b9a002d17358a9aadc6ee28f4",
+    "reranker_execution": "reuse_phase7_verified_scores_not_new_timing",
+    "retrieval": {
+      "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+      "benchmark_id": "apt-qa-v1.1",
+      "bm25": {
+        "b": 0.75,
+        "k1": 1.2,
+        "positive_scores_only": true,
+        "query_term_frequency": "binary",
+        "tokenizer": "ascii_identifiers_cjk_chars_v1"
+      },
+      "candidate_k": 30,
+      "chunk_count": 1297,
+      "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+      "corpus_vectors_sha256": "8ec19d62d0c83de1db485e4f8456ad70a5202913a0e273d505a839dd296e3c71",
+      "dense_search": "numpy_exact_cosine",
+      "embedding_max_seq_length": 256,
+      "embedding_model": {
+        "dimension": 1024,
+        "id": "bge-m3",
+        "license": "MIT",
+        "loader": "sentence_transformers",
+        "model_name": "BAAI/bge-m3",
+        "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+      },
+      "generation": "not_run: ranking-only benchmark; no LLM variable",
+      "query_rewrite": false,
+      "query_vectors_sha256": "a33d21ca42da8a79729dfbeb2566561dc69c445e5028e04dfa579df5fcfc77c7",
+      "question_count": 20,
+      "rrf": {
+        "rank_constant": 60,
+        "weights": [
+          1.0,
+          1.0
+        ]
+      },
+      "tie_break": "corpus_order",
+      "top_k": [
+        1,
+        3,
+        5,
+        10
+      ]
+    },
+    "retrieval_results_fingerprint": "f220931e5b0567039b9a8965e1f359b7020b777fd25262778bfb0988542d8ea2",
+    "review_prompt_fingerprint": "917ba64b8839e55b1f0ba64fab8e3a88a87d40eb9e2ebbb7ebc034c6339977a2",
+    "review_status": "ai_assisted_same_model_family_pending_independent_human_review",
+    "rubric_fingerprint": "27fb280d2b3ee6e4dfd64975f4be4adb6ccb052604e947f6d52f9ab3101a8057",
+    "temperature": 0,
+    "token_safety_margin": 256
+  },
+  "experiment": "phase10-four-way-ablation",
+  "inputs_fingerprint": "02fa8578dd17cbf2474eda5c2f26db572a47a295f1ed693779934160016aaec3",
+  "limitations": [
+    "同模型家族 AI 辅助评审，未独立人工复核；分数不是最终研究结论。",
+    "抽查发现 AI 混淆至少五年与确定最长时间，以及当前 Context 缺失与整份报告缺失；矛盾判定可能误报，不能称已确认幻觉下界。",
+    "隐藏策略名但 Context 长度可暴露组别，不能称完全盲评。",
+    "断言拆分/遗漏/语义关系仍需人工检查；参考资料并不覆盖所有真实知识。",
+    "20 题单次运行无显著性或外部泛化结论；云端权重未固定，temperature=0 不保证逐字复现。",
+    "复用固定重排分数，不报告本轮端到端检索/重排耗时；上下文长度随策略自然变化。"
+  ],
+  "metric_policy": {
+    "accuracy": "supported/(supported+contradicted); unverifiable excluded; not independent truth accuracy",
+    "aggregation": "question_macro_except_explicit_micro; N/A denominators reported",
+    "citation_correctness": "supported citation occurrences/all citation occurrences; no citations=N/A",
+    "completeness": "fully covered required facts/all required facts; composite facts all-or-nothing",
+    "hallucination_rate": "AI-labeled contradicted/all factual claims; reference-bounded proxy, NOT validated truth or guaranteed lower bound",
+    "quote_validation": "continuous substring after whitespace/Markdown emphasis/backtick/quotation-delimiter removal only; no factual rewriting",
+    "reference_scope_audit": "real provided-source IDs outside shared references are downgraded to unverifiable; raw review retained",
+    "unknown_citation_audit": "missing source Metadata forces unsupported regardless of raw AI verdict; raw review retained",
+    "unverifiable_rate": "unverifiable/all factual claims; not assumed false; report alongside accuracy/hallucination"
+  },
+  "per_query": [
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 10,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 6
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q001:dense",
+      "question_id": "q001",
+      "reference_scope_downgrade_count": 6,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 7,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 4,
+        "unverifiable": 3
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q001:hybrid",
+      "question_id": "q001",
+      "reference_scope_downgrade_count": 3,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.42857142857142855
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 9,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 5
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q001:hybrid_reranker",
+      "question_id": "q001",
+      "reference_scope_downgrade_count": 5,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 5
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q001:pure",
+      "question_id": "q001",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 0.9333333333333333,
+      "citation_count": 15,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 6
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q002:dense",
+      "question_id": "q002",
+      "reference_scope_downgrade_count": 5,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 0.9375,
+      "citation_count": 16,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q002:hybrid",
+      "question_id": "q002",
+      "reference_scope_downgrade_count": 9,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.6428571428571429
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 20,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 3,
+        "unverifiable": 10
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q002:hybrid_reranker",
+      "question_id": "q002",
+      "reference_scope_downgrade_count": 10,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.7692307692307693
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 3,
+        "unverifiable": 1
+      },
+      "completeness": 0,
+      "hallucination_rate": 0.0,
+      "id": "q002:pure",
+      "question_id": "q002",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.25
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 16,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 4,
+        "unverifiable": 12
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q003:dense",
+      "question_id": "q003",
+      "reference_scope_downgrade_count": 12,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.75
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 0.7142857142857143,
+      "citation_count": 14,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 4,
+        "unverifiable": 8
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q003:hybrid",
+      "question_id": "q003",
+      "reference_scope_downgrade_count": 8,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.6666666666666666
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 13,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 3,
+        "unverifiable": 10
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q003:hybrid_reranker",
+      "question_id": "q003",
+      "reference_scope_downgrade_count": 10,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.7692307692307693
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 5
+      },
+      "completeness": 0.3333333333333333,
+      "hallucination_rate": 0.0,
+      "id": "q003:pure",
+      "question_id": "q003",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.7142857142857143
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 12,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q004:dense",
+      "question_id": "q004",
+      "reference_scope_downgrade_count": 9,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.6428571428571429
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 0.6363636363636364,
+      "citation_count": 11,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 3,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q004:hybrid",
+      "question_id": "q004",
+      "reference_scope_downgrade_count": 9,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.75
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 15,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 7
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q004:hybrid_reranker",
+      "question_id": "q004",
+      "reference_scope_downgrade_count": 7,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5384615384615384
+    },
+    {
+      "accuracy": null,
+      "category": "background",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 0,
+        "unverifiable": 5
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.0,
+      "id": "q004:pure",
+      "question_id": "q004",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 4,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q005:dense",
+      "question_id": "q005",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 8,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 0
+      },
+      "completeness": 0.3333333333333333,
+      "hallucination_rate": 0.0,
+      "id": "q005:hybrid",
+      "question_id": "q005",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "background",
+      "citation_correctness": 1.0,
+      "citation_count": 4,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q005:hybrid_reranker",
+      "question_id": "q005",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 0.75,
+      "category": "background",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 3,
+        "unverifiable": 2
+      },
+      "completeness": 0.3333333333333333,
+      "hallucination_rate": 0.16666666666666666,
+      "id": "q005:pure",
+      "question_id": "q005",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.3333333333333333
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 17,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 1,
+        "unverifiable": 8
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q006:dense",
+      "question_id": "q006",
+      "reference_scope_downgrade_count": 8,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8888888888888888
+    },
+    {
+      "accuracy": 0.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 14,
+      "claim_counts": {
+        "contradicted": 2,
+        "supported": 0,
+        "unverifiable": 12
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.14285714285714285,
+      "id": "q006:hybrid",
+      "question_id": "q006",
+      "reference_scope_downgrade_count": 12,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8571428571428571
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 16,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 3,
+        "unverifiable": 11
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q006:hybrid_reranker",
+      "question_id": "q006",
+      "reference_scope_downgrade_count": 11,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.7857142857142857
+    },
+    {
+      "accuracy": null,
+      "category": "ttp",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 0,
+        "unverifiable": 7
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.0,
+      "id": "q006:pure",
+      "question_id": "q006",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 6,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 2
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q007:dense",
+      "question_id": "q007",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.25
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 7,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 9,
+        "unverifiable": 2
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q007:hybrid",
+      "question_id": "q007",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.18181818181818182
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 5,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q007:hybrid_reranker",
+      "question_id": "q007",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 10
+      },
+      "completeness": 0,
+      "hallucination_rate": 0.0,
+      "id": "q007:pure",
+      "question_id": "q007",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8333333333333334
+    },
+    {
+      "accuracy": 0.75,
+      "category": "ttp",
+      "citation_correctness": 0.75,
+      "citation_count": 4,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 3,
+        "unverifiable": 2
+      },
+      "completeness": 0.3333333333333333,
+      "hallucination_rate": 0.16666666666666666,
+      "id": "q008:dense",
+      "question_id": "q008",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.3333333333333333
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 13,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 3
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q008:hybrid",
+      "question_id": "q008",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.3333333333333333
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 0.9,
+      "citation_count": 10,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 1
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q008:hybrid_reranker",
+      "question_id": "q008",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 1,
+      "unverifiable_rate": 0.14285714285714285
+    },
+    {
+      "accuracy": null,
+      "category": "ttp",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 0,
+        "unverifiable": 4
+      },
+      "completeness": 0.3333333333333333,
+      "hallucination_rate": 0.0,
+      "id": "q008:pure",
+      "question_id": "q008",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 14,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 13
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q009:dense",
+      "question_id": "q009",
+      "reference_scope_downgrade_count": 13,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8666666666666667
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 17,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 14
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q009:hybrid",
+      "question_id": "q009",
+      "reference_scope_downgrade_count": 14,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.875
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 16,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 13
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q009:hybrid_reranker",
+      "question_id": "q009",
+      "reference_scope_downgrade_count": 12,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8666666666666667
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 8
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.0,
+      "id": "q009:pure",
+      "question_id": "q009",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 16,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 10,
+        "unverifiable": 2
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q010:dense",
+      "question_id": "q010",
+      "reference_scope_downgrade_count": 2,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.16666666666666666
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 14,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 9,
+        "unverifiable": 3
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q010:hybrid",
+      "question_id": "q010",
+      "reference_scope_downgrade_count": 3,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.25
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": 1.0,
+      "citation_count": 15,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 10,
+        "unverifiable": 7
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q010:hybrid_reranker",
+      "question_id": "q010",
+      "reference_scope_downgrade_count": 4,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.4117647058823529
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ttp",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 4
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.0,
+      "id": "q010:pure",
+      "question_id": "q010",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.36363636363636365
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 6,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 9,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q011:dense",
+      "question_id": "q011",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 6,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q011:hybrid",
+      "question_id": "q011",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 4,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q011:hybrid_reranker",
+      "question_id": "q011",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 5
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q011:pure",
+      "question_id": "q011",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.45454545454545453
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 12,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 8,
+        "unverifiable": 1
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q012:dense",
+      "question_id": "q012",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.1111111111111111
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 9,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q012:hybrid",
+      "question_id": "q012",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 0.9230769230769231,
+      "citation_count": 13,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 11,
+        "unverifiable": 1
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q012:hybrid_reranker",
+      "question_id": "q012",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.08333333333333333
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "category": "attack_technique",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 2,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.08333333333333333,
+      "id": "q012:pure",
+      "question_id": "q012",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.75
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 8,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 6
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q013:dense",
+      "question_id": "q013",
+      "reference_scope_downgrade_count": 6,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.75
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 12,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q013:hybrid",
+      "question_id": "q013",
+      "reference_scope_downgrade_count": 6,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8181818181818182
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 8,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 2,
+        "unverifiable": 6
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q013:hybrid_reranker",
+      "question_id": "q013",
+      "reference_scope_downgrade_count": 6,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.75
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 3
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q013:pure",
+      "question_id": "q013",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.3333333333333333
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 17,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q014:dense",
+      "question_id": "q014",
+      "reference_scope_downgrade_count": 9,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.6
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 17,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 11
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q014:hybrid",
+      "question_id": "q014",
+      "reference_scope_downgrade_count": 11,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.6470588235294118
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 16,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 8
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q014:hybrid_reranker",
+      "question_id": "q014",
+      "reference_scope_downgrade_count": 8,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5333333333333333
+    },
+    {
+      "accuracy": null,
+      "category": "attack_technique",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 0,
+        "unverifiable": 10
+      },
+      "completeness": 0,
+      "hallucination_rate": 0.0,
+      "id": "q014:pure",
+      "question_id": "q014",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 10,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 1,
+        "unverifiable": 9
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q015:dense",
+      "question_id": "q015",
+      "reference_scope_downgrade_count": 9,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.9
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 13,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 1,
+        "unverifiable": 11
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q015:hybrid",
+      "question_id": "q015",
+      "reference_scope_downgrade_count": 11,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.9166666666666666
+    },
+    {
+      "accuracy": null,
+      "category": "attack_technique",
+      "citation_correctness": 1.0,
+      "citation_count": 18,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 0,
+        "unverifiable": 7
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q015:hybrid_reranker",
+      "question_id": "q015",
+      "reference_scope_downgrade_count": 7,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "attack_technique",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 1,
+        "unverifiable": 5
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q015:pure",
+      "question_id": "q015",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8333333333333334
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 7,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q016:dense",
+      "question_id": "q016",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 7,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 1
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q016:hybrid",
+      "question_id": "q016",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.16666666666666666
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 6,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 8,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q016:hybrid_reranker",
+      "question_id": "q016",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 0.25,
+      "category": "ioc",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 3,
+        "supported": 1,
+        "unverifiable": 4
+      },
+      "completeness": 0,
+      "hallucination_rate": 0.375,
+      "id": "q016:pure",
+      "question_id": "q016",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 12,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 8,
+        "unverifiable": 5
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q017:dense",
+      "question_id": "q017",
+      "reference_scope_downgrade_count": 5,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.38461538461538464
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 15,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 6,
+        "unverifiable": 6
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q017:hybrid",
+      "question_id": "q017",
+      "reference_scope_downgrade_count": 6,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 11,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 4,
+        "unverifiable": 5
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q017:hybrid_reranker",
+      "question_id": "q017",
+      "reference_scope_downgrade_count": 4,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5555555555555556
+    },
+    {
+      "accuracy": 0.5,
+      "category": "ioc",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 1,
+        "unverifiable": 13
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.06666666666666667,
+      "id": "q017:pure",
+      "question_id": "q017",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.8666666666666667
+    },
+    {
+      "accuracy": 0.875,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 12,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 7,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.125,
+      "id": "q018:dense",
+      "question_id": "q018",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 0.875,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 12,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 7,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.125,
+      "id": "q018:hybrid",
+      "question_id": "q018",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 13,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q018:hybrid_reranker",
+      "question_id": "q018",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 0.0,
+      "category": "ioc",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 2,
+        "supported": 0,
+        "unverifiable": 2
+      },
+      "completeness": 0,
+      "hallucination_rate": 0.5,
+      "id": "q018:pure",
+      "question_id": "q018",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.5
+    },
+    {
+      "accuracy": 0.6666666666666666,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 5,
+      "claim_counts": {
+        "contradicted": 2,
+        "supported": 4,
+        "unverifiable": 2
+      },
+      "completeness": 0.3333333333333333,
+      "hallucination_rate": 0.25,
+      "id": "q019:dense",
+      "question_id": "q019",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.25
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 6,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 1
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.0,
+      "id": "q019:hybrid",
+      "question_id": "q019",
+      "reference_scope_downgrade_count": 1,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.16666666666666666
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 6,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 9,
+        "unverifiable": 2
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q019:hybrid_reranker",
+      "question_id": "q019",
+      "reference_scope_downgrade_count": 2,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.18181818181818182
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 7,
+        "unverifiable": 4
+      },
+      "completeness": 0.6666666666666666,
+      "hallucination_rate": 0.0,
+      "id": "q019:pure",
+      "question_id": "q019",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.36363636363636365
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 1,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q020:dense",
+      "question_id": "q020",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "dense",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 0.8333333333333334,
+      "category": "ioc",
+      "citation_correctness": 0.0,
+      "citation_count": 1,
+      "claim_counts": {
+        "contradicted": 1,
+        "supported": 5,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.16666666666666666,
+      "id": "q020:hybrid",
+      "question_id": "q020",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": 1.0,
+      "category": "ioc",
+      "citation_correctness": 1.0,
+      "citation_count": 1,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 5,
+        "unverifiable": 0
+      },
+      "completeness": 1,
+      "hallucination_rate": 0.0,
+      "id": "q020:hybrid_reranker",
+      "question_id": "q020",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "hybrid_reranker",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.0
+    },
+    {
+      "accuracy": null,
+      "category": "ioc",
+      "citation_correctness": null,
+      "citation_count": 0,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 0,
+        "unverifiable": 3
+      },
+      "completeness": 0,
+      "hallucination_rate": 0.0,
+      "id": "q020:pure",
+      "question_id": "q020",
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 1.0
+    }
+  ],
+  "pilot_estimated_cost_usd": 0.013212036,
+  "pilot_review_count": 2,
+  "pilot_reviews_fingerprint": "e34e6e23e034d8770655979fd5a237139481aedae81776ff4628975fd83efec3",
+  "results": [
+    {
+      "accuracy": 0.8111111111111111,
+      "accuracy_scored_answers": 15,
+      "answer_count": 20,
+      "answers_with_citations": 0,
+      "by_category": {
+        "attack_technique": {
+          "accuracy": 0.9166666666666666,
+          "accuracy_scored_answers": 4,
+          "answer_count": 5,
+          "answers_with_citations": 0,
+          "citation_correctness": null,
+          "citation_correctness_micro": null,
+          "citation_correctness_scored_answers": 0,
+          "citation_occurrence_count": 0,
+          "claim_counts": {
+            "contradicted": 1,
+            "supported": 15,
+            "unverifiable": 32
+          },
+          "completeness": 0.8,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.016666666666666666,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 0,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.6742424242424242,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "background": {
+          "accuracy": 0.9375,
+          "accuracy_scored_answers": 4,
+          "answer_count": 5,
+          "answers_with_citations": 0,
+          "citation_correctness": null,
+          "citation_correctness_micro": null,
+          "citation_correctness_scored_answers": 0,
+          "citation_occurrence_count": 0,
+          "claim_counts": {
+            "contradicted": 1,
+            "supported": 13,
+            "unverifiable": 18
+          },
+          "completeness": 0.4666666666666667,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.03333333333333333,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 0,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.5595238095238095,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ioc": {
+          "accuracy": 0.4375,
+          "accuracy_scored_answers": 4,
+          "answer_count": 5,
+          "answers_with_citations": 0,
+          "citation_correctness": null,
+          "citation_correctness_micro": null,
+          "citation_correctness_scored_answers": 0,
+          "citation_occurrence_count": 0,
+          "claim_counts": {
+            "contradicted": 6,
+            "supported": 9,
+            "unverifiable": 26
+          },
+          "completeness": 0.26666666666666666,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.18833333333333332,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 0,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.6460606060606061,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ttp": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 3,
+          "answer_count": 5,
+          "answers_with_citations": 0,
+          "citation_correctness": null,
+          "citation_correctness_micro": null,
+          "citation_correctness_scored_answers": 0,
+          "citation_occurrence_count": 0,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 11,
+            "unverifiable": 33
+          },
+          "completeness": 0.4666666666666666,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 0,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.7993939393939394,
+          "unverifiable_rate_scored_answers": 5
+        }
+      },
+      "citation_correctness": null,
+      "citation_correctness_micro": null,
+      "citation_correctness_scored_answers": 0,
+      "citation_occurrence_count": 0,
+      "citation_protocol_error_answers": 0,
+      "claim_counts": {
+        "contradicted": 8,
+        "supported": 48,
+        "unverifiable": 109
+      },
+      "completeness": 0.5,
+      "completeness_scored_answers": 20,
+      "empty_answers": 0,
+      "generation_estimated_cost_usd": 0.0081102,
+      "generation_latency_median_seconds": 2.4652464500104543,
+      "generation_output_tokens": 5875,
+      "generation_prompt_tokens": 3534,
+      "hallucination_rate": 0.059583333333333335,
+      "hallucination_rate_scored_answers": 20,
+      "reference_scope_downgrade_count": 0,
+      "strategy": "pure",
+      "truncated_answers": 0,
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.6698051948051948,
+      "unverifiable_rate_scored_answers": 20
+    },
+    {
+      "accuracy": 0.9645833333333333,
+      "accuracy_scored_answers": 20,
+      "answer_count": 20,
+      "answers_with_citations": 20,
+      "by_category": {
+        "attack_technique": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 1.0,
+          "citation_correctness_micro": 1.0,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 53,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 26,
+            "unverifiable": 25
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 25,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.4722222222222222,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "background": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 0.9866666666666667,
+          "citation_correctness_micro": 0.9824561403508771,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 57,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 27,
+            "unverifiable": 33
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 32,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.4785714285714286,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ioc": {
+          "accuracy": 0.9083333333333333,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 1.0,
+          "citation_correctness_micro": 1.0,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 37,
+          "claim_counts": {
+            "contradicted": 3,
+            "supported": 31,
+            "unverifiable": 7
+          },
+          "completeness": 0.8666666666666667,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.075,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 6,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.12692307692307692,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ttp": {
+          "accuracy": 0.95,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 0.95,
+          "citation_correctness_micro": 0.9824561403508771,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 57,
+          "claim_counts": {
+            "contradicted": 1,
+            "supported": 22,
+            "unverifiable": 27
+          },
+          "completeness": 0.8666666666666667,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.03333333333333333,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 25,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.5011111111111111,
+          "unverifiable_rate_scored_answers": 5
+        }
+      },
+      "citation_correctness": 0.9841666666666666,
+      "citation_correctness_micro": 0.9901960784313726,
+      "citation_correctness_scored_answers": 20,
+      "citation_occurrence_count": 204,
+      "citation_protocol_error_answers": 0,
+      "claim_counts": {
+        "contradicted": 4,
+        "supported": 106,
+        "unverifiable": 92
+      },
+      "completeness": 0.9333333333333333,
+      "completeness_scored_answers": 20,
+      "empty_answers": 0,
+      "generation_estimated_cost_usd": 0.025935264,
+      "generation_latency_median_seconds": 2.2707657500286587,
+      "generation_output_tokens": 7809,
+      "generation_prompt_tokens": 61236,
+      "hallucination_rate": 0.027083333333333334,
+      "hallucination_rate_scored_answers": 20,
+      "reference_scope_downgrade_count": 88,
+      "strategy": "dense",
+      "truncated_answers": 0,
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.3947069597069597,
+      "unverifiable_rate_scored_answers": 20
+    },
+    {
+      "accuracy": 0.9354166666666667,
+      "accuracy_scored_answers": 20,
+      "answer_count": 20,
+      "answers_with_citations": 20,
+      "by_category": {
+        "attack_technique": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 1.0,
+          "citation_correctness_micro": 1.0,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 57,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 21,
+            "unverifiable": 31
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 28,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.4763814616755793,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "background": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 0.8576298701298701,
+          "citation_correctness_micro": 0.8392857142857143,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 56,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 21,
+            "unverifiable": 29
+          },
+          "completeness": 0.8666666666666667,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 29,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.4976190476190476,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ioc": {
+          "accuracy": 0.9416666666666667,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 0.8,
+          "citation_correctness_micro": 0.975609756097561,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 41,
+          "claim_counts": {
+            "contradicted": 2,
+            "supported": 28,
+            "unverifiable": 8
+          },
+          "completeness": 0.9333333333333333,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.058333333333333334,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 8,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.16666666666666666,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ttp": {
+          "accuracy": 0.8,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 1.0,
+          "citation_correctness_micro": 1.0,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 65,
+          "claim_counts": {
+            "contradicted": 2,
+            "supported": 26,
+            "unverifiable": 34
+          },
+          "completeness": 0.9333333333333333,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.02857142857142857,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 30,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.49945887445887444,
+          "unverifiable_rate_scored_answers": 5
+        }
+      },
+      "citation_correctness": 0.9144074675324675,
+      "citation_correctness_micro": 0.954337899543379,
+      "citation_correctness_scored_answers": 20,
+      "citation_occurrence_count": 219,
+      "citation_protocol_error_answers": 0,
+      "claim_counts": {
+        "contradicted": 4,
+        "supported": 96,
+        "unverifiable": 102
+      },
+      "completeness": 0.9333333333333333,
+      "completeness_scored_answers": 20,
+      "empty_answers": 0,
+      "generation_estimated_cost_usd": 0.026285136,
+      "generation_latency_median_seconds": 2.0897230500122532,
+      "generation_output_tokens": 7441,
+      "generation_prompt_tokens": 61240,
+      "hallucination_rate": 0.021726190476190475,
+      "hallucination_rate_scored_answers": 20,
+      "reference_scope_downgrade_count": 95,
+      "strategy": "hybrid",
+      "truncated_answers": 1,
+      "unknown_citation_override_count": 0,
+      "unverifiable_rate": 0.410031512605042,
+      "unverifiable_rate_scored_answers": 20
+    },
+    {
+      "accuracy": 1.0,
+      "accuracy_scored_answers": 19,
+      "answer_count": 20,
+      "answers_with_citations": 20,
+      "by_category": {
+        "attack_technique": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 4,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 0.9846153846153847,
+          "citation_correctness_micro": 0.9830508474576272,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 59,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 25,
+            "unverifiable": 22
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 21,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.47333333333333333,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "background": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 1.0,
+          "citation_correctness_micro": 1.0,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 61,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 23,
+            "unverifiable": 32
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 32,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.5153846153846154,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ioc": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 1.0,
+          "citation_correctness_micro": 1.0,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 37,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 33,
+            "unverifiable": 7
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 6,
+          "unknown_citation_override_count": 0,
+          "unverifiable_rate": 0.14747474747474748,
+          "unverifiable_rate_scored_answers": 5
+        },
+        "ttp": {
+          "accuracy": 1.0,
+          "accuracy_scored_answers": 5,
+          "answer_count": 5,
+          "answers_with_citations": 5,
+          "citation_correctness": 0.98,
+          "citation_correctness_micro": 0.9838709677419355,
+          "citation_correctness_scored_answers": 5,
+          "citation_occurrence_count": 62,
+          "claim_counts": {
+            "contradicted": 0,
+            "supported": 28,
+            "unverifiable": 32
+          },
+          "completeness": 1,
+          "completeness_scored_answers": 5,
+          "hallucination_rate": 0.0,
+          "hallucination_rate_scored_answers": 5,
+          "reference_scope_downgrade_count": 28,
+          "unknown_citation_override_count": 1,
+          "unverifiable_rate": 0.44140056022408963,
+          "unverifiable_rate_scored_answers": 5
+        }
+      },
+      "citation_correctness": 0.9911538461538462,
+      "citation_correctness_micro": 0.9908675799086758,
+      "citation_correctness_scored_answers": 20,
+      "citation_occurrence_count": 219,
+      "citation_protocol_error_answers": 1,
+      "claim_counts": {
+        "contradicted": 0,
+        "supported": 109,
+        "unverifiable": 93
+      },
+      "completeness": 1,
+      "completeness_scored_answers": 20,
+      "empty_answers": 0,
+      "generation_estimated_cost_usd": 0.026951904,
+      "generation_latency_median_seconds": 2.1363845000159927,
+      "generation_output_tokens": 7409,
+      "generation_prompt_tokens": 63716,
+      "hallucination_rate": 0.0,
+      "hallucination_rate_scored_answers": 20,
+      "reference_scope_downgrade_count": 87,
+      "strategy": "hybrid_reranker",
+      "truncated_answers": 1,
+      "unknown_citation_override_count": 1,
+      "unverifiable_rate": 0.39439831410419646,
+      "unverifiable_rate_scored_answers": 20
+    }
+  ],
+  "review_estimated_cost_usd": 0.33105376799999997,
+  "review_protocol": {
+    "note": "保留首次 4096-token 试评两条原始记录；q014 输出截断。全部 80 答统一使用 v2 重新评审，生成回答不重跑。",
+    "pilot_file": "reviews.json",
+    "plot_file": "ablation_comparison.png",
+    "prompt_path": "configs/ablation_review_prompt.json",
+    "results_file": "reviews-v2.json",
+    "review_id": "apt-ablation-review-v2",
+    "settings": {
+      "context_window_tokens": 32768,
+      "max_output_tokens": 8192,
+      "response_format": {
+        "type": "json_object"
+      },
+      "temperature": 0
+    },
+    "summary_file": "summary-v2.json"
+  },
+  "reviews_fingerprint": "07e71ac3113ee5e03326f14df5c4f6cfe2f2f32bc3fa2ea41c00d1f4215ccc31",
+  "total_estimated_cost_usd_including_pilot": 0.43154830799999994
+}

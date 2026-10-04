@@ -148,6 +148,8 @@ class DeepSeekProvider(HTTPProvider):
             "thinking": {"type": "disabled"},
             "temperature": self.settings["temperature"],
             "max_tokens": self.settings["max_output_tokens"],
+            **({"response_format": self.settings["response_format"]}
+               if "response_format" in self.settings else {}),
         })
         choice, usage = data["choices"][0], data["usage"]
         if choice["message"].get("reasoning_content"):
