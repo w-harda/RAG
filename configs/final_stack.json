@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "decision_id": "apt-rag-stack-v1",
+  "phase": 8,
+  "status": "selected_not_integrated",
+  "objective": "quality_first_research_not_latency_sla",
+  "selection": {
+    "embedding_model_id": "bge-m3",
+    "vectorstore_backend": "faiss",
+    "retrieval_strategy": "hybrid_reranker",
+    "primary_llm_provider_id": "deepseek-flash",
+    "local_llm_provider_id": "ollama-qwen"
+  },
+  "policies": {
+    "context_mode": "retrieved_chunks",
+    "context_top_k": 10,
+    "automatic_provider_fallback": false,
+    "cloud_input_policy": "public_corpus_only",
+    "query_rewrite": false,
+    "on_context_overflow": "fail_without_silent_truncation",
+    "on_unknown_citation": "reject_unknown_label"
+  },
+  "references": {
+    "processing": {"path": "configs/processing.json", "json_sha256": "aaeda650af3ac9b792ccebc3f50e0544089e0000e43bbba64dd52e2b5a5921f1"},
+    "embedding": {"path": "configs/embedding_benchmark.json", "json_sha256": "4978372ecabdf18b86125b8f8ab876c18dce015cf5ff8f7d714592383e8adcb4"},
+    "vectorstore": {"path": "configs/vectorstore_benchmark.json", "json_sha256": "4952bd3f04e5a91ee1a94b0f012582fa0539c57820eb0e820bfbae143472dd6f"},
+    "generation": {"path": "configs/llm_benchmark.json", "json_sha256": "5f1ca462b173d51c2c69d7569af13fc176a67ab6749aebfc57beec8af3da3859"},
+    "retrieval": {"path": "configs/retrieval_benchmark.json", "json_sha256": "a41b2e1489ca24a0cb600cac489248b2e00409e0ed6e5d010c6c896b79e2f303"},
+    "prompt": {"path": "configs/llm_benchmark_prompt.json", "json_sha256": "813ecb4fbf9b02d64e53dd4e7600095f81821f06c2678e06fdee89d5f7b74b80"},
+    "benchmark": {"path": "data/benchmark/apt_qa_v1.json", "json_sha256": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8"},
+    "manifest": {"path": "data/manifest/reports.json", "json_sha256": "0b600e28099c5b8b708af73fa0370ee3105d1051aeaa2f010289a8c2ecbdef9e"},
+    "phase4": {"path": "results/phase4/summary.json", "json_sha256": "a18d4a50a25d9d6290b0194553b1cbbeee173bb74448e1a106419357989faba3"},
+    "phase5": {"path": "results/phase5/summary.json", "json_sha256": "ece5d8ffed73fec4a13410a182297e915b45aa4c827857eaf9843f82502a650d"},
+    "phase6": {"path": "results/phase6/summary.json", "json_sha256": "47b2f26f267f0f7e45b92a3b0c03c56a51b11849f1230cca24982a968f59c464"},
+    "phase7": {"path": "results/phase7/summary.json", "json_sha256": "5f1e989315dbc2a88fb57f02bbb0b519e861320d1e0fdc7bbb70e40c1bdc5a42"}
+  }
+}

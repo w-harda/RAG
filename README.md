@@ -6,7 +6,7 @@
 
 ## 当前进度
 
-Phase 7：Dense、Hybrid（BM25 + Dense）与 Hybrid + Reranker 检索 Benchmark。
+Phase 8：根据 Phase 4–7 的实验结果确定最终研究技术栈，记录依据与限制。
 
 已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比、两个 LLM 的 40 份真实回答，以及三策略固定向量检索对比和 600 个真实 Reranker 分数。LLM 辅助评分尚未经独立人工评审；检索指标来自固定证据标注，不代表最终问答正确率。原始 PDF、处理文本、向量、模型和索引缓存不进入 Git，实验结果进入 Git。
 
@@ -90,7 +90,17 @@ uv run python scripts/validate_retrieval_results.py --verify-inputs
 uv run python scripts/run_retrieval_benchmark.py
 ```
 
-已经完成的实验默认复用。尚未进入 Phase 8 的最终技术栈决策，未实现最终 RAG Pipeline 或 Web UI。
+已经完成的实验默认复用。
+
+最终研究选型为 BGE-M3 + FAISS HNSW + Hybrid/RRF + BGE-Reranker-v2-m3 + DeepSeek Flash；本地 Ollama Qwen 保留为显式选择方案，不自动回退。该配置质量优先，CPU 重排单题约 31 秒，不承诺低延迟；组件选定不代表组合已经验证。完整依据、未验证边界和 Phase 9 验收要求见 [技术栈决策](docs/stack_selection.md)。
+
+`configs/final_stack.json` 冻结组件选择与既有配置/结果的内容指纹，是选型记录而非运行管线。离线校验不需要密钥、模型或处理后语料：
+
+```powershell
+uv run python scripts/validate_stack_selection.py
+```
+
+Phase 8 未调用模型或付费 API，未改动旧实验数据；尚未实现 Phase 9 的完整 RAG Pipeline/Citation 或 Web UI。
 
 ## 当前目录
 
