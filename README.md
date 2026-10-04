@@ -6,9 +6,9 @@
 
 ## 当前进度
 
-Phase 4：三模型 Embedding 检索 Benchmark。
+Phase 5：FAISS 与 Chroma 向量存储 Benchmark。
 
-已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark，以及 BGE-M3、text2vec-large-chinese、m3e-base 三模型实测。BGE-M3 在当前跨语言任务中领先，被选为 Phase 5 的固定 Embedding。原始 PDF、处理文本和向量缓存不进入 Git，实验结果进入 Git。
+已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测，以及固定 BGE-M3 向量的 FAISS/Chroma 对比。向量存储实验包含三种规模、18 次建库、延迟原始样本、Metadata 过滤及跨进程重载验证。原始 PDF、处理文本、向量和索引缓存不进入 Git，实验结果进入 Git。
 
 ## 环境要求
 
@@ -20,7 +20,7 @@ Phase 4：三模型 Embedding 检索 Benchmark。
 ## 初始化
 
 ```powershell
-uv sync
+uv sync --locked
 ```
 
 `uv` 会创建本地 `.venv`，安装当前项目及开发依赖，并严格按照 `uv.lock` 解析环境。
@@ -53,6 +53,13 @@ Benchmark 的设计、字段与证据相关性等级见 [Benchmark 文档](docs/
 
 Embedding 控制变量、指标定义、运行命令和真实结果见 [Embedding 实验](docs/embedding_benchmark.md)。
 
+FAISS/Chroma 的控制变量、建库速度、延迟、Metadata 与规模比较见 [向量存储实验](docs/vectorstore_benchmark.md)。已有 Embedding 缓存时运行：
+
+```powershell
+uv run python scripts/run_vectorstore_benchmark.py
+uv run python scripts/plot_vectorstore_results.py
+```
+
 ## 当前目录
 
 ```text
@@ -62,6 +69,7 @@ Embedding 控制变量、指标定义、运行命令和真实结果见 [Embeddin
 ├── data/benchmark/    # 问题、标准答案与 Ground Truth Evidence
 ├── data/manifest/     # 报告清单与 JSON Schema
 ├── docs/              # 阶段文档
+├── results/           # 已提交的真实实验结果与图表
 ├── scripts/           # 下载、处理与数据校验入口
 ├── tests/             # 自动化测试
 ├── .env.example       # 环境变量模板（不存放真实密钥）

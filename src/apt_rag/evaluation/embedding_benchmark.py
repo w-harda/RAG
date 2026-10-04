@@ -15,7 +15,7 @@ from typing import Any
 import numpy as np
 from numpy.typing import NDArray
 
-from apt_rag.embedding import EmbeddingProvider, SentenceTransformerProvider
+from apt_rag.embedding import EmbeddingProvider
 from apt_rag.evaluation.retrieval import evaluate_rankings
 
 
@@ -184,7 +184,9 @@ def _save_embeddings(
 def build_provider(
     spec: EmbeddingModelSpec,
     config: EmbeddingBenchmarkConfig,
-) -> SentenceTransformerProvider:
+) -> EmbeddingProvider:
+    from apt_rag.embedding.sentence_transformer import SentenceTransformerProvider
+
     return SentenceTransformerProvider(
         spec.model_name,
         revision=spec.revision,

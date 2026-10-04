@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "embedding_config": "configs/embedding_benchmark.json",
+  "embedding_model_id": "bge-m3",
+  "results_directory": "results/phase5",
+  "storage_directory": "data/processed/vectorstores",
+  "backends": ["faiss", "chroma"],
+  "sizes": [250, 750, 1297],
+  "top_k": 10,
+  "build_repeats": 3,
+  "query_repeats": 10,
+  "warmup_rounds": 1,
+  "seed": 42,
+  "filter": {"vendor": "Mandiant"},
+  "hnsw": {"max_neighbors": 16, "ef_construction": 100, "ef_search": 100, "num_threads": 1},
+  "chroma": {"batch_size": 100, "sync_threshold": 100}
+}
