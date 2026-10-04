@@ -6,7 +6,7 @@
 
 ## 当前进度
 
-Phase 10：完成四组生成消融的工程运行与 AI 辅助比较；独立人工质量复核仍待完成。
+Phase 11：提供 Streamlit 聊天式前端，直接复用 Phase 9 管线；Phase 10 的独立人工质量复核仍待完成。
 
 已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比、两个 LLM 的 40 份真实回答，以及三策略固定向量检索对比和 600 个真实 Reranker 分数。LLM 辅助评分尚未经独立人工评审；检索指标来自固定证据标注，不代表最终问答正确率。原始 PDF、处理文本、向量、模型和索引缓存不进入 Git，实验结果进入 Git。
 
@@ -128,13 +128,26 @@ uv run python scripts/run_ablation_benchmark.py --prepare-only
 uv run python scripts/run_ablation_benchmark.py --allow-cloud
 ```
 
-本次 AI 辅助完整性评分为 Pure 50.00%、Dense 93.33%、Hybrid 93.33%、Hybrid + Reranker 100.00%；评审已发现范围和限定词误判，最终研究结论仍需独立人工复核。下一阶段 Web UI 不自动进入。
+本次 AI 辅助完整性评分为 Pure 50.00%、Dense 93.33%、Hybrid 93.33%、Hybrid + Reranker 100.00%；评审已发现范围和限定词误判，最终研究结论仍需独立人工复核。
+
+Phase 11 使用 Streamlit 原生聊天组件，提供左侧临时会话/模型选择、中间 Markdown 消息、底部聊天输入，以及回答下方的真实标题、页码、章节、URL 和 Chunk ID。默认本地 Qwen，DeepSeek 必须手动勾选云端授权；未授权不调用云端，不自动重试或回退。
+
+```powershell
+uv sync --locked
+uv run streamlit run app/streamlit_app.py
+# 前端交互测试使用假后端，不调用付费 API。
+uv run pytest tests/test_streamlit_app.py -q
+```
+
+打开 `http://127.0.0.1:8501`。本地输入、模型与服务准备方式、授权/资源边界及验证细节见 [Streamlit 前端说明](docs/streamlit_app.md)。聊天历史只用于展示，后端每轮独立检索，不支持省略指代的多轮记忆。Phase 9 核心管线和旧实验记录保持不变；本阶段不进入 Phase 12。
 
 ## 当前目录
 
 ```text
 .
 ├── src/apt_rag/       # Python 包
+├── app/               # Streamlit 聊天展示层
+├── .streamlit/        # 本机服务与页面主题配置
 ├── configs/           # 可复现实验配置
 ├── data/benchmark/    # 问题、标准答案与 Ground Truth Evidence
 ├── data/manifest/     # 报告清单与 JSON Schema
