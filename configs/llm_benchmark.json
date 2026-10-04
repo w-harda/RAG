@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "benchmark_path": "data/benchmark/apt_qa_v1.json",
+  "manifest_path": "data/manifest/reports.json",
+  "chunks_directory": "data/processed/chunks",
+  "inputs_path": "data/processed/llm_benchmark/inputs.json",
+  "results_directory": "results/phase6",
+  "prompt_path": "configs/llm_benchmark_prompt.json",
+  "context_mode": "ground_truth_evidence",
+  "temperature": 0,
+  "max_output_tokens": 768,
+  "timeout_seconds": 600,
+  "providers": [
+    {
+      "id": "ollama-qwen",
+      "kind": "ollama",
+      "model": "qwen3.5:4b",
+      "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "host_env": "OLLAMA_HOST",
+      "default_host": "http://localhost:11434",
+      "num_ctx": 8192,
+      "seed": 42,
+      "keep_alive": "10m"
+    },
+    {
+      "id": "deepseek-flash",
+      "kind": "deepseek",
+      "model": "deepseek-flash",
+      "documented_version": "DeepSeek-V4.1-Flash",
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "pricing": {
+        "currency": "USD",
+        "checked_on": "2026-10-04",
+        "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "cache_hit_per_million": 0.006,
+        "cache_miss_per_million": 0.3,
+        "output_per_million": 1.2,
+        "note": "采用峰值单价作为保守估算；非实际账单，非高峰时段通常更低。"
+      }
+    }
+  ]
+}

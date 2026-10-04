@@ -1,0 +1,443 @@
+{
+  "controls": {
+    "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+    "benchmark_id": "apt-qa-v1.1",
+    "context_mode": "ground_truth_evidence",
+    "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+    "max_output_tokens": 768,
+    "prompt_fingerprint": "813ecb4fbf9b02d64e53dd4e7600095f81821f06c2678e06fdee89d5f7b74b80",
+    "question_count": 20,
+    "stream": false,
+    "temperature": 0,
+    "thinking": false
+  },
+  "inputs": [
+    {
+      "category": "background",
+      "messages_sha256": "dc62300a8dd0116cb2e2318c0fdef0f12668c435baf9bd51e00a99ff2bc7b2bf",
+      "question_id": "q001",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt44-2024-p0004-c000",
+          "document_title": "APT44: Unearthing Sandworm",
+          "label": "S1",
+          "page": 4,
+          "report_id": "mandiant-apt44-2024",
+          "section": "Overview of APT44",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+          "text_sha256": "1f4ff56f4ea0ebbf055971e3f967775368e904f286d0ed6010c89d8ee4d3ebbd",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "background",
+      "messages_sha256": "f34ae2bb79df8626fdb748c7bb6f1dbf826fcd679472389c8f1bea0843a98761",
+      "question_id": "q002",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt42-2022-p0002-c000",
+          "document_title": "APT42: Crooked Charms, Cons, and Compromises",
+          "label": "S1",
+          "page": 2,
+          "report_id": "mandiant-apt42-2022",
+          "section": "Executive Summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt42-charms-cons-compromises",
+          "text_sha256": "d93bd346963ce3d412904891fd78733263e169fc5a537e1b9b5ea40d81524d61",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "background",
+      "messages_sha256": "0024fa98aabd6729ae07ffbb8deb2c11a8806c2b85b9908c1aefabf140cf22db",
+      "question_id": "q003",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt41-2019-p0003-c000",
+          "document_title": "APT41: A Dual Espionage and Cyber Crime Operation",
+          "label": "S1",
+          "page": 3,
+          "report_id": "mandiant-apt41-2019",
+          "section": "Executive Summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-dual-espionage-and-cyber-crime-operation",
+          "text_sha256": "9e69f777a6fedee677fad52cd7d07ee625a3e6ca749d909580924eba4b186394",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "background",
+      "messages_sha256": "f4341e59f6ba4722a80152ccd3506ee497439c38aa6d6dad020ec6411c318496",
+      "question_id": "q004",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt38-2018-p0002-c000",
+          "document_title": "APT38: Un-usual Suspects",
+          "label": "S1",
+          "page": 2,
+          "report_id": "mandiant-apt38-2018",
+          "section": "executive summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt38-details-on-new-north-korean-regime-backed-threat-group/",
+          "text_sha256": "eb54dff4a557d17a01a15cc0722c37c7f53a44b27dd164561d78249e4e19ba33",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "background",
+      "messages_sha256": "78833b613c0315c097557f38470ae554d6c973eb3be95f20f8ab10cc34fc05b0",
+      "question_id": "q005",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt1-2013-p0005-c000",
+          "document_title": "APT1: Exposing One of China's Cyber Espionage Units",
+          "label": "S1",
+          "page": 5,
+          "report_id": "mandiant-apt1-2013",
+          "section": "KEY FINDINGS",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/mandiant-exposes-apt1-chinas-cyber-espionage-units",
+          "text_sha256": "1c7b358ffbe78dbbc7df6ea85db31d2be32cb87943a40e2bad7ffd1e17dab580",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "ttp",
+      "messages_sha256": "787eace48f22016e5d4ef4ed592aa75a218ff4433b46f1c4f10f5092f096dcb8",
+      "question_id": "q006",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa24-038a-p0003-c000",
+          "document_title": "PRC State-Sponsored Actors Compromise and Maintain Persistent Access to U.S. Critical Infrastructure",
+          "label": "S1",
+          "page": 3,
+          "report_id": "cisa-aa24-038a",
+          "section": "SUMMARY",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a",
+          "text_sha256": "e18e49b4b0c157c37a8b7faf9328f5a97ab7a85a763fb65b5db82cec4525932b",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "ttp",
+      "messages_sha256": "8ad94b01f22aee097fc0a42cc098e43424bf1dd576b7069e572fb76775089218",
+      "question_id": "q007",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa21-116a-p0002-c000",
+          "document_title": "Russian Foreign Intelligence Service (SVR) Cyber Operations: Trends and Best Practices for Network Defenders",
+          "label": "S1",
+          "page": 2,
+          "report_id": "cisa-aa21-116a",
+          "section": "SVR CYBER OPERATIONS TACTICS, TECHNIQUES, AND PROCEDURES",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-116a",
+          "text_sha256": "4aedf1d6c8410af9ecbe46d139aaa2bbc9a6ee9a041a867199bca89128149065",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "ttp",
+      "messages_sha256": "5d5ef2648beb2e223980d94985ca5f8253a302bae4afb26d1da626dd3d6b6287",
+      "question_id": "q008",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa21-200a-p0003-c001",
+          "document_title": "Tactics, Techniques, and Procedures of Indicted APT40 Actors Associated with China's MSS Hainan State Security Department",
+          "label": "S1",
+          "page": 3,
+          "report_id": "cisa-aa21-200a",
+          "section": "TECHNICAL DETAILS",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-200a",
+          "text_sha256": "b367b48751d4f4e63e8133bb7e4d336e84b29f09c6e366cec6f426cf305f6d83",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "ttp",
+      "messages_sha256": "8345dd78d95387d6e56e58ad62dbaf1f657d6323dee78be579e193f0b44b98d8",
+      "question_id": "q009",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt42-2022-p0003-c001",
+          "document_title": "APT42: Crooked Charms, Cons, and Compromises",
+          "label": "S1",
+          "page": 3,
+          "report_id": "mandiant-apt42-2022",
+          "section": "Overview",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt42-charms-cons-compromises",
+          "text_sha256": "8c37acd1a186cca2264b0fe136bacc31604025bafc8cc7369a3ed37ca2b476fd",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "ttp",
+      "messages_sha256": "065061050ccac06544a26942cab33e7db6849c1b16fe6987e4870eac58a14632",
+      "question_id": "q010",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt44-2024-p0007-c000",
+          "document_title": "APT44: Unearthing Sandworm",
+          "label": "S1",
+          "page": 7,
+          "report_id": "mandiant-apt44-2024",
+          "section": "A Highly Adaptive Adversary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+          "text_sha256": "b32fa22132fbf1df1702ca357706cb2b37b88d22478b263cc4a509864e9f34c9",
+          "vendor": "Mandiant"
+        },
+        {
+          "chunk_id": "mandiant-apt44-2024-p0008-c000",
+          "document_title": "APT44: Unearthing Sandworm",
+          "label": "S2",
+          "page": 8,
+          "report_id": "mandiant-apt44-2024",
+          "section": "A Highly Adaptive Adversary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+          "text_sha256": "9a93673104ab90a23cee791a2705246791d424197ced85a8465f09252fa3acb7",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "attack_technique",
+      "messages_sha256": "96fce718366336222f7babeaabf8a07ae04c4852e3c09cbdee96ec7a7c66cab3",
+      "question_id": "q011",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-347a-p0001-c001",
+          "document_title": "Russian Foreign Intelligence Service (SVR) Exploiting JetBrains TeamCity CVE Globally",
+          "label": "S1",
+          "page": 1,
+          "report_id": "cisa-aa23-347a",
+          "section": "SUMMARY",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a",
+          "text_sha256": "dc2e7a53db5ba2db010abad1828db6f79031e24d0807ae62c0717f49a8cde592",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-347a-p0003-c000",
+          "document_title": "Russian Foreign Intelligence Service (SVR) Exploiting JetBrains TeamCity CVE Globally",
+          "label": "S2",
+          "page": 3,
+          "report_id": "cisa-aa23-347a",
+          "section": "THREAT OVERVIEW",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a",
+          "text_sha256": "d3c0815cfba9cea5600d6285b2c8b9ff0e0aa062bcc94e465c24675b61458e47",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "attack_technique",
+      "messages_sha256": "394fa3605c4ac63332e347d096c81a6559d596ba39c0826f0383c19a275116be",
+      "question_id": "q012",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-108-p0003-c001",
+          "document_title": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+          "label": "S1",
+          "page": 3,
+          "report_id": "cisa-aa23-108",
+          "section": "Overview and Context",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108",
+          "text_sha256": "de0bd54560dd17558ab0fb8f3b7c435c5767e4a5ed63e5c44b85026d14c2957d",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-108-p0003-c002",
+          "document_title": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+          "label": "S2",
+          "page": 3,
+          "report_id": "cisa-aa23-108",
+          "section": "Malware Deployment",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108",
+          "text_sha256": "37118abc5a4b29427d6e8c0c3f7dd7ee541510818f226953339c467d0bb9cbfb",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-108-p0003-c000",
+          "document_title": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+          "label": "S3",
+          "page": 3,
+          "report_id": "cisa-aa23-108",
+          "section": "Overview and Context",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108",
+          "text_sha256": "df84a86985af8053cd828a78e36244cd7c57a613904ef0c2011b7e873b6cf340",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "attack_technique",
+      "messages_sha256": "d928378ac51499e16911250a3192a2ad96ab0c157e1d83490d9caf3c22d33f36",
+      "question_id": "q013",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-129a-p0001-c001",
+          "document_title": "Hunting Russian Intelligence Snake Malware",
+          "label": "S1",
+          "page": 1,
+          "report_id": "cisa-aa23-129a",
+          "section": "SUMMARY",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+          "text_sha256": "89ecfac216855b2323d948a154e99dcf814644a9ca68ff1c4cebe4208266747d",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "attack_technique",
+      "messages_sha256": "cc1da935c30aa8fa7e63ae63addb3d3edfe76c618737cf22f9e24368d7742e85",
+      "question_id": "q014",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt38-2018-p0014-c000",
+          "document_title": "APT38: Un-usual Suspects",
+          "label": "S1",
+          "page": 14,
+          "report_id": "mandiant-apt38-2018",
+          "section": "Tactics, Techniques and",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt38-details-on-new-north-korean-regime-backed-threat-group/",
+          "text_sha256": "6d18e25bf6bad1fd432af95c25c37d0665f4d8e0d1c7e4f5712fed1b2d247435",
+          "vendor": "Mandiant"
+        },
+        {
+          "chunk_id": "mandiant-apt38-2018-p0015-c001",
+          "document_title": "APT38: Un-usual Suspects",
+          "label": "S2",
+          "page": 15,
+          "report_id": "mandiant-apt38-2018",
+          "section": "Tactics, Techniques and",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt38-details-on-new-north-korean-regime-backed-threat-group/",
+          "text_sha256": "ddb693d878ad62fd3af15440f3d2bb5288bcdda6da545a05469706a7ed7efd84",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "attack_technique",
+      "messages_sha256": "a79b928a6594d15773e3b0bf6b0d05942d0363a70a2e5e9268511e6354a864f9",
+      "question_id": "q015",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt41-2019-p0003-c000",
+          "document_title": "APT41: A Dual Espionage and Cyber Crime Operation",
+          "label": "S1",
+          "page": 3,
+          "report_id": "mandiant-apt41-2019",
+          "section": "Executive Summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-dual-espionage-and-cyber-crime-operation",
+          "text_sha256": "9e69f777a6fedee677fad52cd7d07ee625a3e6ca749d909580924eba4b186394",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "ioc",
+      "messages_sha256": "73df4980dfa1cba1f063b22575265c14acfff0cc548afe5cd21e32ae83681c83",
+      "question_id": "q016",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt41-2019-p0023-c001",
+          "document_title": "APT41: A Dual Espionage and Cyber Crime Operation",
+          "label": "S1",
+          "page": 23,
+          "report_id": "mandiant-apt41-2019",
+          "section": "March 2017",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-dual-espionage-and-cyber-crime-operation",
+          "text_sha256": "a323e4c4cc7fd4a8db35f28562d4cdfd6df807012f31f15e7229b21fde103a51",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "ioc",
+      "messages_sha256": "ae4cd463539682d1d736c2c81dfef3ba7e68da1096aa8bb3ef33bb7fab1eb083",
+      "question_id": "q017",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt28-2014-p0019-c002",
+          "document_title": "APT28: A Window into Russia's Cyber Espionage Operations?",
+          "label": "S1",
+          "page": 19,
+          "report_id": "mandiant-apt28-2014",
+          "section": "DEVELOPERS",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations",
+          "text_sha256": "c3e7ff52f843a729fc8adf15c4d9d66a7edb893885e7dff668b6f377634f1286",
+          "vendor": "Mandiant"
+        }
+      ]
+    },
+    {
+      "category": "ioc",
+      "messages_sha256": "b9ef8b6ab9be742567a446ceff93d0697a01307eae1d23e8e1159832f4fe11c3",
+      "question_id": "q018",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-129a-p0038-c002",
+          "document_title": "Hunting Russian Intelligence Snake Malware",
+          "label": "S1",
+          "page": 38,
+          "report_id": "cisa-aa23-129a",
+          "section": "IV: 00 D2 10 B7 60 5E DA 0F",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+          "text_sha256": "34b6c01f8a46f78de9cd544f8816bed55a3867be7cd6d7267b423b1066768bd4",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-129a-p0011-c000",
+          "document_title": "Hunting Russian Intelligence Snake Malware",
+          "label": "S2",
+          "page": 11,
+          "report_id": "cisa-aa23-129a",
+          "section": "13 MITRE ATT&CK IDs: [T1027], [T1547.006], [T1569.002], [T1574.002]",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+          "text_sha256": "3344c016022f2af2112bbb1f5715d948ff8cd4cf709b5ee82720386127168818",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "ioc",
+      "messages_sha256": "406389eb68eada91265adf3ab765426afa088a231d4b0e7e7331eb60cc78507c",
+      "question_id": "q019",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa24-249a-p0021-c000",
+          "document_title": "Russian Military Cyber Actors Target US and Global Critical Infrastructure",
+          "label": "S1",
+          "page": 21,
+          "report_id": "cisa-aa24-249a",
+          "section": "Overview",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a",
+          "text_sha256": "2c351fe0fcf4985cf314dbe2fa346fd7f1785de6880a6f658dadbe852696d52b",
+          "vendor": "CISA"
+        }
+      ]
+    },
+    {
+      "category": "ioc",
+      "messages_sha256": "e95785e0af7cec5a7ba468e652823044b5e5609beeba08666d2f14985f9e6195",
+      "question_id": "q020",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa21-200a-p0006-c001",
+          "document_title": "Tactics, Techniques, and Procedures of Indicted APT40 Actors Associated with China's MSS Hainan State Security Department",
+          "label": "S1",
+          "page": 6,
+          "report_id": "cisa-aa21-200a",
+          "section": "APPENDIX: APT40 INDICATORS OF COMPROMISE",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-200a",
+          "text_sha256": "d7c25fcd121fca05b731154ba54c5706cf05d2c073fb3ab976cb0929d6517c47",
+          "vendor": "CISA"
+        }
+      ]
+    }
+  ],
+  "inputs_fingerprint": "2aa6703f6f3d548f067f1b133db64da3d6f74ac5e15ae83539fe36b26056df12"
+}

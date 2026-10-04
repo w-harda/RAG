@@ -1,0 +1,987 @@
+{
+  "answers": [
+    {
+      "answer": "APT44 通常还被称为 Sandworm、FROZENBARENTS 和 Seashell Blizzard [S1]。它被归属于俄罗斯的 Unit 74455，即俄罗斯联邦武装力量总参谋部总局（GU，通称 GRU）下属的 Main Centre for Special Technologies（GTsST）[S1]。其行动范围特点在于：与多数倾向于专精某一特定任务的俄罗斯国家支持威胁组织不同，APT44 是一个高度动态的威胁行为体，活跃于网络间谍、攻击和影响行动的全谱系 [S1]；这些组成部分构成 GRU 信息作战部队（VIO）通常开展的特种活动全范围，报告评估 APT44 极有可能隶属于该部队 [S1]。",
+      "answer_sha256": "920df5ce55ae931883a028a6d0f567e441d3b15cf4db08bdf6d28680e5b25d26",
+      "cache_hit_tokens": 0,
+      "category": "background",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00032639999999999996,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:49.770630+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.1311120999744162,
+      "load_seconds": null,
+      "messages_sha256": "dc62300a8dd0116cb2e2318c0fdef0f12668c435baf9bd51e00a99ff2bc7b2bf",
+      "output_tokens": 153,
+      "prompt_tokens": 476,
+      "question_id": "q001",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt44-2024-p0004-c000",
+          "document_title": "APT44: Unearthing Sandworm",
+          "label": "S1",
+          "page": 4,
+          "report_id": "mandiant-apt44-2024",
+          "section": "Overview of APT44",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+          "text_sha256": "1f4ff56f4ea0ebbf055971e3f967775368e904f286d0ed6010c89d8ee4d3ebbd",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据报告片段，Mandiant 对 APT42 的国家背景、主要任务及可能服务机构的判断如下：\n\n- Mandiant 以高置信度评估 APT42 是伊朗国家支持的网络间谍组织 [S1]。\n- Mandiant 判断 APT42 的任务是针对对伊朗政府具有战略利益的个人和组织，开展信息收集与监视行动 [S1]。\n- Mandiant 以中等置信度估计 APT42 代表 Islamic Revolutionary Guard Corps (IRGC) Intelligence Organization (IRGC-IO) 运作 [S1]。\n- 上述中等置信度估计的依据是与该组织行动授权和优先事项相吻合的目标选择模式 [S1]。\n\n证据不足的部分：报告片段未说明 Mandiant 判断 APT42 为“伊朗国家支持”所依据的具体归因证据或技术指标，也未提供除目标选择模式之外支持 IRGC-IO 关联的其他证据 [S1]。",
+      "answer_sha256": "e08dd574e5c740e249172f56c69b8e6cfb26c05bc8b0bb8796d4b3af310c9147",
+      "cache_hit_tokens": 0,
+      "category": "background",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00036209999999999997,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:51.461623+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.6881205000099726,
+      "load_seconds": null,
+      "messages_sha256": "f34ae2bb79df8626fdb748c7bb6f1dbf826fcd679472389c8f1bea0843a98761",
+      "output_tokens": 194,
+      "prompt_tokens": 431,
+      "question_id": "q002",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt42-2022-p0002-c000",
+          "document_title": "APT42: Crooked Charms, Cons, and Compromises",
+          "label": "S1",
+          "page": 2,
+          "report_id": "mandiant-apt42-2022",
+          "section": "Executive Summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt42-charms-cons-compromises",
+          "text_sha256": "d93bd346963ce3d412904891fd78733263e169fc5a537e1b9b5ea40d81524d61",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "APT41 的两类主要行动动机分别是：具有中国国家背景的间谍活动，以及出于个人经济利益、以个人获利为目的的金融动机活动 [S1]。\n\n对应活动如下：\n\n- 间谍活动：针对 healthcare、high-tech、telecommunications 行业，建立并维持战略访问权限，并在 2015 年中期之前窃取知识产权 [S1]。\n- 监控/追踪个人相关迹象：针对 higher education、travel services、news/media 公司的行动，显示该组织也可能追踪个人并进行 surveillance [S1]。\n- 金融动机入侵：尤其针对 video game 行业，包括窃取 source code 和 digital certificates、virtual currency manipulation，以及尝试部署 ransomware [S1]。\n- 软件供应链攻击：执行多起 software supply chain compromises，获取软件公司访问权限，在分发更新前向合法文件注入恶意代码 [S1]。\n\n置信度方面，报告称 FireEye Threat Intelligence 以 high confidence 评估 APT41 是中国国家支持的间谍组织，同时也从事出于个人获利的金融动机活动 [S1]。报告未提供企图金额或实际金额信息，证据不足。",
+      "answer_sha256": "3d47a1298bbc3d88977025cd4792267c361a85b056e3b56f216d3e6890c6a65b",
+      "cache_hit_tokens": 0,
+      "category": "background",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00040260000000000003,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:53.257558+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.794002900016494,
+      "load_seconds": null,
+      "messages_sha256": "0024fa98aabd6729ae07ffbb8deb2c11a8806c2b85b9908c1aefabf140cf22db",
+      "output_tokens": 235,
+      "prompt_tokens": 402,
+      "question_id": "q003",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt41-2019-p0003-c000",
+          "document_title": "APT41: A Dual Espionage and Cyber Crime Operation",
+          "label": "S1",
+          "page": 3,
+          "report_id": "mandiant-apt41-2019",
+          "section": "Executive Summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-dual-espionage-and-cyber-crime-operation",
+          "text_sha256": "9e69f777a6fedee677fad52cd7d07ee625a3e6ca749d909580924eba4b186394",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "- 支持背景：APT38 是一个具有经济动机、由朝鲜政权支持的组织 [S1]。  \n- 核心目标：针对金融机构实施破坏性攻击，并实施部分全球最大规模的网络盗窃；其行动并非只是尽快获取访问权限并转账，而被认为更像间谍行动，会在被入侵金融机构内谨慎侦察，并在经济动机目标与了解内部系统之间保持平衡 [S1]。  \n- 公开行动所涉盗窃金额规模：仅基于广泛公开的行动，该组织已企图窃取超过 11 亿美元 [S1]。  \n- 需要区分：证据明确表述的是“attempted to steal more than $1.1 billion”，即企图金额超过 11 亿美元，不是实际已窃取金额 [S1]。  \n- 其他相关事实：APT38 与 TEMP.Hermit 朝鲜网络间谍活动共享恶意软件代码和其他开发资源，但其行动被认为更全球化，并高度专门针对金融部门 [S1]。自至少 2014 年以来，该组织已入侵至少 13 个不同国家的 16 个以上组织，有时同时进行 [S1]。自首次观察到活动以来，其行动变得越来越复杂和具有破坏性 [S1]。",
+      "answer_sha256": "5a9c8852277406422e78f8d6313160dd916a48d49df1653f530fddddd500c29f",
+      "cache_hit_tokens": 0,
+      "category": "background",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0004365,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:55.059865+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.8003535000025295,
+      "load_seconds": null,
+      "messages_sha256": "f4341e59f6ba4722a80152ccd3506ee497439c38aa6d6dad020ec6411c318496",
+      "output_tokens": 254,
+      "prompt_tokens": 439,
+      "question_id": "q004",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt38-2018-p0002-c000",
+          "document_title": "APT38: Un-usual Suspects",
+          "label": "S1",
+          "page": 2,
+          "report_id": "mandiant-apt38-2018",
+          "section": "executive summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt38-details-on-new-north-korean-regime-backed-threat-group/",
+          "text_sha256": "eb54dff4a557d17a01a15cc0722c37c7f53a44b27dd164561d78249e4e19ba33",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "Mandiant 认为 APT1 是中国人民解放军总参谋部（PLA General Staff Department，GSD）第三部第二局（2nd Bureau of the 3rd Department，总参三部二局），其军事单位代号（MUCD）通常称为 Unit 61398（61398部队）[S1]。该单位部分位于上海市浦东新区高桥镇大同路（Datong Road，大同路，Gaoqiaozhen，高桥镇，Pudong New Area，浦东新区，Shanghai，上海）[S1]。",
+      "answer_sha256": "5b17fd09b5b3add7bfecb8b98ad7d65dfa68ee5109ccd59a08a55c916cf69f5b",
+      "cache_hit_tokens": 0,
+      "category": "background",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00029939999999999996,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:56.121142+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.058907700004056,
+      "load_seconds": null,
+      "messages_sha256": "78833b613c0315c097557f38470ae554d6c973eb3be95f20f8ab10cc34fc05b0",
+      "output_tokens": 116,
+      "prompt_tokens": 534,
+      "question_id": "q005",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt1-2013-p0005-c000",
+          "document_title": "APT1: Exposing One of China's Cyber Espionage Units",
+          "label": "S1",
+          "page": 5,
+          "report_id": "mandiant-apt1-2013",
+          "section": "KEY FINDINGS",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/mandiant-exposes-apt1-chinas-cyber-espionage-units",
+          "text_sha256": "1c7b358ffbe78dbbc7df6ea85db31d2be32cb87943a40e2bad7ffd1e17dab580",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "Volt Typhoon 使用 living off the land（LOTL）技术，这是其针对关键基础设施恶意网络活动的标志性手法 [S1]。该组织还依赖有效账户（valid accounts），并结合强运营安全（strong operational security），两者结合使其能够长期未被发现地维持驻留 [S1]。该组织进行广泛的预利用侦察，了解目标组织及其环境，针对受害者环境定制其战术、技术与程序（TTPs），并持续投入资源以维持驻留和长期理解目标环境，即使在初始入侵之后也是如此 [S1]。\n\n报告观察到的最长驻留时间：美国作者机构近期观察到迹象显示，Volt Typhoon 行为者在某些受害者 IT 环境中维持访问和据点至少五年 [S1]。",
+      "answer_sha256": "db08bee62647c7d3441356cfdc7e0ca5471a57f156023342fe2311ee08257b54",
+      "cache_hit_tokens": 0,
+      "category": "ttp",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00031979999999999997,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:57.652376+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.5289839000324719,
+      "load_seconds": null,
+      "messages_sha256": "787eace48f22016e5d4ef4ed592aa75a218ff4433b46f1c4f10f5092f096dcb8",
+      "output_tokens": 155,
+      "prompt_tokens": 446,
+      "question_id": "q006",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa24-038a-p0003-c000",
+          "document_title": "PRC State-Sponsored Actors Compromise and Maintain Persistent Access to U.S. Critical Infrastructure",
+          "label": "S1",
+          "page": 3,
+          "report_id": "cisa-aa24-038a",
+          "section": "SUMMARY",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a",
+          "text_sha256": "e18e49b4b0c157c37a8b7faf9328f5a97ab7a85a763fb65b5db82cec4525932b",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据所给证据，可确认的要点如下：\n\n- 在一次 2018 年大型网络入侵中，SVR 网络行为者使用密码喷洒（password spraying）来识别与一个管理员账户相关的弱密码 [S1]。\n- 行为者以“low and slow”方式实施密码喷洒，即在不频繁的时间间隔内尝试少量密码，可能是为了避免被发现 [S1]。\n- 该密码喷洒使用了大量 IP 地址，这些地址全部位于与受害者相同的国家，包括与住宅、商业、移动以及 The Onion Router (TOR) 地址相关的 IP [S1]。\n\n证据未提供的内容：未提供具体尝试的密码数量、具体时间间隔、持续时间、目标账户数量或具体工具名称，因此无法进一步量化“低速慢速”的实施细节 [S1]。",
+      "answer_sha256": "6a0a93bb20158657df0afc4e6fdd35e64c0f9e88ad9fdaeb2f7c457456a36ccd",
+      "cache_hit_tokens": 0,
+      "category": "ttp",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00034079999999999994,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:25:58.909416+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.2546160000492819,
+      "load_seconds": null,
+      "messages_sha256": "8ad94b01f22aee097fc0a42cc098e43424bf1dd576b7069e572fb76775089218",
+      "output_tokens": 169,
+      "prompt_tokens": 460,
+      "question_id": "q007",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa21-116a-p0002-c000",
+          "document_title": "Russian Foreign Intelligence Service (SVR) Cyber Operations: Trends and Best Practices for Network Defenders",
+          "label": "S1",
+          "page": 2,
+          "report_id": "cisa-aa21-116a",
+          "section": "SVR CYBER OPERATIONS TACTICS, TECHNIQUES, AND PROCEDURES",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-116a",
+          "text_sha256": "4aedf1d6c8410af9ecbe46d139aaa2bbc9a6ee9a041a867199bca89128149065",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据所给证据，可确认的与 APT40 隐藏数据外传和命令控制相关的手段如下：\n\n- 使用 Dropbox 账户，将上传窃取数据的行为伪装成对 Dropbox 服务的合法使用，涉及 Defense Evasion [TA0005]、Command and Control [TA0011] 和 Collection [TA0009] [S1]。\n- 使用协议隧道 Protocol tunneling [T1572] 和多跳代理 multi-hop proxies [T1090.003]，其中包括使用 Tor [S0183] [S1]。\n- 使用域名仿冒 domain typosquatting 构建 C2 基础设施，涉及 Exfiltration [TA0010] 和 [T1583.001] [S1]。\n- 归档 Archive [T1560]、加密 encrypt [T1532]，并将收集的数据暂存于本地 [T1074.001] 和远程 [T1074.002] 以备外传 [S1]。\n- 通过 C2 通道外传 Exfiltration over C2 channel [T1041] [S1]。\n\n关于“云服务、代理或隧道及数据暂存手段”的具体范围，证据明确提到的云服务为 Dropbox [S1]；代理或隧道包括协议隧道、多跳代理和 Tor [S1]；数据暂存手段包括本地暂存 [T1074.001] 和远程暂存 [T1074.002]，并配合归档 [T1560] 与加密 [T1532] [S1]。证据未提供除 Dropbox 之外的其他云服务名称，也未提供具体代理服务器、隧道工具或暂存位置的细节，因此这些方面信息不足 [S1]。",
+      "answer_sha256": "cab8aa663d7e57f083c5221596ec4e3315b9ca3ff607a59ce3a92fb22e8b73da",
+      "cache_hit_tokens": 0,
+      "category": "ttp",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0005625,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:00.908302+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.9968178999843076,
+      "load_seconds": null,
+      "messages_sha256": "5d5ef2648beb2e223980d94985ca5f8253a302bae4afb26d1da626dd3d6b6287",
+      "output_tokens": 363,
+      "prompt_tokens": 423,
+      "question_id": "q008",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa21-200a-p0003-c001",
+          "document_title": "Tactics, Techniques, and Procedures of Indicted APT40 Actors Associated with China's MSS Hainan State Security Department",
+          "label": "S1",
+          "page": 3,
+          "report_id": "cisa-aa21-200a",
+          "section": "TECHNICAL DETAILS",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-200a",
+          "text_sha256": "b367b48751d4f4e63e8133bb7e4d336e84b29f09c6e366cec6f426cf305f6d83",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据现有证据，可以确认以下几点：\n\n- APT42 的鱼叉式网络钓鱼活动“增强了对建立信任与融洽关系的强调”，并且是在尝试窃取目标凭据之前这样做 [S1]。\n- APT42 还使用凭据收集来收集多因素认证（MFA）代码，以绕过认证方法 [S1]。\n- APT42 使用已泄露的凭据，进一步试图访问雇主、同事和亲属的网络、设备与账户 [S1]。\n\n关于“为何强调先建立信任”的动机，证据只说明其发生在窃取凭据之前，并强调建立信任与融洽关系，未进一步给出原因解释，因此无法据此推断更具体的动机 [S1]。",
+      "answer_sha256": "3d759fe6e40c54371357fcc57d8d6f9811b7d73a4f4b517cc8db02d8ddc6615f",
+      "cache_hit_tokens": 0,
+      "category": "ttp",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0003147,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:02.158137+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.2473066000384279,
+      "load_seconds": null,
+      "messages_sha256": "8345dd78d95387d6e56e58ad62dbaf1f657d6323dee78be579e193f0b44b98d8",
+      "output_tokens": 151,
+      "prompt_tokens": 445,
+      "question_id": "q009",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt42-2022-p0003-c001",
+          "document_title": "APT42: Crooked Charms, Cons, and Compromises",
+          "label": "S1",
+          "page": 3,
+          "report_id": "mandiant-apt42-2022",
+          "section": "Overview",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt42-charms-cons-compromises",
+          "text_sha256": "8c37acd1a186cca2264b0fe136bacc31604025bafc8cc7369a3ed37ca2b476fd",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "APT44 从初始访问到入侵后活动常采用的方法如下：\n\n**初始访问**\n- 使用多样化初始访问方法，包括钓鱼、凭据收集、已知漏洞利用，以及针对性供应链攻击 [S1]。\n- 常利用非选择性的初始访问向量，先获得对目标群体的广泛访问，再筛选出感兴趣受害者进行后续活动 [S1]。\n- 频繁通过利用边缘基础设施（如路由器和 VPN 设备）实现初始访问 [S1]。\n- 从网络边界立足点执行多种任务，包括侦察、信息窃取、下游钓鱼和部署擦除器恶意软件 [S1]。\n- 延续 ETERNALPETYA（又名 NotPetya）的做法，持续通过颠覆软件供应链实现初始访问；近期一例中，对某软件开发者的访问导致东欧和中亚关键基础设施网络被下游攻陷，随后向选定受害者部署擦除器恶意软件 [S1]。\n\n**入侵后活动**\n- 进入网络后，常使用 living-off-the-land（LOTL）技术推进访问、建立持久化和外泄信息 [S2]。\n- 采用“low-equity”恶意软件投递方式，优先使用开源或犯罪来源工具，而非自有定制植入物 [S2]。\n- 保持高运营安全水平，持续调整以规避最佳实践防御原则；通常遵循一套 playbook，以扩大行动规模、减少受害者环境中的取证痕迹，并使后渗透活动难以检测 [S2]。\n- 对部署最先进、开发成本可能最高的工具非常谨慎；需要定制恶意软件时，通常部署轻量、可弃用工具，以免其使用或暴露对整体能力造成显著损耗 [S2]。\n- 几乎可以肯定依赖多家俄罗斯公司和犯罪市场来获取并维持其更常使用的攻击能力 [S2]。\n\n**证据不足说明**\n- 上述证据未提供具体 IOC、具体漏洞编号、具体工具名称或具体企图金额/实际金额信息，因此无法据此列出这些细节 [S1][S2]。",
+      "answer_sha256": "e385ea0e51d3a688e8cfce6d87604adf19898e3a44e9806a20937f2efcd6c9f6",
+      "cache_hit_tokens": 0,
+      "category": "ttp",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S2",
+          "S2",
+          "S2",
+          "S2",
+          "S2",
+          "S1",
+          "S2"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0007311,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:04.538995+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 2.3782352000125684,
+      "load_seconds": null,
+      "messages_sha256": "065061050ccac06544a26942cab33e7db6849c1b16fe6987e4870eac58a14632",
+      "output_tokens": 426,
+      "prompt_tokens": 733,
+      "question_id": "q010",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt44-2024-p0007-c000",
+          "document_title": "APT44: Unearthing Sandworm",
+          "label": "S1",
+          "page": 7,
+          "report_id": "mandiant-apt44-2024",
+          "section": "A Highly Adaptive Adversary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+          "text_sha256": "b32fa22132fbf1df1702ca357706cb2b37b88d22478b263cc4a509864e9f34c9",
+          "vendor": "Mandiant"
+        },
+        {
+          "chunk_id": "mandiant-apt44-2024-p0008-c000",
+          "document_title": "APT44: Unearthing Sandworm",
+          "label": "S2",
+          "page": 8,
+          "report_id": "mandiant-apt44-2024",
+          "section": "A Highly Adaptive Adversary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt44-unearthing-sandworm",
+          "text_sha256": "9a93673104ab90a23cee791a2705246791d424197ced85a8465f09252fa3acb7",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "APT29（又称 SVR、the Dukes、CozyBear、NOBELIUM/Midnight Blizzard）大规模利用的是 JetBrains TeamCity 的 CVE-2023-42793，自 2023 年 9 月起针对托管 JetBrains TeamCity 软件的服务器 [S1]。\n\n攻陷构建服务器可能升级为供应链攻击，是因为 TeamCity 软件被软件开发者用于管理和自动化软件编译、构建、测试与发布；一旦该服务器被攻陷，访问权限会让恶意行为者获得该软件开发者的源代码、签名证书，以及破坏软件编译和部署流程的能力，而这种访问权限可被进一步用于实施供应链操作 [S1]。报告还指出，通过利用 CVE-2023-42793 这一软件开发程序相关漏洞，SVR 可能因获得对受害者的访问权限而受益，尤其是可能借此攻陷数十家软件开发者的网络 [S2]。\n\n需要区分的是：报告称 SVR 曾在 2020 年利用此类访问权限攻陷 SolarWinds 及其客户 [S1]；但就本次行动而言，作者机构评估 SVR 尚未利用其对软件开发者的访问权限进入客户网络，且很可能仍处于行动的预备阶段 [S2]。报告未提供企图金额或实际金额信息。",
+      "answer_sha256": "54d27d09cd120ab6aaf1fb78ed65c43c62b7c23cba39beba37884d3587a50081",
+      "cache_hit_tokens": 0,
+      "category": "attack_technique",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S2",
+          "S1",
+          "S2"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0005543999999999999,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:06.262530+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.7208410000312142,
+      "load_seconds": null,
+      "messages_sha256": "96fce718366336222f7babeaabf8a07ae04c4852e3c09cbdee96ec7a7c66cab3",
+      "output_tokens": 267,
+      "prompt_tokens": 780,
+      "question_id": "q011",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-347a-p0001-c001",
+          "document_title": "Russian Foreign Intelligence Service (SVR) Exploiting JetBrains TeamCity CVE Globally",
+          "label": "S1",
+          "page": 1,
+          "report_id": "cisa-aa23-347a",
+          "section": "SUMMARY",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a",
+          "text_sha256": "dc2e7a53db5ba2db010abad1828db6f79031e24d0807ae62c0717f49a8cde592",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-347a-p0003-c000",
+          "document_title": "Russian Foreign Intelligence Service (SVR) Exploiting JetBrains TeamCity CVE Globally",
+          "label": "S2",
+          "page": 3,
+          "report_id": "cisa-aa23-347a",
+          "section": "THREAT OVERVIEW",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-347a",
+          "text_sha256": "d3c0815cfba9cea5600d6285b2c8b9ff0e0aa062bcc94e465c24675b61458e47",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据所给证据，可确认的内容如下：\n\n- APT28 在 2021 年利用基础设施伪装 SNMP 访问，目标包括全球 Cisco 路由器，涉及欧洲少量目标、美国政府机构和约 250 个乌克兰受害者 [S3]。\n- 弱 SNMP community strings（包括默认的 “public”）使 APT28 得以获取路由器信息；APT28 还发送额外 SNMP 命令枚举路由器接口 [S3]。\n- 被入侵路由器被配置为接受 SNMP v2 请求，而 SNMP v2 不支持加密，因此包括 community strings 在内的所有数据均以未加密方式传输 [S3]。\n- APT28 利用了漏洞 CVE-2017-6742（Cisco Bug ID: CSCve54313）[S1][S3]。\n- 该漏洞由 Cisco 于 2017 年 6 月 29 日首次公布，并提供了修补软件；Cisco 发布的公告提供了缓解措施，例如仅允许来自可信主机的 SNMP 访问，或禁用若干 SNMP Management Information Bases (MIBs) [S1]。\n- 对部分目标设备，APT28 行为者使用 SNMP exploit 部署恶意软件，详见 NCSC 的 Jaguar Tooth Malware Analysis Report [S2]。\n\n关于 Jaguar Tooth 随后执行的操作，证据仅显示：\n\n- 该恶意软件获取了更多设备信息，这些信息通过 trivial file transfer protocol (TFTP) 外传，并启用了通过后门的未认证访问 [S2]。\n\n证据不足或无法确认的部分：\n\n- 所给片段没有具体说明 SNMP exploit 与 CVE-2017-6742 之间的直接利用链细节，只分别提到 SNMP exploit 部署恶意软件 [S2] 以及 APT28 利用了 CVE-2017-6742 [S1][S3]。\n- 所给片段没有提供 Jaguar Tooth 除“获取更多设备信息、经 TFTP 外传、启用未认证后门访问”之外的其他后续操作 [S2]。",
+      "answer_sha256": "b5044d684eb3294512d51cdde40ea0700e00a5c05e3f39bba2187d7b4a6cc06c",
+      "cache_hit_tokens": 0,
+      "category": "attack_technique",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S3",
+          "S3",
+          "S3",
+          "S1",
+          "S3",
+          "S1",
+          "S2",
+          "S2",
+          "S2",
+          "S1",
+          "S3",
+          "S2"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.000786,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:08.772340+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 2.5072798000182956,
+      "load_seconds": null,
+      "messages_sha256": "394fa3605c4ac63332e347d096c81a6559d596ba39c0826f0383c19a275116be",
+      "output_tokens": 444,
+      "prompt_tokens": 844,
+      "question_id": "q012",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-108-p0003-c001",
+          "document_title": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+          "label": "S1",
+          "page": 3,
+          "report_id": "cisa-aa23-108",
+          "section": "Overview and Context",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108",
+          "text_sha256": "de0bd54560dd17558ab0fb8f3b7c435c5767e4a5ed63e5c44b85026d14c2957d",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-108-p0003-c002",
+          "document_title": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+          "label": "S2",
+          "page": 3,
+          "report_id": "cisa-aa23-108",
+          "section": "Malware Deployment",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108",
+          "text_sha256": "37118abc5a4b29427d6e8c0c3f7dd7ee541510818f226953339c467d0bb9cbfb",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-108-p0003-c000",
+          "document_title": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+          "label": "S3",
+          "page": 3,
+          "report_id": "cisa-aa23-108",
+          "section": "Overview and Context",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-108",
+          "text_sha256": "df84a86985af8053cd828a78e36244cd7c57a613904ef0c2011b7e873b6cf340",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据所给证据，可确认以下几点：\n\n- Snake 植入体被用于 FSB 的 Center 16 开展针对敏感目标的长期情报收集 [S1]。\n- 为使用该工具开展行动，FSB 建立了一个由全球大量被 Snake 感染计算机组成的隐蔽点对点（P2P）网络 [S1]。\n- 该 P2P 网络中的许多系统充当 relay nodes，将伪装的作战流量路由至 FSB 最终目标上的 Snake 植入体，或从其路由出来 [S1]。\n- Snake 的自定义通信协议采用加密和分片（encryption and fragmentation）以保障机密性，并被设计用于阻碍检测和收集工作 [S1]。\n- 已在北美、南美、欧洲、非洲、亚洲和澳大利亚的 50 多个国家识别出 Snake 基础设施，包括美国和俄罗斯本身 [S1]。\n- FSB 在全球使用 Snake 从高优先级目标收集敏感情报，例如政府网络、研究设施和记者 [S1]。\n\n关于“如何帮助隐蔽开展长期情报收集”的机制性结论，证据仅支持：隐蔽 P2P 网络与 relay nodes 用于路由伪装流量，自定义协议通过加密和分片保障机密性并旨在阻碍检测与收集 [S1]。证据未提供更具体的技术细节（如具体协议名称、加密算法、分片方式、节点发现机制等），因此无法进一步说明其具体实现方式。",
+      "answer_sha256": "5b85ad90996598d46c67a4eef329755cfeaac40099411f692564e1d75514ae28",
+      "cache_hit_tokens": 0,
+      "category": "attack_technique",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0005004,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:10.719286+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.9439318999648094,
+      "load_seconds": null,
+      "messages_sha256": "d928378ac51499e16911250a3192a2ad96ab0c157e1d83490d9caf3c22d33f36",
+      "output_tokens": 305,
+      "prompt_tokens": 448,
+      "question_id": "q013",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-129a-p0001-c001",
+          "document_title": "Hunting Russian Intelligence Snake Malware",
+          "label": "S1",
+          "page": 1,
+          "report_id": "cisa-aa23-129a",
+          "section": "SUMMARY",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+          "text_sha256": "89ecfac216855b2323d948a154e99dcf814644a9ca68ff1c4cebe4208266747d",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "基于所给证据，可归纳出以下攻击技术发展过程：\n\n1. APT38 早期行动显示其意图操纵金融交易系统，至少自 2014 年 2 月起就开始针对金融机构，但直到 2015 年才观察到欺诈交易；这段时期被视为一个学习期，为其后续典型 TTP 的形成提供基础 [S1]。\n\n2. 美国司法部公布的细节表明，恶意软件开发者曾阅读 SWIFT 系统的用户手册，这提供了其初期开发 SWIFT 专用恶意软件（如 DYEPACK）努力的迹象；DYEPACK 最早被观察到的部署是在 2015 年 12 月 [S1]。\n\n3. 根据已观察事件，APT38 的活动最初集中在东南亚，先在此积累能力，随后不久扩展到全球；东南亚方向的针对活动可能从 2014 年 2 月持续到 2017 年末 [S1]。\n\n4. 该组织进行了极其彻底且耗时的侦察活动，例如多次花时间观察网络活动，并收集有关可访问 SWIFT 服务器的用户和系统的关键信息 [S2]。\n\n5. APT38 维护了大量独特的非公开后门和其他工具，并持续随时间改进工具以纳入更多战术，包括规避检测的措施；例如，威胁行为者修改 DYEPACK，将原始独立版本改为内存内联使用，从而避免将恶意软件写入磁盘 [S2]。\n\n综合来看，证据支持的演进脉络是：从阅读 SWIFT 用户手册、开发 SWIFT 专用恶意软件（如 DYEPACK），到早期部署与学习期，再到长期侦察、工具库积累，以及将 DYEPACK 从独立落盘版本演进为内存内联版本以规避检测 [S1][S2]。\n\n需要指出的是，所给证据未提供 DYEPACK 更早版本的具体技术细节、各版本之间的完整时间线，也未提供企图金额或实际金额信息，因此无法就这些方面作出判断 [S1][S2]。",
+      "answer_sha256": "7aba6c0820d406c4656d374e1431ebbc7ea3f1e8bab1ff3eaf81aac65052760f",
+      "cache_hit_tokens": 0,
+      "category": "attack_technique",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S2",
+          "S2",
+          "S1",
+          "S2",
+          "S1",
+          "S2"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0007227,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:13.524536+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 2.802214399969671,
+      "load_seconds": null,
+      "messages_sha256": "cc1da935c30aa8fa7e63ae63addb3d3edfe76c618737cf22f9e24368d7742e85",
+      "output_tokens": 418,
+      "prompt_tokens": 737,
+      "question_id": "q014",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt38-2018-p0014-c000",
+          "document_title": "APT38: Un-usual Suspects",
+          "label": "S1",
+          "page": 14,
+          "report_id": "mandiant-apt38-2018",
+          "section": "Tactics, Techniques and",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt38-details-on-new-north-korean-regime-backed-threat-group/",
+          "text_sha256": "6d18e25bf6bad1fd432af95c25c37d0665f4d8e0d1c7e4f5712fed1b2d247435",
+          "vendor": "Mandiant"
+        },
+        {
+          "chunk_id": "mandiant-apt38-2018-p0015-c001",
+          "document_title": "APT38: Un-usual Suspects",
+          "label": "S2",
+          "page": 15,
+          "report_id": "mandiant-apt38-2018",
+          "section": "Tactics, Techniques and",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt38-details-on-new-north-korean-regime-backed-threat-group/",
+          "text_sha256": "ddb693d878ad62fd3af15440f3d2bb5288bcdda6da545a05469706a7ed7efd84",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "APT41 通过入侵软件公司，在合法文件中注入恶意代码，然后随更新分发，从而把恶意代码传递给下游目标 [S1]。",
+      "answer_sha256": "f331a6186f54d8de86487817e3fb824856bbae98df45fcdc0dc3b9f56c620699",
+      "cache_hit_tokens": 0,
+      "category": "attack_technique",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0001575,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:14.181473+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 0.6536854999721982,
+      "load_seconds": null,
+      "messages_sha256": "a79b928a6594d15773e3b0bf6b0d05942d0363a70a2e5e9268511e6354a864f9",
+      "output_tokens": 31,
+      "prompt_tokens": 401,
+      "question_id": "q015",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt41-2019-p0003-c000",
+          "document_title": "APT41: A Dual Espionage and Cyber Crime Operation",
+          "label": "S1",
+          "page": 3,
+          "report_id": "mandiant-apt41-2019",
+          "section": "Executive Summary",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-dual-espionage-and-cyber-crime-operation",
+          "text_sha256": "9e69f777a6fedee677fad52cd7d07ee625a3e6ca749d909580924eba4b186394",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "依据所给证据：\n\n- DIRTCLEANER 据信会下载一个第二阶段加载器，其 MD5 为 `748aa5fcfa2af451c76039faf6a8684d` [S1]。\n- 该第二阶段加载器包含 32-bit 和 64-bit 的 COLDJAVA DLL payload [S1]。\n- COLDJAVA payload 包含 shellcode，该 shellcode 会加载 BLACKCOFFEE 的一个变种 [S1]。\n- 因此，证据中明确给出的后续载荷链组件为：第二阶段加载器（MD5: `748aa5fcfa2af451c76039faf6a8684d`）→ COLDJAVA DLL payload（32-bit 和 64-bit）→ shellcode → BLACKCOFFEE 变种 [S1]。\n\n证据未提供该第二阶段加载器的文件名、落地路径、C&C 地址或 BLACKCOFFEE 变种的具体 MD5/哈希等信息，无法据此补充 [S1]。",
+      "answer_sha256": "bd922b179813015d9409213128b0c44020c53aacb98eb0a8a308e8228b38e7e7",
+      "cache_hit_tokens": 0,
+      "category": "ioc",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00043079999999999995,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:15.528682+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.3442407000111416,
+      "load_seconds": null,
+      "messages_sha256": "73df4980dfa1cba1f063b22575265c14acfff0cc548afe5cd21e32ae83681c83",
+      "output_tokens": 220,
+      "prompt_tokens": 556,
+      "question_id": "q016",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt41-2019-p0023-c001",
+          "document_title": "APT41: A Dual Espionage and Cyber Crime Operation",
+          "label": "S1",
+          "page": 23,
+          "report_id": "mandiant-apt41-2019",
+          "section": "March 2017",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-dual-espionage-and-cyber-crime-operation",
+          "text_sha256": "a323e4c4cc7fd4a8db35f28562d4cdfd6df807012f31f15e7229b21fde103a51",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "报告列出的 APT28 常用工具/恶意软件家族包括 SOURFACE downloader、其第二阶段后门 EVILTOSS，以及被称为 CHOPSTICK 的模块化植入家族 [S1]。\n\nEVILTOSS 是通过 SOURFACE downloader 投递的后门，用于获取系统访问权限，以进行侦察、监控、凭据窃取和 shellcode 执行 [S1]。\n\nCHOPSTICK 是从某个软件框架编译而来的模块化植入，用于提供定制化功能和灵活性 [S1]。\n\n证据未提供 EVILTOSS 或 CHOPSTICK 的具体企图金额或实际金额信息。",
+      "answer_sha256": "2bfbf1e58155dea75bac6767600751e4c709061778023c8824267b7654a5936d",
+      "cache_hit_tokens": 0,
+      "category": "ioc",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00027929999999999996,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:16.523027+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 0.9916915000067092,
+      "load_seconds": null,
+      "messages_sha256": "ae4cd463539682d1d736c2c81dfef3ba7e68da1096aa8bb3ef33bb7fab1eb083",
+      "output_tokens": 134,
+      "prompt_tokens": 395,
+      "question_id": "q017",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "mandiant-apt28-2014-p0019-c002",
+          "document_title": "APT28: A Window into Russia's Cyber Espionage Operations?",
+          "label": "S1",
+          "page": 19,
+          "report_id": "mandiant-apt28-2014",
+          "section": "DEVELOPERS",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/apt28-a-window-into-russias-cyber-espionage-operations",
+          "text_sha256": "c3e7ff52f843a729fc8adf15c4d9d66a7edb893885e7dff668b6f377634f1286",
+          "vendor": "Mandiant"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "可重点检查的目录是 `%windows%\\registration\\`（即 `%windows%\\Registration` 目录）[S1][S2]。\n\n文件特征方面：\n- 文件名结构为 `<RANDOM_GUID>.<RANDOM_GUID>.crmlog`[S2]。\n- 具有高熵（High Entropy）[S1]。\n- 文件属性为 hidden、system 和 archive[S1]。\n- 可通过扫描典型队列路径下、文件名匹配其典型命名规范正则表达式的所有文件来定位，再对这些文件进行高熵扫描[S1]。\n\n证据不足的部分：上述片段未给出用于匹配文件名的具体正则表达式内容，也未给出 HighEntropy Yara 规则的完整内容[S1]。",
+      "answer_sha256": "2fb85e73499509d66c9b118790c6a88d7f9f18a22074fdd5410aa7000ae3a04d",
+      "cache_hit_tokens": 0,
+      "category": "ioc",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S2",
+          "S2",
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0003795,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:17.760804+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 1.2348502000095323,
+      "load_seconds": null,
+      "messages_sha256": "b9ef8b6ab9be742567a446ceff93d0697a01307eae1d23e8e1159832f4fe11c3",
+      "output_tokens": 157,
+      "prompt_tokens": 637,
+      "question_id": "q018",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa23-129a-p0038-c002",
+          "document_title": "Hunting Russian Intelligence Snake Malware",
+          "label": "S1",
+          "page": 38,
+          "report_id": "cisa-aa23-129a",
+          "section": "IV: 00 D2 10 B7 60 5E DA 0F",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+          "text_sha256": "34b6c01f8a46f78de9cd544f8816bed55a3867be7cd6d7267b423b1066768bd4",
+          "vendor": "CISA"
+        },
+        {
+          "chunk_id": "cisa-aa23-129a-p0011-c000",
+          "document_title": "Hunting Russian Intelligence Snake Malware",
+          "label": "S2",
+          "page": 11,
+          "report_id": "cisa-aa23-129a",
+          "section": "13 MITRE ATT&CK IDs: [T1027], [T1547.006], [T1569.002], [T1574.002]",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-129a",
+          "text_sha256": "3344c016022f2af2112bbb1f5715d948ff8cd4cf709b5ee82720386127168818",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "SHA-256：a196c6b8ffcb97ffb276d04f354696e2391311db3841ae16c8c9f56f36a38e92 [S1]。\n\n破坏行为：stage1.exe 在受感染设备关机时执行，覆盖主引导记录（MBR），使系统无法正常启动 [S1]。",
+      "answer_sha256": "f3f5bc087f3de1b6fd7030bd342f028e0ea9b54901e790f529fd76bacac0090a",
+      "cache_hit_tokens": 0,
+      "category": "ioc",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.0002688,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:18.638103+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 0.8741258000372909,
+      "load_seconds": null,
+      "messages_sha256": "406389eb68eada91265adf3ab765426afa088a231d4b0e7e7331eb60cc78507c",
+      "output_tokens": 78,
+      "prompt_tokens": 584,
+      "question_id": "q019",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa24-249a-p0021-c000",
+          "document_title": "Russian Military Cyber Actors Target US and Global Critical Infrastructure",
+          "label": "S1",
+          "page": 21,
+          "report_id": "cisa-aa24-249a",
+          "section": "Overview",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a",
+          "text_sha256": "2c351fe0fcf4985cf314dbe2fa346fd7f1785de6880a6f658dadbe852696d52b",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    },
+    {
+      "answer": "根据给出的证据，CISA 附录中 APT40 IOC 的域名/URL 列表最先列出的三个是：\n\n1. airbusocean[.]com [S1]\n2. https://pastebin[.]com/vfb5mbbu [S1]\n3. santaclarasystem[.]us [S1]\n\n说明：证据片段仅显示该列表的起始部分，未提供页码内更细的排序规则说明；以上按片段中出现的先后顺序认定 [S1]。",
+      "answer_sha256": "8972e1ab5a87b9b695b055328963f8d625b54e87adbb183e0f4b75a7dc5176ad",
+      "cache_hit_tokens": 0,
+      "category": "ioc",
+      "citation_check": {
+        "has_citation": true,
+        "label_validity": 1.0,
+        "occurrences": [
+          "S1",
+          "S1",
+          "S1",
+          "S1"
+        ],
+        "unknown_labels": []
+      },
+      "estimated_api_cost_usd": 0.00032639999999999996,
+      "finish_reason": "stop",
+      "generated_at": "2026-10-04T11:26:19.581381+00:00",
+      "generation_seconds": null,
+      "latency_seconds": 0.9400170000153594,
+      "load_seconds": null,
+      "messages_sha256": "e95785e0af7cec5a7ba468e652823044b5e5609beeba08666d2f14985f9e6195",
+      "output_tokens": 107,
+      "prompt_tokens": 660,
+      "question_id": "q020",
+      "response_model": "deepseek-flash",
+      "sources": [
+        {
+          "chunk_id": "cisa-aa21-200a-p0006-c001",
+          "document_title": "Tactics, Techniques, and Procedures of Indicted APT40 Actors Associated with China's MSS Hainan State Security Department",
+          "label": "S1",
+          "page": 6,
+          "report_id": "cisa-aa21-200a",
+          "section": "APPENDIX: APT40 INDICATORS OF COMPROMISE",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-200a",
+          "text_sha256": "d7c25fcd121fca05b731154ba54c5706cf05d2c073fb3ab976cb0929d6517c47",
+          "vendor": "CISA"
+        }
+      ],
+      "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669"
+    }
+  ],
+  "completed": true,
+  "config_fingerprint": "5f1ca462b173d51c2c69d7569af13fc176a67ab6749aebfc57beec8af3da3859",
+  "controls": {
+    "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+    "benchmark_id": "apt-qa-v1.1",
+    "context_mode": "ground_truth_evidence",
+    "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+    "max_output_tokens": 768,
+    "prompt_fingerprint": "813ecb4fbf9b02d64e53dd4e7600095f81821f06c2678e06fdee89d5f7b74b80",
+    "question_count": 20,
+    "stream": false,
+    "temperature": 0,
+    "thinking": false
+  },
+  "finished_at": "2026-10-04T11:26:19.584010+00:00",
+  "identity": {
+    "documented_version": "DeepSeek-V4.1-Flash",
+    "immutable_revision_available": false,
+    "model": "deepseek-flash"
+  },
+  "inputs_fingerprint": "2aa6703f6f3d548f067f1b133db64da3d6f74ac5e15ae83539fe36b26056df12",
+  "provider_id": "deepseek-flash",
+  "provider_spec": {
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "base_url": "https://api.deepseek.com",
+    "documented_version": "DeepSeek-V4.1-Flash",
+    "id": "deepseek-flash",
+    "kind": "deepseek",
+    "model": "deepseek-flash",
+    "pricing": {
+      "cache_hit_per_million": 0.006,
+      "cache_miss_per_million": 0.3,
+      "checked_on": "2026-10-04",
+      "currency": "USD",
+      "note": "采用峰值单价作为保守估算；非实际账单，非高峰时段通常更低。",
+      "output_per_million": 1.2,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+    }
+  },
+  "runtime": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.3"
+  },
+  "schema_version": "1.0",
+  "started_at": "2026-10-04T11:25:46.984998+00:00"
+}

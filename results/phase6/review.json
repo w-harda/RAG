@@ -1,0 +1,801 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "Codex，依据冻结 Context、标准答案和预先写定的必答事实清单逐题辅助复核",
+  "independent_human_review": false,
+  "reviewed_on": "2026-10-04",
+  "rubric_fingerprint": "27fb280d2b3ee6e4dfd64975f4be4adb6ccb052604e947f6d52f9ab3101a8057",
+  "policy": "复合必答事实完整覆盖才记 true；同义表述接受，观察/置信度等限定需保留。每次来源标签单独检查与相邻断言的支持关系；缺失不是无证据断言。报告已有文本缺陷单列，不将其直接计作模型编造。数值仅作本阶段初步比较，需独立人工复核。",
+  "reviews": [
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q001",
+      "answer_sha256": "8031ed12eb74ebf243b23d385b26c94ef29b65fcd4198a0cc40b4b7d438ed1ea",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持三类别名、GRU 下属 Unit 74455 和三类任务；GU/GRU 中文表达略绕，暂按保留层级判定。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q002",
+      "answer_sha256": "31f7577dc8cdb7d2c84c72ead29fadde0a943a0bf0b599ac2429c4d331ef02e8",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 明示高/中置信度、任务及 IRGC-IO；额外提到片段截断和金额不足不产生新事实。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q003",
+      "answer_sha256": "b6bbc7f7b6aa7c27a42a59f3e427cf4f4d35bf26637511d584666b86b5cf917a",
+      "fact_coverage": [
+        false,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "漏掉中国国家支持属性，第一项只覆盖双动机的一部分；其余活动在 S1 中均可找到。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q004",
+      "answer_sha256": "b80c4baa5bb2672237290f442b89f5b0457667fb7deffe7a63df78e826316f59",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持朝鲜、金融目标、破坏和企图超过 11 亿美元；未把企图额当实际额。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q005",
+      "answer_sha256": "5a41ee8e2091f26fee57aed5c83f7f9d9b6a49ede3b49393823a9ccdc1f5cead",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        false,
+        true
+      ],
+      "unsupported_claims": [
+        "英文释义写成 3rd Department of the 2nd Bureau，与报告 2nd Bureau of the 3rd Department 相反。"
+      ],
+      "notes": "中文总参三部二局正确，但括号英文把第二局和第三部层级反转；第一处引文不能支持该英文扩展。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q006",
+      "answer_sha256": "d9cabb88eea6041a809abb66e07b60ff9ec1ab8d0c232c561f39d77c2dd2d561",
+      "fact_coverage": [
+        true,
+        false,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "保留 LOTL/账户/行动安全和至少五年，未回答按环境定制和持续维护；不能把至少五年当精确最长值。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q007",
+      "answer_sha256": "8d71a1412260825043c13ccc1e2f2a537b8c04e91b46a40a93958cc168492a96",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持低频、同国多类 IP、MFA 豁免，以及对旧式登录/spoofing 的怀疑性描述。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q008",
+      "answer_sha256": "8dbde28bb166abd9d35e02fdf452061663871ea8aabb2c595bf313ec1820024e",
+      "fact_coverage": [
+        true,
+        true,
+        false
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "遗漏经 C2 通道最终外传；Dropbox、代理/隧道、暂存和归档加密均由 S1 支持。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q009",
+      "answer_sha256": "52bd49002bbcead3f8babc24a420d4f70dbfed7b92024df2c15047260c197607",
+      "fact_coverage": [
+        false,
+        true,
+        false
+      ],
+      "citation_supported": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "unsupported_claims": [
+        "把双栏中的 corporate / lightweight tools 合成目标并用于因果解释，报告目标实际是个人/企业邮箱。",
+        "将 visibility gaps 误解释为对雇主/同事/亲属攻击造成访问差距，报告是在说明观测可见性不足。"
+      ],
+      "notes": "双栏交错文本被误读为目标包括企业和轻量工具；个人/企业邮箱漏答，扩展访问被误述为造成访问差距。MFA 及进一步访问有依据。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q010",
+      "answer_sha256": "f3bc2f1bde50038c078fc9602858112fff1ac50bdc3564ab56b54da43b2d8aae",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1/S2 分别支持初始访问和入侵后手法；可追溯额外例子不计作幻觉。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q011",
+      "answer_sha256": "a6cd14bf79f8c093fbef0cbea6a5dc29221257937f340a14c081198905401db1",
+      "fact_coverage": [
+        false,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "漏掉 2023 年 9 月起这一时间限定；源代码、证书、流程和客户网络的供应链风险可从 S1/S2 对应。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q012",
+      "answer_sha256": "a1f692c3c03f1017ec6607f7ca8bb135f54014f7b4419aee1ea4c8de1fdce96e",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true
+      ],
+      "unsupported_claims": [
+        "称 SNMP 和 CVE-2017-6742 为两个漏洞；SNMP 是协议，弱配置不是另一个已声明 CVE。"
+      ],
+      "notes": "必答三项齐全；额外把 SNMP 与 CVE 并称两个漏洞，SNMP 在证据中是协议；[S1,S3] 不能支持该措辞。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q013",
+      "answer_sha256": "43f348b1736548393e708d14531c060cca4f45ee2708d255f08947d8b1af3339",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持全球 P2P、FSB Center 16、中继及加密分片；金额不足说明无关但未新增情报断言。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q014",
+      "answer_sha256": "968bec55c7302cc359682b06e2746d9e4c3116af46be7fcb1907c244bdfb5e31",
+      "fact_coverage": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "将未知实际初始部署时间表述为 2015 年 12 月开始部署进行欺诈，并给出学习→精细化→扩张的确定序列，证据仅记观察时间和分散阶段。"
+      ],
+      "notes": "未保留最早已知部署的观察限定，未明确侦察用户/系统；把阶段编排为确定演进顺序并联结 2015 年 12 月部署和欺诈，证据不足。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q015",
+      "answer_sha256": "09d4b6f94c5e2a34d0c6b6ff22a732d895a7dc8e317050f2f8ebdfaa0bfa03f8",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "入侵公司、合法文件注入和更新传播均由 S1 支持。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q016",
+      "answer_sha256": "dd624086ba6a85c216fcee80dad8844b27483fa8940015363536464d2288aac7",
+      "fact_coverage": [
+        true,
+        false,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [
+        "DDR 被扩展为下载并运行，所给证据没有该释义；把 TeamViewer 当作 BLACKCOFFEE 托管指令的网站/配置文件位置，错接了双栏的其他事件。"
+      ],
+      "notes": "MD5 和 shellcode→BLACKCOFFEE 正确，漏掉 32/64 位；TeamViewer 属于交错的另一事件文本，不能当 BLACKCOFFEE 指令托管站点，DDR 释义也无依据。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q017",
+      "answer_sha256": "17d37230e2efbe8271fc9866b03f8e0f502da26e342a09d985918454bc2c0a4d",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 中三家族和 EVILTOSS/CHOPSTICK 功能均匹配；关于非完整清单的谨慎措辞不产生额外家族。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q018",
+      "answer_sha256": "1743b86dfafac944ccfe8759838ccf5260ad09387972e38ce529dce780eb0b4b",
+      "fact_coverage": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "路径缺少闭合 %，对应 S1 的文本问题，S2 另给正确形式；文件名结构实际只见 S2，却标 [S1]。高熵和属性由 S1 支持，不把输入路径缺陷算模型编造。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q019",
+      "answer_sha256": "ea8093bf378c000216bdaa4c54820647949414cf8818ab8a899e4cc94141559e",
+      "fact_coverage": [
+        true,
+        true,
+        false
+      ],
+      "citation_supported": [
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "哈希、关机覆盖 MBR 正确；缺失伪造勒索信息。冻结证据仅有勒索句开头，标准答案该项支持不足，两模型同受此限制。"
+    },
+    {
+      "provider_id": "ollama-qwen",
+      "question_id": "q020",
+      "answer_sha256": "516598dded9def823ce24f7ca7a27b49ab9705626fa43245aa544fff575a8462",
+      "fact_coverage": [
+        true,
+        false,
+        false
+      ],
+      "citation_supported": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "声称列表顺序无法确定并跳过 Pastebin URL，以第四项 cargillnotice 替代前三项中的第二项。"
+      ],
+      "notes": "漏掉第二个 Pastebin URL，将第四项 cargillnotice 放入前三项并声称无法确定顺序；仅第一域名符合起始列表位置。去混淆域名与原始形式等价，但违反保留原样要求。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q001",
+      "answer_sha256": "920df5ce55ae931883a028a6d0f567e441d3b15cf4db08bdf6d28680e5b25d26",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持别名、GRU/GTsST/Unit 74455 和任务全谱系，保留 VIO 隶属的可能性限定。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q002",
+      "answer_sha256": "e08dd574e5c740e249172f56c69b8e6cfb26c05bc8b0bb8796d4b3af310c9147",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 的置信度、任务、IRGC-IO 和归因依据均匹配；片段未提供的细节明确拒绝补充。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q003",
+      "answer_sha256": "3d47a1298bbc3d88977025cd4792267c361a85b056e3b56f216d3e6890c6a65b",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持国家背景、双动机和所列行业/活动；额外供应链活动也有证据。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q004",
+      "answer_sha256": "5a9c8852277406422e78f8d6313160dd916a48d49df1653f530fddddd500c29f",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持背景/金融目标/破坏及企图金额，明确不等于实际盗得；额外组织/国家数有依据。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q005",
+      "answer_sha256": "5b17fd09b5b3add7bfecb8b98ad7d65dfa68ee5109ccd59a08a55c916cf69f5b",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "单位层级与地理位置在 S1 中完整且一致，保留部分设施位于该处的限定。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q006",
+      "answer_sha256": "db08bee62647c7d3441356cfdc7e0ca5471a57f156023342fe2311ee08257b54",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持 LOTL、有效账户、行动安全、定制 TTP 和维护访问；至少五年是下界而非精确最大值。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q007",
+      "answer_sha256": "6a0a93bb20158657df0afc4e6fdd35e64c0f9e88ad9fdaeb2f7c457456a36ccd",
+      "fact_coverage": [
+        true,
+        true,
+        false
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "低频及同国多类 IP 有依据，但漏答被错误豁免 MFA 的管理员账户；额外拒绝量化无依据细节。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q008",
+      "answer_sha256": "cab8aa663d7e57f083c5221596ec4e3315b9ca3ff607a59ce3a92fb22e8b73da",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "全部必答事实在 S1 中；[S0183] 是 ATT&CK Software ID，不是未知来源标签，不能误算引用错误。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q009",
+      "answer_sha256": "3d759fe6e40c54371357fcc57d8d6f9811b7d73a4f4b517cc8db02d8ddc6615f",
+      "fact_coverage": [
+        false,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "保留信任、MFA 和雇主/同事/亲属扩展，但未明确个人/企业邮箱，第一复合项不满分；对动机谨慎不构成幻觉。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q010",
+      "answer_sha256": "e385ea0e51d3a688e8cfce6d87604adf19898e3a44e9806a20937f2efcd6c9f6",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1/S2 分别支持初始及入侵后手法，包含 C2/工具来源等额外例子，未把无 IOC 信息补成具体值。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q011",
+      "answer_sha256": "54d27d09cd120ab6aaf1fb78ed65c43c62b7c23cba39beba37884d3587a50081",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持日期/CVE 和构建资产及供应链风险，S2 支持准备阶段和未用于进入客户；保留评估限定。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q012",
+      "answer_sha256": "b5044d684eb3294512d51cdde40ea0700e00a5c05e3f39bba2187d7b4a6cc06c",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S3 支持 SNMP 弱配置和未加密，S1/S3 支持 CVE，S2 支持 Jaguar Tooth/TFTP/未认证后门；区分已知事实和未展开链路。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q013",
+      "answer_sha256": "5b85ad90996598d46c67a4eef329755cfeaac40099411f692564e1d75514ae28",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持 FSB Center 16、P2P 中继、加密分片和全球节点；额外目标类别可对应。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q014",
+      "answer_sha256": "7aba6c0820d406c4656d374e1431ebbc7ea3f1e8bab1ff3eaf81aac65052760f",
+      "fact_coverage": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1/S2 支持四项必答事实并区分已观察部署；总结演进无新增确定交易金额。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q015",
+      "answer_sha256": "f331a6186f54d8de86487817e3fb824856bbae98df45fcdc0dc3b9f56c620699",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 支持软件公司入侵、合法文件注入及更新传播。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q016",
+      "answer_sha256": "bd922b179813015d9409213128b0c44020c53aacb98eb0a8a308e8228b38e7e7",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 的 MD5、32/64 位和 shellcode→BLACKCOFFEE 链条逐项正确，未混入 TeamViewer。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q017",
+      "answer_sha256": "2bfbf1e58155dea75bac6767600751e4c709061778023c8824267b7654a5936d",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "S1 明示三家族以及各功能，额外财务不足说明无关但未新增断言。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q018",
+      "answer_sha256": "2fb85e73499509d66c9b118790c6a88d7f9f18a22074fdd5410aa7000ae3a04d",
+      "fact_coverage": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "正确路径由 S2 支持，但句中同时引用 S1（其文本缺少 %），该处逐标签判为不支持；文件名由 S2，高熵和属性由 S1 正确支持。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q019",
+      "answer_sha256": "f3f5bc087f3de1b6fd7030bd342f028e0ea9b54901e790f529fd76bacac0090a",
+      "fact_coverage": [
+        true,
+        true,
+        false
+      ],
+      "citation_supported": [
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "哈希和 MBR/无法启动正确；未给出伪造勒索信息。该复合事实在冻结 Context 中支持不全，不应据此推断模型本身不懂该行为。"
+    },
+    {
+      "provider_id": "deepseek-flash",
+      "question_id": "q020",
+      "answer_sha256": "8972e1ab5a87b9b695b055328963f8d625b54e87adbb183e0f4b75a7dc5176ad",
+      "fact_coverage": [
+        true,
+        true,
+        true
+      ],
+      "citation_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "notes": "三个 IOC 与 S1 的起始文本顺序一致，保留原始去武器化形式；说明按出现顺序而非优先级。"
+    }
+  ]
+}

@@ -98,6 +98,7 @@ source = { editable = "." }
 dependencies = [
     { name = "chromadb" },
     { name = "faiss-cpu" },
+    { name = "httpx" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pdfplumber" },
@@ -113,6 +114,7 @@ dev = [
 requires-dist = [
     { name = "chromadb", specifier = ">=1.0,<2" },
     { name = "faiss-cpu", specifier = ">=1.12,<2" },
+    { name = "httpx", specifier = ">=0.28,<1" },
     { name = "matplotlib", specifier = ">=3.10,<4" },
     { name = "numpy", specifier = ">=2.3,<3" },
     { name = "pdfplumber", specifier = ">=0.11.10" },

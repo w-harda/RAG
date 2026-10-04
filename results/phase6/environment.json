@@ -1,0 +1,12 @@
+{
+  "recorded_on": "2026-10-04",
+  "cpu": "Intel Core i7-10875H @ 2.30GHz",
+  "cpu_physical_cores": 8,
+  "cpu_logical_processors": 16,
+  "physical_memory_bytes": 17011142656,
+  "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design",
+  "gpu_memory_mib": 6144,
+  "gpu_driver": "610.88",
+  "local_execution_observation": "ollama ps 在实验中显示 100% GPU、CONTEXT 8192",
+  "note": "无主机名、用户名或环境变量值；软件和模型身份另保存在各运行文件 runtime/identity 中。"
+}

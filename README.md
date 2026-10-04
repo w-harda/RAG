@@ -6,9 +6,9 @@
 
 ## 当前进度
 
-Phase 5：FAISS 与 Chroma 向量存储 Benchmark。
+Phase 6：本地 Qwen 与 DeepSeek 云端 API 的固定证据 LLM Benchmark。
 
-已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测，以及固定 BGE-M3 向量的 FAISS/Chroma 对比。向量存储实验包含三种规模、18 次建库、延迟原始样本、Metadata 过滤及跨进程重载验证。原始 PDF、处理文本、向量和索引缓存不进入 Git，实验结果进入 Git。
+已完成 15 份 APT 报告、1,297 个可追溯 Chunk、20 题 Ground Truth Benchmark、三模型 Embedding 实测、FAISS/Chroma 对比，以及两个 LLM 的 40 份真实回答。LLM 实验固定相同 Context 和 Prompt，保存逐题耗时、用量、费用估算和证据辅助复核。辅助评分尚未经独立人工评审，不是最终消融结论。原始 PDF、处理文本、向量和索引缓存不进入 Git，实验结果进入 Git。
 
 ## 环境要求
 
@@ -59,6 +59,22 @@ FAISS/Chroma 的控制变量、建库速度、延迟、Metadata 与规模比较�
 uv run python scripts/run_vectorstore_benchmark.py
 uv run python scripts/plot_vectorstore_results.py
 ```
+
+LLM 的控制变量、环境变量、真实结果和评审限制见 [LLM 实验](docs/llm_benchmark.md)。离线验证与绘图不需要密钥、Ollama 或模型：
+
+```powershell
+uv run python scripts/validate_llm_results.py
+uv run python scripts/plot_llm_results.py
+```
+
+已有 Phase 2 Chunk 时，可仅重建输入，或运行模型实验（云端首次调用会计费）：
+
+```powershell
+uv run python scripts/run_llm_benchmark.py --prepare-only
+uv run python scripts/run_llm_benchmark.py
+```
+
+已完成的回答默认复用，不再次调用模型。重新实测应使用独立配置及新结果目录，不覆盖本次记录。尚未实现 Phase 7 检索策略对比、最终 RAG Pipeline 或 Web UI。
 
 ## 当前目录
 

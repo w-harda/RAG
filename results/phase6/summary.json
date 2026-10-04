@@ -1,0 +1,64 @@
+{
+  "controls": {
+    "benchmark_fingerprint": "d1b03ac114c864375312a4dc8e97887a317209c5105bafdcf04da20f8dea77b8",
+    "benchmark_id": "apt-qa-v1.1",
+    "context_mode": "ground_truth_evidence",
+    "corpus_fingerprint": "a1d0417d7673929048716cb44ade4bb478b39e4e25d8f95cf5df5d125a9a801b",
+    "max_output_tokens": 768,
+    "prompt_fingerprint": "813ecb4fbf9b02d64e53dd4e7600095f81821f06c2678e06fdee89d5f7b74b80",
+    "question_count": 20,
+    "stream": false,
+    "temperature": 0,
+    "thinking": false
+  },
+  "inputs_fingerprint": "2aa6703f6f3d548f067f1b133db64da3d6f74ac5e15ae83539fe36b26056df12",
+  "results": [
+    {
+      "cited_answer_rate": 1.0,
+      "estimated_api_cost_usd": null,
+      "first_request_seconds": 89.81778179999674,
+      "latency_median_seconds": 3.9922351500135846,
+      "latency_p95_seconds": 14.932250930028442,
+      "latency_total_seconds": 176.634992999956,
+      "output_tokens": 4084,
+      "prompt_tokens": 11521,
+      "provider_id": "ollama-qwen",
+      "question_count": 20,
+      "semantic_quality": {
+        "fully_covered": 0.5,
+        "has_unsupported_claim": 0.3,
+        "independent_human_review": false,
+        "question_count": 20,
+        "required_fact_coverage": 0.7958333333333333,
+        "semantic_citation_support": 0.8586904761904762,
+        "status": "provisional_evidence_assisted_review"
+      },
+      "truncated_count": 0,
+      "unknown_source_labels": 0
+    },
+    {
+      "cited_answer_rate": 1.0,
+      "estimated_api_cost_usd": 0.0085017,
+      "first_request_seconds": 1.1311120999744162,
+      "latency_median_seconds": 1.4366123000218067,
+      "latency_p95_seconds": 2.5220265300158644,
+      "latency_total_seconds": 30.891334100160748,
+      "output_tokens": 4377,
+      "prompt_tokens": 10831,
+      "provider_id": "deepseek-flash",
+      "question_count": 20,
+      "semantic_quality": {
+        "fully_covered": 0.85,
+        "has_unsupported_claim": 0.0,
+        "independent_human_review": false,
+        "question_count": 20,
+        "required_fact_coverage": 0.95,
+        "semantic_citation_support": 0.9928571428571429,
+        "status": "provisional_evidence_assisted_review"
+      },
+      "truncated_count": 0,
+      "unknown_source_labels": 0
+    }
+  ],
+  "schema_version": "1.0"
+}
