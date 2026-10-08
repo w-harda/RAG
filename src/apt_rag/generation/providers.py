@@ -78,19 +78,34 @@ class OllamaProvider(HTTPProvider):
         super().__init__(client or httpx.Client(timeout=settings["timeout_seconds"], trust_env=False))
         self.host, self.spec, self.settings = host.rstrip("/"), spec, settings
 
+    def request(self, method: str, url: str, **kwargs: Any) -> dict[str, Any]:
+        # 新版标签可同时包含 ggml/llamacpp；身份、预检和生成必须选择同一后端。
+        if self.spec.get("runner") and method == "POST" and url in {
+                self.host + "/api/show", self.host + "/api/chat"}:
+            kwargs["json"] = {**kwargs.get("json", {}), "runner": self.spec["runner"]}
+        return super().request(method, url, **kwargs)
+
     def identity(self) -> dict[str, Any]:
         tags = self.request("GET", self.host + "/api/tags")
-        selected = next((m for m in tags["models"] if m["name"] == self.spec["model"]), None)
+        selected = next((m for m in tags["models"] if m["name"] == self.spec["model"] and
+                         (not self.spec.get("runner") or m["details"].get("runner") == self.spec["runner"])), None)
         if selected is None or selected["digest"] != self.spec["digest"]:
             raise ValueError("本地模型不存在或 digest 与配置不同；不要静默更换模型")
         info = self.request("POST", self.host + "/api/show", json={"model": self.spec["model"]})
         if "thinking" not in info.get("capabilities", []):
             raise ValueError("当前配置要求能显式关闭 thinking 的模型")
+        if self.spec.get("runner") and info["details"].get("runner") != self.spec["runner"]:
+            raise ValueError("Ollama 未使用固定 runner；禁止静默切换后端")
+        if self.spec.get("template_sha256") and fingerprint(info.get("template", "")) != self.spec["template_sha256"]:
+            raise ValueError("Ollama 模板指纹改变；需重新验证长度接口")
+        version = self.request("GET", self.host + "/api/version")["version"]
+        if self.spec.get("ollama_version") and version != self.spec["ollama_version"]:
+            raise ValueError("Ollama 运行版本改变；请释放管线并重新核验兼容性")
         return {
             "model": selected["name"], "digest": selected["digest"],
             "model_bytes": selected["size"], "details": info["details"],
             "template_sha256": fingerprint(info.get("template", "")),
-            "ollama_version": self.request("GET", self.host + "/api/version")["version"],
+            "ollama_version": version,
         }
 
     def generate(self, messages: list[dict[str, str]]) -> GenerationResult:

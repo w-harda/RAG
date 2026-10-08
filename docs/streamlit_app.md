@@ -1,5 +1,7 @@
 # Phase 11：Streamlit 聊天前端
 
+> 当前后端已重构为强制 LangChain LCEL，前端仍通过相同的 `build_pipeline()` / `answer()` 接口调用，控件、授权及引用显示保持原行为。缓存身份增加框架版本，详见 [LangChain RAG 实现](langchain_rag.md)。以下验收数字是原 Phase 11 记录。
+
 > 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
 
 本阶段仅增加 Streamlit 展示层，直接调用 Phase 9 的 `build_pipeline(...)` 和 `pipeline.answer(question)`。不修改核心 RAG Pipeline、Prompt、检索、重排、预算或引用规则，不添加 Gradio、React/Next.js、用户登录、Agent、MCP、插件或新的持久化系统。

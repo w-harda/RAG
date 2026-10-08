@@ -93,6 +93,20 @@ def test_cloud_explicit_consent_and_cached_pipeline_cannot_bypass_revocation(bac
     assert any("未获显式云端授权" in e.value for e in at.error)
 
 
+def test_runtime_profile_change_does_not_reuse_old_pipeline(backend, monkeypatch):
+    original = Path.read_bytes
+    revision = [b"first profile"]
+    profile = ROOT / "configs/ollama_runtime.json"
+    monkeypatch.setattr(Path, "read_bytes", lambda path: revision[0] if path == profile else original(path))
+    at = app()
+    at.chat_input[0].set_value("第一个问题").run()
+    revision[0] = b"updated profile"
+    at.chat_input[0].set_value("第二个问题").run()
+    assert not at.exception
+    assert backend.built == [("ollama-qwen", False), ("ollama-qwen", False)]
+    assert len(backend.answered) == 2
+
+
 def test_history_new_chat_switch_revokes_consent_without_calling_backend(backend):
     at = app()
     first = at.session_state.active_chat

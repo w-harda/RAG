@@ -1,5 +1,7 @@
-"""Phase 11 聊天展示层：仅调用原 Phase 9 工厂和 answer，不改 RAG 逻辑。"""
+"""聊天展示层：通过原工厂/answer 接口使用强制 LangChain RAG 编排。"""
 
+import hashlib
+from importlib.metadata import version
 from pathlib import Path
 from uuid import uuid4
 
@@ -137,6 +139,11 @@ def main():
     initialize_state()
     try:
         config, decision, sources = load_settings(ROOT, RAG_CONFIG)
+        runtime_profile = ROOT / "configs/ollama_runtime.json"
+        configuration_id = fingerprint({"config": config, "decision": decision,
+            "orchestration": {"framework": "langchain", "version": version("langchain-core")},
+            "ollama_runtime_sha256": hashlib.sha256(runtime_profile.read_bytes()).hexdigest()
+                if runtime_profile.exists() else None})
     except Exception as error:
         st.title("APT 情报问答")
         st.error(error_message(error))
@@ -192,7 +199,7 @@ def main():
         st.session_state.pending = {"chat_id": st.session_state.active_chat, "provider_id": provider_id,
                                     "question": question, "status": "queued"}
         st.rerun()
-    process_pending(config, fingerprint({"config": config, "decision": decision}), cloud_id)
+    process_pending(config, configuration_id, cloud_id)
 
 
 if __name__ == "__main__":

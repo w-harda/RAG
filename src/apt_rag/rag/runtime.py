@@ -1,9 +1,10 @@
-"""选型加载、固定 Corpus、可重载 FAISS 与真实组件装配。"""
+"""选型加载、固定 Corpus、可重载 FAISS 与 LangChain RAG 组件装配。"""
 
 import hashlib
 import importlib.metadata
 import json
 import platform
+import re
 from pathlib import Path
 
 from apt_rag.evaluation.embedding_benchmark import _write_json
@@ -105,6 +106,39 @@ def open_index(root, config, decision, sources, inputs, *, create=False):
     return store, audit
 
 
+def configure_ollama_runtime(root, config, spec, provider):
+    """仅真实 RAG 运行应用已核验的兼容配置，不改历史实验/索引身份。"""
+    version = provider.request("GET", provider.host + "/api/version")["version"]
+    if version == config["ollama_version"]:
+        return config, spec, None
+    path = root / "configs/ollama_runtime.json"
+    if not path.exists():
+        raise ValueError(f"Ollama 版本 {version} 未验证；缺少运行兼容配置")
+    profile = json.loads(path.read_text(encoding="utf-8"))
+    if (profile["schema_version"] != "1.0" or
+            profile["baseline_ollama_version"] != config["ollama_version"] or
+            profile["baseline_model_digest"] != spec["digest"] or profile["model"] != spec["model"]):
+        raise ValueError("Ollama 兼容配置与历史基线不一致")
+    verified_versions = profile.get("verified_ollama_versions")
+    if (not isinstance(verified_versions, list) or not verified_versions or
+            any(not isinstance(v, str) or not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", v) for v in verified_versions) or
+            len(set(verified_versions)) != len(verified_versions)):
+        raise ValueError("Ollama 兼容配置的版本列表无效；必须逐版明确核验")
+    if version not in verified_versions:
+        raise ValueError(f"Ollama 版本 {version} 未验证；需复核严格长度/模板接口")
+    if (profile["runner"] != "ggml" or any(not isinstance(profile[k], str) or len(profile[k]) != 64 or
+            any(c not in "0123456789abcdef" for c in profile[k]) for k in ("digest", "template_sha256"))):
+        raise ValueError("Ollama 兼容配置的 runner/指纹无效")
+    active_spec = {**spec, **{k: profile[k] for k in ("digest", "runner", "template_sha256")},
+                   "ollama_version": version}
+    provider.spec = active_spec
+    return {**config, "ollama_version": version}, active_spec, {
+        "config_path": "configs/ollama_runtime.json", "config_fingerprint": fingerprint(profile),
+        "baseline_ollama_version": config["ollama_version"], "ollama_version": version,
+        "baseline_model_digest": spec["digest"], "runner": profile["runner"], "digest": profile["digest"],
+    }
+
+
 def build_pipeline(root, config_path, provider_id=None, *, allow_cloud=False, dry_run=False):
     config, decision, sources = load_settings(root, config_path)
     allowed = {decision["selection"][k] for k in ("primary_llm_provider_id", "local_llm_provider_id")}
@@ -128,7 +162,10 @@ def build_pipeline(root, config_path, provider_id=None, *, allow_cloud=False, dr
     settings = {**sources["generation"], "strict_context": True}
     llm = PreparationOnlyLLM(spec) if dry_run and spec["kind"] == "deepseek" else build_provider(spec, settings)
     try:
-        budget = TokenBudget(root, config, spec, settings["max_output_tokens"], provider=llm)
+        budget_config, compatibility = config, None
+        if spec["kind"] == "ollama":
+            budget_config, spec, compatibility = configure_ollama_runtime(root, config, spec, llm)
+        budget = TokenBudget(root, budget_config, spec, settings["max_output_tokens"], provider=llm)
     except Exception:
         if llm.client is not None:
             llm.client.close()
@@ -141,7 +178,12 @@ def build_pipeline(root, config_path, provider_id=None, *, allow_cloud=False, dr
         top_k=decision["policies"]["context_top_k"], max_question_characters=config["max_question_characters"],
         public_corpus_verified=True)
     return pipeline, {"rag_config_fingerprint": fingerprint(config), "decision_id": decision["decision_id"],
+                      "orchestration": {"framework": "langchain", "package": "langchain-core",
+                                        "version": importlib.metadata.version("langchain-core"),
+                                        "tracing_enabled": False},
+                      **({"ollama_runtime_compatibility": compatibility} if compatibility else {}),
                       "provider_spec": spec, "corpus_fingerprint": inputs["controls"]["corpus_fingerprint"],
                       "context_mode": "retrieved_chunks", "runtime": {"python": platform.python_version(),
                           "platform": platform.platform(), "packages": {name: importlib.metadata.version(name)
-                              for name in ("numpy", "faiss-cpu", "torch", "transformers", "tokenizers", "httpx")}}}
+                              for name in ("numpy", "faiss-cpu", "torch", "transformers", "tokenizers", "httpx",
+                                           "langchain-core", "langsmith")}}}

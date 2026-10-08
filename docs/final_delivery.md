@@ -1,5 +1,7 @@
 # Phase 12 最终交付与验收
 
+> 本文记录 Phase 12 当时的交付，不代表此后的代码完全未变。当前生产 RAG 已按新要求强制使用 LangChain LCEL；重构范围与新的验证记录见 [LangChain RAG 实现](langchain_rag.md)。下方实验、克隆验收和测试数量均保留历史口径。
+
 ## 交付边界
 
 Phase 0–11 工程已集成，Phase 12 只整理 README、架构/结构/配置来源、从 clone 开始的复现、Phase 4–10 总表和独立人工复核材料。没有新增问答核心功能、Agent、MCP、用户系统、多轮记忆或新框架。

@@ -20,7 +20,9 @@
  → Phase 9 接入验收 → Phase 10 四组消融 / AI 辅助评审 → 待独立人工复核
 ```
 
-核心通过 `EmbeddingProvider`、`VectorStore`、`Retriever`、`Reranker`、`LLMProvider` 和 `RAGPipeline` 解耦。沿用已验证的轻量适配器，不额外包裹 LangChain/LlamaIndex；Streamlit 仅为展示层，不重写 Pipeline。
+**当前 RAG 系统强制使用 LangChain（`langchain-core` / LCEL）编排**，没有非框架运行开关或自动回退。`RunnableSequence` / `RunnableBranch` 分步骤执行 Query Embedding、Dense/BM25、RRF、重排、Context、预算、LLM 与 Citation，CLI / Streamlit 继续共用 `RAGPipeline.answer()`。底层 `EmbeddingProvider`、`VectorStore`、`Retriever`、`Reranker` 和 `LLMProvider` 保持独立，沿用已验证算法及适配器。
+
+文档解析/分块/语料向量/索引属于离线准备，复用原有脚本与固定产物，不在每次提问时重做，不替换为框架默认切块/索引/Prompt。历史 Phase 4–10 实验结果保留原实现口径，不能称为 LangChain 实测。重构范围与等价验证见 [LangChain RAG 实现](docs/langchain_rag.md)。
 
 ## Phase 0–11 交付内容
 
@@ -54,8 +56,11 @@ Phase 12 整理最终文档、复现入口、离线校验和空白人工复核�
 | 生成 | `deepseek-flash`（云主选型）/ Ollama `qwen3.5:4b`（显式本地），temperature=0、thinking 关闭、输出 768 |
 | 预算 | 共享 8,192 Token / 余量 256；Ollama 固定 `0.35.1` 与模型 digest，`rag.json` |
 | 展示 | Streamlit `1.65.0`；默认本地 Qwen，无自动云回退、无多轮记忆 |
+| RAG 编排 | LangChain LCEL / `langchain-core 1.6.7`；顺序节点与条件分支，跟踪上传显式关闭 |
 
 详见 [技术栈决策](docs/stack_selection.md)。云主选型与 UI 默认本地不冲突：后者避免未经授权付费。没有实测 Milvus、其他 Reranker 或 Dense + Reranker，不补作结论。
+
+本地问答另支持逐版核验的 Ollama `0.40.0`、`0.40.1` + 固定 `ggml` 子模型，使用独立的 `configs/ollama_runtime.json` 精确版本允许列表；历史 `0.35.1` 实验配置和结果不变。升级后出现版本/digest 报错时，见 [本地运行兼容说明](docs/ollama_runtime.md)。未知版本不会自动放行。
 
 ## 从 clone 开始安装与准备
 

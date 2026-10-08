@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "baseline_ollama_version": "0.35.1",
+  "baseline_model_digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+  "verified_ollama_versions": ["0.40.0", "0.40.1"],
+  "model": "qwen3.5:4b",
+  "digest": "3c3adf637187c95955232acd3ed05b9ea45aeb2a5f953e631c38174a46b5b56a",
+  "runner": "ggml",
+  "template_sha256": "39302355407942b6b0b50e1a78741740fc8a31926a4febea429526497e0e6008"
+}

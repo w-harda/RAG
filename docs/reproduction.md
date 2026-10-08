@@ -2,6 +2,8 @@
 
 本指南区分三种行为：**离线校验历史记录**、**重建运行缓存并实际问答**、**独立重新实测**。三者不能互相冒充；历史数据、固定配置、Prompt 和模型身份均不在收尾时修改。
 
+当前 CLI / Streamlit 的在线 RAG 已强制采用 LangChain LCEL，启动命令、配置、离线准备和输出契约不变。依赖通过更新后的 `uv.lock` 安装；不需要 LangSmith 账户，代码显式禁用跟踪上传。Phase 4–10 结果仍属于原实现的历史实验，详见 [LangChain 重构说明](langchain_rag.md)。
+
 命令以 Windows PowerShell 为例，在仓库根目录执行；原实验为 Python 3.12.3 / Windows / CPU。已提交依赖锁不等于锁定所有硬件、操作系统、云权重或外部下载服务。请逐条检查退出码，失败时不要继续后面的命令。官方来源文件改变、向量字节不同或模型身份变化时应停止，而不是修改校验值绕过。
 
 ## 1. 安装与无模型离线检查
@@ -76,6 +78,8 @@ uv run python scripts/validate_rag_results.py --verify-inputs
 ## 4. Ollama、真实问答和 Streamlit
 
 ### 本地服务
+
+以下 `0.35.1` 是历史实验复现基线。若已有 Ollama `0.40.0` 或 `0.40.1`，CLI / Streamlit 可使用逐版核验的固定 `ggml` 运行兼容配置，见 [兼容说明](ollama_runtime.md)；不要为了运行网页直接改历史版本/digest，也不要在新版上用下方预算验收命令覆盖历史记录。
 
 从 [Ollama v0.35.1 官方发布页](https://github.com/ollama/ollama/releases/tag/v0.35.1) 获取适合系统的发行包，不安装其他来源的替代二进制。准备本机服务：
 

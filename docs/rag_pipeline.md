@@ -1,5 +1,7 @@
 # Phase 9：完整 RAG Pipeline 与真实来源引用
 
+> 当前生产管线已按后续要求重构为强制 LangChain LCEL 编排；本文的“框架无关编排”描述是 Phase 9 交付时的历史状态。算法、数据和实验结果不变，当前代码与验证边界见 [LangChain RAG 实现](langchain_rag.md)。
+
 > 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
 
 ## 已实现范围与最小架构

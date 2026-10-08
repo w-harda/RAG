@@ -1,5 +1,7 @@
 # Phase 8：最终研究技术栈决策
 
+> 框架选型的后续变更：当前生产 RAG 强制使用 LangChain LCEL；下方“不引入框架”的取舍属于 Phase 8 历史记录，冻结选型 JSON 与实验数据未改。当前实现见 [LangChain RAG 实现](langchain_rag.md)。
+
 > 本文保留该阶段交付时的历史状态和实测口径；当前最终状态与完整流程见 [README](../README.md)、[复现指南](reproduction.md) 和 [最终实验汇总](results_summary.md)。后续阶段已实现的内容不回写历史实验数据。
 
 ## 状态与目标
